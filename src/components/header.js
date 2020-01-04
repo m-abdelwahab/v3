@@ -1,14 +1,21 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { theme, mixins } from "../styles"
 
 import usePopup from "../hooks/usePopup"
+
+import IconLogo from "./icons/logo"
+const { colors } = theme
 
 const links = [
   { url: "/", name: "Projects" },
   { url: "/about", name: "About" },
   { url: "/blog", name: "Blog" },
   { url: "/talks", name: "Talks" },
+  { url: "/resume", name: "Résumé" },
+
+
 ]
 
 export default React.memo(() => {
@@ -23,6 +30,11 @@ export default React.memo(() => {
 
   return (
     <Header>
+      <Logo>
+        <LogoLink href="/" aria-label="home">
+          <IconLogo />
+        </LogoLink>
+      </Logo>
       <nav>
         <ul>
           <li className="menu" {...getContainerProps()}>
@@ -57,22 +69,42 @@ export default React.memo(() => {
   )
 })
 const Header = styled.header`
-  position: fixed;
-  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  z-index: 4;
-  .hidden {
-    display: none;
-  }
-
+  
   nav {
-    position: relative;
   }
 
   .menu {
     position: absolute;
     right: 0.3125rem;
     top: 0.4375rem;
+  }
+`
+const Logo = styled.div`
+  ${mixins.flexCenter};
+  padding: 0 2%;
+
+
+`
+const LogoLink = styled.a`
+  display: block;
+  color: ${colors.white};
+  width: 42px;
+  height: 42px;
+  margin:10px;
+  &:hover,
+  &:focus {
+    svg {
+      fill: ${colors.dark};
+    }
+  }
+  svg {
+    fill: none;
+    transition: ${theme.transition};
+    user-select: none;
   }
 `
 
@@ -132,12 +164,12 @@ const MenuButton = styled.button`
 
     &::before,
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       height: 3px;
       width: 100%;
-      background: currentColor;
+      background: #000000;
       transition-property: transform, opacity;
       transition: transform 0.25s ease;
       transform-origin: ${props => (props.isMenuOpen ? "50%" : "100%")};
@@ -184,6 +216,7 @@ const MenuBody = styled.ul`
   background: var(--white);
   border: 1px solid var(--gray);
   position: absolute;
+  z-index:99;
   right: 30px;
   width: 300px;
   border-radius: var(--baseborderradius);

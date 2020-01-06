@@ -4,93 +4,9 @@ import { email } from "../config"
 import styled from "styled-components"
 import { theme, mixins, media, Section } from "../styles"
 import TextLoop from "react-text-loop"
-import Coding from "../images/coding.png"
+import Me from "../images/me.jpeg"
 
 const { colors } = theme
-
-const HeroContainer = styled(Section)`
-  ${mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 100vh;
-  ${media.tablet`padding-top: 150px;`};
-  div {
-    width: 100%;
-  }
-`
-
-const HeroImg = styled.img`
-  width: 80%;
-  max-width: 800px;
-  background-size: cover;
-  ${media.bigDesktop`display:none;`};
-`
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-const Hi = styled.h1`
-  color: ${colors.dark};
-  margin: 0 0 20px 3px;
-  font-weight: normal;
-  ${media.desktop`font-size: 60px;`};
-  ${media.tablet`font-size: 40px;`};
-  ${media.phablet`font-size: 30px;`};
-  ${media.phone`font-size: 20px;`};
-`
-const Name = styled.h2`
-  color: ${colors.dark};
-  font-size: 80px;
-  line-height: 1.1;
-  margin: 0;
-  ${media.desktop`font-size: 70px;`};
-  ${media.tablet`font-size: 60px;`};
-  ${media.phablet`font-size: 50px;`};
-  ${media.phone`font-size: 40px;`};
-`
-const Subtitle = styled.h3`
-  font-size: 150px;
-  line-height: 1.1;
-  color: ${colors.dark};
-  ${media.desktop`font-size: 100px;`};
-  ${media.tablet`font-size: 60px;`};
-  ${media.phablet`font-size: 50px;`};
-  ${media.phone`font-size: 40px;`};
-`
-const Blurb = styled.div`
-  margin-top: 25px;
-  width: 50%;
-  max-width: 500px;
-
-  span {
-    text-decoration: none;
-    transition: all 100ms ease-in-out;
-
-    &:nth-of-type(1) {
-      color: ${colors.darkBlue};
-    }
-    &:nth-of-type(2) {
-      color: ${colors.pink};
-    }
-    &:nth-of-type(3) {
-      color: ${colors.darkRed};
-    }
-    &:nth-of-type(4) {
-      color: ${colors.green};
-    }
-    &:nth-of-type(5) {
-      color: ${colors.purple};
-    }
-    &:nth-of-type(6) {
-      color: ${colors.orange};
-    }
-  }
-`
-const EmailLink = styled.a`
-  ${mixins.bigButton};
-  margin-top: 50px;
-`
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false)
@@ -114,17 +30,14 @@ const Hero = () => {
 
   const two = () => (
     <Name style={{ transitionDelay: "300ms" }}>
-      Mahmoud <br /> Abdelwahab
+      Mahmoud <br /> Abdelwahab.
     </Name>
   )
   const three = () => <Subtitle style={{ transitionDelay: "400ms" }}></Subtitle>
   const four = () => (
     <Blurb style={{ transitionDelay: "500ms" }}>
-      {" "}
-      <span>Front-end Engineer</span>/<span>UX Designer</span> obsessed with{" "}
-      <span>designing</span> and <span>building</span> exceptional,
-      high-quality, performant <span>websites</span> and{" "}
-      <span>applications</span>.
+      Front-end Engineer/ UX Designer obsessed with designing and building
+      exceptional, high-quality, performant websites and applications .
     </Blurb>
   )
   const five = () => (
@@ -155,7 +68,11 @@ const Hero = () => {
             timeout={3000}
             style={{ transitionDelay: "700ms" }}
           >
-            <HeroImg src={Coding} />
+            <StyledPic>
+              <StyledAvatarLink href="">
+                <StyledAvatar src={Me} alt="Avatar" />
+              </StyledAvatarLink>
+            </StyledPic>
           </CSSTransition>
         )}
       </TransitionGroup>
@@ -164,3 +81,116 @@ const Hero = () => {
 }
 
 export default Hero
+
+const HeroContainer = styled(Section)`
+  ${mixins.flexCenter};
+  flex-direction: column;
+  min-height: 100vh;
+  ${media.desktop`padding-top: 150px;`};
+
+
+  div {
+    width: 100%;
+  }
+`
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  ${media.desktop`flex-direction:column;`};
+`
+
+const Hi = styled.h1`
+  color: ${colors.dark};
+  margin: 0 0 20px 3px;
+  font-weight: normal;
+  span {
+    font-size: 1.4em;
+  }
+`
+const Name = styled.h2`
+  color: ${colors.dark};
+  font-size: 70px;
+  line-height: 1.1;
+  margin: 0;
+  ${media.desktop`font-size: 70px;`};
+  ${media.tablet`font-size: 60px;`};
+  ${media.phablet`font-size: 50px;`};
+  ${media.phone`font-size: 40px;`};
+`
+const Subtitle = styled.h3`
+  font-size: 150px;
+  line-height: 1.1;
+  color: ${colors.dark};
+  ${media.desktop`font-size: 100px;`};
+  ${media.tablet`font-size: 60px;`};
+  ${media.phablet`font-size: 50px;`};
+  ${media.phone`font-size: 40px;`};
+`
+const Blurb = styled.div`
+  margin-top: 25px;
+  width: 80%;
+  max-width: 500px;
+  font-size: 1.2em;
+`
+const EmailLink = styled.a`
+  ${mixins.bigButton};
+  margin-top: 50px;
+`
+
+const StyledPic = styled.div`
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  ${media.tablet` padding: 20px 0 80px  0;`};
+
+  a {
+    &:focus {
+      outline: 0;
+    }
+  }
+`
+const StyledAvatar = styled.img`
+  border-radius: 10px;
+  width: 450px;
+`
+const StyledAvatarLink = styled.a`
+  ${mixins.boxShadow};
+  width: 100%;
+  position: relative;
+  border-radius: ${theme.borderRadius};
+  background-color: ${colors.green};
+  margin-left: -20px;
+  &:hover,
+  &:focus {
+    background: transparent;
+    &:after {
+      top: 15px;
+      left: 15px;
+    }
+  }
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: ${theme.borderRadius};
+    transition: ${theme.transition};
+  }
+  &:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ${colors.navy};
+    mix-blend-mode: screen;
+  }
+  &:after {
+    border: 2px solid ${colors.green};
+    top: 20px;
+    left: 20px;
+    z-index: -1;
+  }
+`

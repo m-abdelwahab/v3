@@ -2,12 +2,14 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Experience from "../components/experience"
-// import Coding from "../components/coding"
+import Hero from "../components/hero"
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    {/* <Coding /> */}
+    <Hero />
     <Experience />
+    
   </Layout>
 )
 

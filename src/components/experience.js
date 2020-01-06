@@ -1,14 +1,13 @@
 import React from "react"
 import experiences from "../data/experience"
 import styled from "styled-components"
-import { theme } from "../styles"
-const { fontSizes } = theme
+import { theme, mixins, media, Section } from "../styles"
+const { fontSizes, colors } = theme
 
 const Experience = () => {
   return (
     <Container>
-      <h3>Expérience</h3>
-
+      <Heading>Experience</Heading>
       {experiences.map(experience => (
         <Card key={experience.id}>
           <ul>
@@ -34,6 +33,17 @@ const Experience = () => {
 
 export default Experience
 
+const Heading = styled.h3`
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 10px 0 40px;
+  width: 100%;
+  white-space: nowrap;
+  color: ${colors.dark};
+  font-size: ${fontSizes.h3};
+  ${media.tablet`font-size: 24px;`};
+`;
 const Icon = styled.img`
   position: absolute;
   right: -28px;
@@ -44,7 +54,7 @@ const Icon = styled.img`
   color: black;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.2s;
-  background-color:white;
+  background-color: white;
   @media (max-width: 600px) {
     left: 50%;
     transform: translateX(-50%);

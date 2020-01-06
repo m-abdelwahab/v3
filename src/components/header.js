@@ -14,8 +14,6 @@ const links = [
   { url: "/blog", name: "Blog" },
   { url: "/talks", name: "Talks" },
   { url: "/resume", name: "Résumé" },
-
-
 ]
 
 export default React.memo(() => {
@@ -69,11 +67,14 @@ export default React.memo(() => {
   )
 })
 const Header = styled.header`
+  position: fixed;
+  z-index:999;
+
+  top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  
   nav {
   }
 
@@ -86,15 +87,13 @@ const Header = styled.header`
 const Logo = styled.div`
   ${mixins.flexCenter};
   padding: 0 2%;
-
-
 `
 const LogoLink = styled.a`
   display: block;
   color: ${colors.white};
   width: 42px;
   height: 42px;
-  margin:10px;
+  margin: 10px;
   &:hover,
   &:focus {
     svg {
@@ -109,13 +108,14 @@ const LogoLink = styled.a`
 `
 
 const MenuButton = styled.button`
-  position: relative;
   border: none;
   background: none;
   padding: 1.875rem 2.1875rem;
   outline: none;
   cursor: pointer;
   transition: opacity 0.25s var(--cubic);
+  z-index:999;
+
 
   .hamburger {
     font-size: 0;
@@ -216,7 +216,6 @@ const MenuBody = styled.ul`
   background: var(--white);
   border: 1px solid var(--gray);
   position: absolute;
-  z-index:99;
   right: 30px;
   width: 300px;
   border-radius: var(--baseborderradius);

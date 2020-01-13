@@ -4,7 +4,8 @@ import { email } from "../config"
 import styled from "styled-components"
 import { theme, mixins, media, Section } from "../styles"
 import TextLoop from "react-text-loop"
-import Me from "../images/me.jpeg"
+import Coding from "../images/coding.svg"
+import Model from "./model"
 
 const { colors } = theme
 
@@ -68,11 +69,9 @@ const Hero = () => {
             timeout={3000}
             style={{ transitionDelay: "700ms" }}
           >
-            <StyledPic>
-              <StyledAvatarLink href="">
-                <StyledAvatar src={Me} alt="Avatar" />
-              </StyledAvatarLink>
-            </StyledPic>
+            <StyledCanvas>
+              <Model />
+            </StyledCanvas>
           </CSSTransition>
         )}
       </TransitionGroup>
@@ -87,7 +86,6 @@ const HeroContainer = styled(Section)`
   flex-direction: column;
   min-height: 100vh;
   ${media.desktop`padding-top: 150px;`};
-
 
   div {
     width: 100%;
@@ -139,20 +137,28 @@ const EmailLink = styled.a`
 `
 
 const StyledPic = styled.div`
-  width: 80%;
-  max-width: 500px;
-  margin: 0 auto;
-  ${media.tablet` padding: 20px 0 80px  0;`};
-
-  a {
-    &:focus {
-      outline: 0;
-    }
+  svg {
+    height: 80%;
   }
+
+  ${media.tablet` 
+  svg{
+
+     width: 100%;
+    margin:0 auto;
+
+  }
+  `};
 `
 const StyledAvatar = styled.img`
   border-radius: 10px;
-  width: 450px;
+  width: 550px;
+`
+const StyledCanvas = styled.div`
+  canvas{
+    width:600px;
+    height:600px;
+  }
 `
 const StyledAvatarLink = styled.a`
   ${mixins.boxShadow};

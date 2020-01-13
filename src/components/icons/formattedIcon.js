@@ -8,6 +8,25 @@ import {
   IconMail,
   IconMedium,
   IconLink,
+  IconGit,
+  IconCSS,
+  IconApollo,
+  IconExpress,
+  IconFigma,
+  IconGatsby,
+  IconGraphql,
+  IconHandlebars,
+  IconHeroku,
+  IconHTML,
+  IconIllustrator,
+  IconJava,
+  IconMongodb,
+  IconNetlify,
+  IconNode,
+  IconReact,
+  IconTypescript,
+  IconXd,
+  IconJavaScript
 } from "./index"
 
 const FormattedIcon = ({ name }) => {
@@ -28,6 +47,44 @@ const FormattedIcon = ({ name }) => {
       return <IconMedium />
     case "Link":
       return <IconLink />
+    case "Git":
+      return <IconGit />
+    case "CSS":
+      return <IconCSS />
+    case "Apollo":
+      return <IconApollo />
+    case "Express":
+      return <IconExpress />
+    case "Figma":
+      return <IconFigma />
+    case "Gatsby":
+      return <IconGatsby />
+    case "GraphQL":
+      return <IconGraphql />
+    case "Handlebars":
+      return <IconHandlebars />
+    case "Heroku":
+      return <IconHeroku />
+    case "HTML":
+      return <IconHTML />
+    case "Illustrator":
+      return <IconIllustrator />
+    case "Node":
+      return <IconNode />
+    case "Xd":
+      return <IconXd />
+    case "TypeScript":
+      return <IconTypescript />
+    case "React":
+      return <IconReact />
+    case "Netlify":
+      return <IconNetlify />
+    case "MongoDB":
+      return <IconMongodb />
+    case "Java":
+      return <IconJava />
+    case "JavaScript":
+      return <IconJavaScript />
     default:
       return <IconGithub />
   }

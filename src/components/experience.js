@@ -1,5 +1,5 @@
 import React from "react"
-import experiences from "../data/experience"
+import {experiences} from "../data/aboutData"
 import styled from "styled-components"
 import { theme, mixins, media, Section } from "../styles"
 const { fontSizes, colors } = theme
@@ -25,6 +25,8 @@ const Experience = () => {
               <p>{experience.description}</p>
             </li>
           </ul>
+
+
         </Card>
       ))}
     </Container>

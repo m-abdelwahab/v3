@@ -27,8 +27,11 @@ import IconReact from "./react"
 import IconTypescript from "./typescript"
 import IconXd from "./xd"
 import IconJavaScript from "./javascript"
-
+import IconGlobe from "./globe"
+import IconStyledComponents from "./styledComponents"
 export {
+  IconGlobe,
+  IconStyledComponents,
   IconXd,
   IconLogo,
   IconGithub,

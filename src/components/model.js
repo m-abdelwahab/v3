@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import React, { Suspense, useRef } from "react"
+import React, { Suspense, useRef, useState,useMemo } from "react"
 import {
   Canvas,
   extend,
@@ -20,8 +20,14 @@ const Controls = props => {
 }
 
 function Asset({ url }) {
-  const gltf = useLoader(GLTFLoader, url)
-  return <primitive object={gltf.scene} />
+  // useMemo
+  // const gltf = useLoader(GLTFLoader, url)
+  // return <primitive object={gltf.scene} />
+  const [gltf, set] = useState()
+  
+  useMemo(() => new GLTFLoader().load(url, set), [url])
+
+  return gltf ? <primitive object={gltf.scene} /> : null
 }
 
 const Cube = () => {
@@ -37,19 +43,20 @@ const Cube = () => {
 const Model = () => {
   return (
     <Canvas
-      camera={{ position: [1, 1, 1] }}
+      camera={{ position: [150, 150, 200] }}
       onCreated={({ gl }) => {
         gl.shadowMap.enabled = true
         gl.shadowMap.type = THREE.PCFSoftShadowMap
       }}
     >
-      <ambientLight intensity={1.5} />
-      <pointLight intensity={2} position={[10, -25, 10]} />
+      
+      <ambientLight intensity={5} />
+      <pointLight intensity={0.25} position={[10, -25, 10]} />
       <spotLight
         castShadow
-        intensity={1.25}
+        intensity={0.25}
         angle={Math.PI / 8}
-        position={[25, 25, 15]}
+        position={[3,3, 3]}
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
       />
@@ -59,7 +66,7 @@ const Model = () => {
         enableZoom={false}
         enableDamping
         dampingFactor={0.5}
-        rotateSpeed={1}
+        rotateSpeed={0.25}
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 2}
       />

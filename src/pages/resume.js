@@ -1,11 +1,13 @@
 import React from "react"
 import MyResume from "../components/resume"
-
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 const Resume = () => {
   return (
-    <div>
+    <Layout>
+      <SEO title="resume" />
       <MyResume />
-    </div>
+    </Layout>
   )
 }
 

@@ -5,8 +5,7 @@ const IconFigma = () => {
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 200 300"
-      width="1667"
-      height="2500"
+      width="24px"
     >
       <path
         fill="#0acf83"

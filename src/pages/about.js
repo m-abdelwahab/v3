@@ -40,7 +40,7 @@ const About = () => {
           </AboutStats>
 
           <AboutSkills>
-            <h1>Skills</h1> <br />
+            <h1>Tools I use</h1> <br />
             {skillsList.map(skill => {
               return (
                 <Tooltip

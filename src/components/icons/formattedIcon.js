@@ -26,11 +26,17 @@ import {
   IconReact,
   IconTypescript,
   IconXd,
-  IconJavaScript
+  IconJavaScript,
+  IconGlobe,
+  IconStyledComponents,
 } from "./index"
 
 const FormattedIcon = ({ name }) => {
   switch (name) {
+    case "styled-components":
+      return <IconStyledComponents />
+    case "Globe":
+      return <IconGlobe />
     case "Github":
       return <IconGithub />
     case "Linkedin":

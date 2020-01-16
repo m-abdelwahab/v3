@@ -95,7 +95,6 @@ export const skillsList = [
   { name: "Heroku" },
   { name: "MongoDB" },
   {name:"Handlebars"},
-  { name: "Figma" },
   { name: "Xd" },
   { name: "Illustrator" },
 ]

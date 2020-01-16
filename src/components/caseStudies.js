@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Talks = () => {
+const CaseStudies = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Talks = () => {
     )
 }
 
-export default Talks
+export default CaseStudies

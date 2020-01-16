@@ -7,10 +7,10 @@ export default [
     id: "1",
     title: "IdeaPad",
     description:
-      "A Full Stack Web Application where users can create an account, add, edit and delete notes. Users can also use voice typing for easier note-taking.",
+      "Full Stack note-taking Web App where users can use voice typing ",
     link: "https://ideapad-app.herokuapp.com",
     github: "https://github.com/m-abdelwahab/ideapad",
-    tech: ["Node", "Express", "MongoDB", "Heroku", "HTML", "CSS", "JavaScript"],
+    tech: ["Node", "Express", "MongoDB", "Heroku", "JavaScript", "Handlebars"],
     cover: `${ideapad}`,
   },
   {
@@ -19,14 +19,14 @@ export default [
     description: "A news app powered by the Hackernews API",
     link: "https://hn360.netlify.com",
     github: "https://github.com/m-abdelwahab/hn360",
-    tech: ["React", "Styled-Components", "React-Testing-Library"],
+    tech: ["React", "styled-components", "React-Testing-Library"],
     cover: `${hn360}`,
   },
   {
     id: "3",
     title: "Portfolio Website",
     description:
-      "My Personal website where I showcase my work and people can learn about me.",
+      "Personal website where I showcase my work and people can learn about me.",
     link: "https://mahmoudabdelwahab.tech",
     github: "https://github.com/m-abdelwahab/portfolio",
     tech: ["Gatsby", "styled-components"],

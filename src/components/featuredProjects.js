@@ -5,45 +5,48 @@ import { FormattedIcon } from "../components/icons"
 import "react-tippy/dist/tippy.css"
 import { theme, mixins, media, Section } from "../styles"
 import { Tooltip } from "react-tippy"
+import Fade from "react-reveal/Fade"
 const { fontSizes, colors } = theme
 
 const FeaturedProjects = () => {
   return (
-    <Container>
-      <Heading> Coding Projects</Heading>
-      <Grid>
-        {Projects.map(project => {
-          return (
-            <Project key={project.id}>
-              <ProjectCover src={project.cover} />
-              <ProjectTitle>{project.title}</ProjectTitle>
-              <ProjectDesc>{project.description}</ProjectDesc>
-              <ProjectStack>
-                {project.tech.map(tech => {
-                  return (
-                    <Tooltip
-                      title={tech}
-                      position="bottom"
-                      trigger="mouseenter"
-                    >
-                      <FormattedIcon name={tech} />
-                    </Tooltip>
-                  )
-                })}
-              </ProjectStack>
-              <ProjectLinks>
-                <a href={project.github} target="_blank">
-                  <FormattedIcon name="GitHub" />
-                </a>
-                <a href={project.link} target="_blank">
-                  <FormattedIcon name="Link" />
-                </a>
-              </ProjectLinks>
-            </Project>
-          )
-        })}
-      </Grid>
-    </Container>
+    <Fade>
+      <Container>
+        <Heading> Coding Projects</Heading>
+        <Grid>
+          {Projects.map(project => {
+            return (
+              <Project key={project.id}>
+                <ProjectCover src={project.cover} />
+                <ProjectTitle>{project.title}</ProjectTitle>
+                <ProjectDesc>{project.description}</ProjectDesc>
+                <ProjectStack>
+                  {project.tech.map(tech => {
+                    return (
+                      <Tooltip
+                        title={tech}
+                        position="bottom"
+                        trigger="mouseenter"
+                      >
+                        <FormattedIcon name={tech} />
+                      </Tooltip>
+                    )
+                  })}
+                </ProjectStack>
+                <ProjectLinks>
+                  <a href={project.github} target="_blank">
+                    <FormattedIcon name="GitHub" />
+                  </a>
+                  <a href={project.link} target="_blank">
+                    <FormattedIcon name="Link" />
+                  </a>
+                </ProjectLinks>
+              </Project>
+            )
+          })}
+        </Grid>
+      </Container>
+    </Fade>
   )
 }
 
@@ -54,6 +57,7 @@ const Container = styled.div`
   padding: 150px 0;
 
   ${media.tablet`padding: 100px 0;`};
+  ${media.phone`margin:0 auto;`};
 `
 
 const Heading = styled.h3`
@@ -69,7 +73,7 @@ const Heading = styled.h3`
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 2fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 3fr));
   grid-template-rows: repeat(2, fr);
 `
 
@@ -99,7 +103,7 @@ const ProjectStack = styled.div`
   margin: 1em;
   svg {
     width: 30px;
-    margin: 1em;
+    margin: 0.5em;
   }
 `
 const ProjectLinks = styled.div`

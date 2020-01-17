@@ -58,7 +58,7 @@ const BlogPost = props => {
       <Fade>
         <Article>
           <Link to="/blog">
-            <Heading >Blog</Heading>
+            <Heading>Blog</Heading>
           </Link>
           <CallToAction>
             More blog posts can be found on{" "}
@@ -72,8 +72,8 @@ const BlogPost = props => {
           </CallToAction>
           <header>
             <Title>{post.frontmatter.title}</Title>
-            <Date>{post.frontmatter.date}</Date>
-            <TimeToRead>{post.timeToRead} min read</TimeToRead>
+            <Date>🗓{post.frontmatter.date}</Date>
+            <TimeToRead>🕑 {post.timeToRead} min read</TimeToRead>
           </header>
           <p dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr />

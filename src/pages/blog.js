@@ -19,8 +19,8 @@ const Blog = ({ data }) => {
             {posts.map(({ node }, i) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <Link to={node.fields.slug}>
-                  <Fade top delay={i * 200}>
+                <Fade top delay={i * 200}>
+                  <Link to={node.fields.slug}>
                     <Card key={node.fields.slug}>
                       <Category>{node.frontmatter.tag}</Category>
                       <Title>{title}</Title>
@@ -33,12 +33,12 @@ const Blog = ({ data }) => {
                         />
                       </Description>
                       <Info>
-                        <p>{node.timeToRead} min read </p>
-                        <span>{node.frontmatter.date}</span>
+                        <p> 🕑{node.timeToRead} min read </p>
+                        <span>🗓{node.frontmatter.date}</span>
                       </Info>
                     </Card>
-                  </Fade>
-                </Link>
+                  </Link>
+                </Fade>
               )
             })}
           </Grid>
@@ -102,16 +102,16 @@ const Card = styled.div`
 const Category = styled.h6`
   font-weight: 600;
   color: darkgrey;
-  margin-bottom:0.5em;
+  margin-bottom: 0.5em;
 `
 const Title = styled.h3`
   margin: 0;
   color: black;
-  font-size:1.5em;
+  font-size: 1.5em;
 `
 const Info = styled.div`
   display: flex;
- justify-content: space-between;
+  justify-content: space-between;
   p {
   }
   span {
@@ -121,7 +121,7 @@ const Info = styled.div`
 `
 const Description = styled.p`
   margin: 2em 0;
-  
+
   p:last-of-type {
     margin: 0;
   }

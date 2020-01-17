@@ -11,7 +11,7 @@ import Fade from "react-reveal/Fade"
 
 const About = () => {
   return (
-    <Container>
+    <Grid>
       <AboutImg src={Me} alt="me" />
       <AboutStats>
         {statsList.map((stat, i) => {
@@ -50,34 +50,34 @@ const About = () => {
         })}
       </AboutSkills>
 
-        <AboutIntro>
-          <h1>
-            I'm an Egyptian based Front-end-engineer and UX designer, I am
-            passionate about building exciting software projects. I'm a 3rd year
-            undergraduate, currently majoring in Computer Science at the German
-            University in Cairo.
-          </h1>
-          <h1>
-            Here's some fun facts about me: I speak five languages: Arabic
-            (Native), English (fluent) , French (fluent), Spanish (intermediate)
-            and German (beginner).
-          </h1>
-          <h1>
-            During the past few years, Fitness and working out became a huge
-            part of my life and daily routine, that's why if you can't find me
-            at my workspace , you'll probably find me at the gym 💪. One of my
-            passions is Filmmaking 🎥 , I love to write, shoot and edit videos.
-            The process of building a story using visuals has always fascinated
-            me; this is probably why I fell in love with Frontend Engineering.
-          </h1>
-        </AboutIntro>
-    </Container>
+      <AboutIntro>
+        <h1>
+          I'm an Egyptian based Front-end-engineer and UX designer, I am
+          passionate about building exciting software projects. I'm a 3rd year
+          undergraduate, currently majoring in Computer Science at the German
+          University in Cairo.
+        </h1>
+        <h1>
+          Here's some fun facts about me: I speak five languages: Arabic
+          (Native), English (fluent) , French (fluent), Spanish (intermediate)
+          and German (beginner).
+        </h1>
+        <h1>
+          During the past few years, Fitness and working out became a huge part
+          of my life and daily routine, that's why if you can't find me at my
+          workspace , you'll probably find me at the gym 💪. One of my passions
+          is Filmmaking 🎥 , I love to write, shoot and edit videos. The process
+          of building a story using visuals has always fascinated me; this is
+          probably why I fell in love with Frontend Engineering.
+        </h1>
+      </AboutIntro>
+    </Grid>
   )
 }
 
 export default About
 
-const Container = styled(Section)`
+const Grid = styled(Section)`
   display: grid;
   grid-template-columns: 30% 1fr;
   grid-template-rows: auto;
@@ -215,8 +215,8 @@ const AboutIntro = styled.div`
   grid-area: intro;
   line-height: 1.7;
   font-size: 2em;
-  margin: 2em 0 ;
-  width:100%;
+  margin: 2em 0;
+  width: 100%;
   & a {
     color: black;
     text-decoration: overline;
@@ -260,9 +260,10 @@ const Counter = styled.span`
   @media (max-width: 1024px) {
     font-size: 2em;
   }
-  &:after {
-    content: "+";
-  }
+    &:after {
+      content: "+";
+    }
+  
 `
 
 const StatTitle = styled.span`

@@ -31,6 +31,7 @@ export default DesignProjects
 const Container = styled.div`
   margin: 0 auto;
   padding: 150px 0;
+  max-width: 1000px;
 
   ${media.tablet`padding: 100px 0;`};
   ${media.phone`margin:0 auto;`};
@@ -59,11 +60,10 @@ const Project = styled.div`
   &:hover {
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.12);
   }
+  /* transform: perspective(980px) rotateY(-31deg) rotateX(3deg); */
   margin: 1em;
   padding: 1em;
-  height: auto;
   max-width: 500px;
-  width: 100%;
 `
 
 const Description = styled.p``

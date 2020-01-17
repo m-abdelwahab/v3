@@ -2,8 +2,6 @@ import robustaLogo from "../images/robusta-logo.svg"
 import gucLogo from "../images/guc-logo.svg"
 import vgs from "../images/vgs.png"
 
-
-
 export const experiences = [
   {
     id: "1",
@@ -11,7 +9,7 @@ export const experiences = [
     title: "Front-end Developer Intern",
     years: "Dec 2019 - present",
     url: "https://robustastudio.com",
-    description: `Réalisation d'un site e-commerce à l'aide de React.js (Next.js) et Node.js`,
+    description: `Worked within an agile sprint team on multiple projects`,
     icon: `${robustaLogo}`,
   },
   {
@@ -49,10 +47,10 @@ export const statsList = [
   },
   {
     id: "3",
-    name: "Soccer Balls Kicked",
+    name: "Hours Spent Designing",
     start: 0,
-    end: 988,
-  }
+    end: 1000,
+  },
 ]
 
 export const skillsList = [
@@ -69,7 +67,7 @@ export const skillsList = [
   { name: "Netlify" },
   { name: "Heroku" },
   { name: "MongoDB" },
-  {name:"Handlebars"},
+  { name: "Handlebars" },
   { name: "Xd" },
   { name: "Illustrator" },
 ]

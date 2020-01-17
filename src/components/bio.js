@@ -36,9 +36,9 @@ const Bio = () => {
     <Card>
       <Avatar src={Me} />
       <Paragraph>
-        Hi!👋 Welcome to My Personal Blog where I write about Software
-        Development, and share my thoughts. I'm A Front-end Software Engineer
-        in my 3rd year studying Computer Science, but I also love to design.
+        Hi! Welcome to my Blog👋. This is where I write about Design, Front-end
+        Development and share my thoughts. I'm A Front-end Software Engineer in
+        my 3rd year studying Computer Science.
       </Paragraph>
     </Card>
   )

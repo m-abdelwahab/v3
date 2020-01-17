@@ -5,7 +5,6 @@ import styled from "styled-components"
 import { theme, mixins, media, Section } from "../styles"
 import TextLoop from "react-text-loop"
 import Coding from "../images/coding.svg"
-import Model from "./model"
 
 const { colors } = theme
 
@@ -43,7 +42,7 @@ const Hero = () => {
   )
   const five = () => (
     <div style={{ transitionDelay: "600ms" }}>
-      <EmailLink href={`mailto:${email}`}>Get In Touch</EmailLink>
+      <EmailLink href={`/resume.pdf`}>Resume</EmailLink>
     </div>
   )
 
@@ -69,9 +68,9 @@ const Hero = () => {
             timeout={3000}
             style={{ transitionDelay: "700ms" }}
           >
-            <StyledCanvas>
-              <Model />
-            </StyledCanvas>
+            <StyledPic>
+              <StyledAvatar src={Coding} />
+            </StyledPic>
           </CSSTransition>
         )}
       </TransitionGroup>
@@ -155,9 +154,9 @@ const StyledAvatar = styled.img`
   width: 550px;
 `
 const StyledCanvas = styled.div`
-  canvas{
-    width:600px;
-    height:600px;
+  canvas {
+    width: 600px;
+    height: 600px;
   }
 `
 const StyledAvatarLink = styled.a`

@@ -29,7 +29,11 @@ import IconXd from "./xd"
 import IconJavaScript from "./javascript"
 import IconGlobe from "./globe"
 import IconStyledComponents from "./styledComponents"
+import IconReactTestingLib from "./reactTestingLibrary"
+import IconPreview from "./preview"
 export {
+  IconPreview,
+  IconReactTestingLib,
   IconGlobe,
   IconStyledComponents,
   IconXd,

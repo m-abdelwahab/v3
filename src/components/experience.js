@@ -1,33 +1,34 @@
 import React from "react"
-import {experiences} from "../data/aboutData"
+import { experiences } from "../data/aboutData"
 import styled from "styled-components"
 import { theme, mixins, media, Section } from "../styles"
+import Fade from "react-reveal/Fade"
 const { fontSizes, colors } = theme
 
 const Experience = () => {
   return (
     <Container>
       <Heading>Experience</Heading>
-      {experiences.map(experience => (
-        <Card key={experience.id}>
-          <ul>
-            <li>
-              <Icon src={experience.icon} />
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href={experience.url}
-              >
-                <h4>{experience.company}</h4>
-              </a>
-              <h5>{experience.title}</h5>
-              <h6>{experience.years}</h6>
-              <p>{experience.description}</p>
-            </li>
-          </ul>
-
-
-        </Card>
+      {experiences.map((experience, i) => (
+        <Fade bottom delay={i * 200} >
+          <Card key={experience.id}>
+            <ul>
+              <li>
+                <Icon src={experience.icon} />
+                <a
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href={experience.url}
+                >
+                  <h4>{experience.company}</h4>
+                </a>
+                <h5>{experience.title}</h5>
+                <h6>{experience.years}</h6>
+                <p>{experience.description}</p>
+              </li>
+            </ul>
+          </Card>
+        </Fade>
       ))}
     </Container>
   )
@@ -45,7 +46,7 @@ const Heading = styled.h3`
   color: ${colors.dark};
   font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
-`;
+`
 const Icon = styled.img`
   position: absolute;
   right: -28px;

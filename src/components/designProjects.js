@@ -1,17 +1,14 @@
 import React from "react"
 import styled from "styled-components"
-import projects from "../data/featuredProjects"
-import { FormattedIcon } from "../components/icons"
-import "react-tippy/dist/tippy.css"
 import { theme, mixins, media, Section } from "../styles"
-import { Tooltip } from "react-tippy"
 import Fade from "react-reveal/Fade"
+import projects from "../data/caseStudies"
 const { fontSizes, colors } = theme
 
-const FeaturedProjects = () => {
+const DesignProjects = () => {
   return (
     <Container>
-      <Heading> Coding Projects</Heading>
+      <Heading>Design Projects</Heading>
       <Grid>
         {projects.map((project, i) => {
           return (
@@ -20,27 +17,6 @@ const FeaturedProjects = () => {
                 <Cover src={project.cover} />
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <Description>{project.description}</Description>
-                <Stack>
-                  {project.tech.map(tech => {
-                    return (
-                      <Tooltip
-                        title={tech}
-                        position="bottom"
-                        trigger="mouseenter"
-                      >
-                        <FormattedIcon name={tech} />
-                      </Tooltip>
-                    )
-                  })}
-                </Stack>
-                <Links>
-                  <a href={project.github} target="_blank">
-                    <FormattedIcon name="GitHub" />
-                  </a>
-                  <a href={project.link} target="_blank">
-                    <FormattedIcon name="Preview" />
-                  </a>
-                </Links>
               </Project>
             </Fade>
           )
@@ -50,7 +26,7 @@ const FeaturedProjects = () => {
   )
 }
 
-export default FeaturedProjects
+export default DesignProjects
 
 const Container = styled.div`
   margin: 0 auto;
@@ -73,7 +49,7 @@ const Heading = styled.h3`
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 3fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
   grid-template-rows: repeat(2, fr);
 `
 
@@ -85,6 +61,9 @@ const Project = styled.div`
   }
   margin: 1em;
   padding: 1em;
+  height: auto;
+  max-width: 500px;
+  width: 100%;
 `
 
 const Description = styled.p``
@@ -94,25 +73,7 @@ const ProjectTitle = styled.h1`
   margin-top: 1em;
 `
 
-const Cover = styled.img``
+const Cover = styled.img`
+  
 
-const Stack = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1em;
-  svg {
-    width: 30px;
-    margin: 0.5em;
-  }
-`
-const Links = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  svg {
-    fill: none;
-    width: 24px;
-  }
 `

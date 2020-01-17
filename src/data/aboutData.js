@@ -2,32 +2,7 @@ import robustaLogo from "../images/robusta-logo.svg"
 import gucLogo from "../images/guc-logo.svg"
 import vgs from "../images/vgs.png"
 
-export const steps = [
-  {
-    id: "1",
-    title: "Research",
-    description: "r sitt ut labore et dolore mm, nisi eum iure repreh",
-    icon: "",
-  },
-  {
-    id: "2",
-    title: "Ideate",
-    description: "r sitt ut labore et dolore mm, nisi eum iure repreh",
-    icon: "",
-  },
-  {
-    id: "3",
-    title: "Implement",
-    description: "r sitt ut labore et dolore mm, nisi eum iure repreh",
-    icon: "",
-  },
-  {
-    id: "4",
-    title: "Implement",
-    description: "r sitt ut labore et dolore mm, nisi eum iure repreh",
-    icon: "",
-  },
-]
+
 
 export const experiences = [
   {

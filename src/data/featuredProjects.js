@@ -19,7 +19,7 @@ export default [
     description: "A news app powered by the Hackernews API",
     link: "https://hn360.netlify.com",
     github: "https://github.com/m-abdelwahab/hn360",
-    tech: ["React", "styled-components", "React-Testing-Library"],
+    tech: ["React", "styled-components", "react-testing-library"],
     cover: `${hn360}`,
   },
   {

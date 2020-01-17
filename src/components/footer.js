@@ -9,7 +9,6 @@ import {
 import { socialMedia } from "../config"
 import styled from "styled-components"
 import { theme, mixins, media } from "../styles"
-import Fade from "react-reveal/Fade"
 const { colors, fontSizes } = theme
 
 const FooterContainer = styled.footer`
@@ -21,6 +20,7 @@ const FooterContainer = styled.footer`
   text-align: center;
   height: auto;
   min-height: 70px;
+  
 `
 const SocialContainer = styled.div`
   color: ${colors.white};
@@ -51,7 +51,6 @@ const GithubLink = styled.a`
 `
 
 const Footer = () => (
-  <Fade>
     <FooterContainer>
       <SocialContainer>
         <SocialItemList>
@@ -95,7 +94,6 @@ const Footer = () => (
         </GithubLink>
       </Copy>
     </FooterContainer>
-  </Fade>
 )
 
 export default Footer

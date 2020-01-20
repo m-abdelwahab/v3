@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { theme, mixins, media, Section } from "../styles"
+import { theme, Section, media } from "../styles"
 import Fade from "react-reveal/Fade"
 const { fontSizes, colors } = theme
 
@@ -14,7 +14,12 @@ const Blog = ({ data }) => {
       <Layout>
         <SEO title="Blog" />
         <Container>
-          <Heading>Blog</Heading>
+          <Heading>
+            <Link to="/">
+              <span>Home</span>
+            </Link>
+            /Blog
+          </Heading>
           <Grid>
             {posts.map(({ node }, i) => {
               const title = node.frontmatter.title || node.fields.slug
@@ -86,7 +91,8 @@ const Grid = styled.div`
 const Container = styled(Section)``
 const Card = styled.div`
   padding: 1.5em;
-  border-radius: 3px;
+  border-radius: 10px;
+  border: 0.5px dashed black;
   margin: 1em auto;
   max-width: 500px;
   display: flex;
@@ -138,4 +144,7 @@ const Heading = styled.h3`
   color: ${colors.dark};
   font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
+  span {
+    font-size: ${fontSizes.h3};
+  }
 `

@@ -10,7 +10,7 @@ const Experience = () => {
     <Container>
       <Heading>Experience</Heading>
       {experiences.map((experience, i) => (
-        <Fade bottom delay={i * 200} >
+        <Fade delay={i * 200}>
           <Card key={experience.id}>
             <ul>
               <li>
@@ -65,12 +65,12 @@ const Icon = styled.img`
   }
 `
 
-const Container = styled.div`
+const Container = styled(Section)`
   position: relative;
-
+  margin-top: 0;
   @media (min-width: 1200px) {
     width: 750px;
-    margin: 120px auto;
+    margin: 0 auto;
   }
 `
 const Card = styled.div`

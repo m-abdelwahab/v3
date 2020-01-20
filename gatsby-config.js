@@ -40,9 +40,6 @@ module.exports = {
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Add any options here
-      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -62,6 +59,15 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: false,
       },
     },
   ],

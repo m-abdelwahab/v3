@@ -52,7 +52,7 @@ const FeaturedProjects = () => {
 
 export default FeaturedProjects
 
-const Container = styled.div`
+const Container = styled(Section)`
   margin: 0 auto;
   padding: 150px 0;
 
@@ -73,7 +73,7 @@ const Heading = styled.h3`
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 3fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
   grid-template-rows: repeat(2, fr);
 `
 
@@ -85,16 +85,24 @@ const Project = styled.div`
   }
   margin: 1em;
   padding: 1em;
+  max-width: 300px;
+  width: 100%;
+  height:auto;
 `
 
-const Description = styled.p``
+const Description = styled.p`
+margin:1em 0;
+height:1.5em;
+`
 
 const ProjectTitle = styled.h1`
   font-size: 1.5em;
   margin-top: 1em;
 `
 
-const Cover = styled.img``
+const Cover = styled.img`
+  
+`
 
 const Stack = styled.div`
   display: flex;

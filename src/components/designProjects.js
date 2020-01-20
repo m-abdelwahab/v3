@@ -66,14 +66,13 @@ const Project = styled.div`
   max-width: 500px;
 `
 
-const Description = styled.p``
+const Description = styled.p`
+height:1.5em;
+`
 
 const ProjectTitle = styled.h1`
   font-size: 1.5em;
   margin-top: 1em;
 `
 
-const Cover = styled.img`
-  
-
-`
+const Cover = styled.img``

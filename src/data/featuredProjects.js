@@ -26,7 +26,7 @@ export default [
     id: "3",
     title: "Portfolio Website",
     description:
-      "Personal website where I showcase my work and people can learn about me.",
+      "RangeError: Maximum call stack size exceeded",
     link: "https://mahmoudabdelwahab.tech",
     github: "https://github.com/m-abdelwahab/portfolio",
     tech: ["Gatsby", "styled-components"],

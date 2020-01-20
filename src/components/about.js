@@ -3,81 +3,94 @@ import styled from "styled-components"
 import { FormattedIcon } from "../components/icons"
 import "react-tippy/dist/tippy.css"
 import CountUp from "react-countup"
-import { Section } from "../styles"
 import { Tooltip } from "react-tippy"
 import Me from "../images/me.jpg"
 import { statsList, skillsList } from "../data/aboutData"
 import Fade from "react-reveal/Fade"
+import { Link } from "gatsby"
+import { theme, Section, media } from "../styles"
+
+const { fontSizes, colors } = theme
 
 const About = () => {
   return (
-    <Grid>
-      <AboutImg src={Me} alt="me" />
-      <AboutStats>
-        {statsList.map((stat, i) => {
-          return (
-            <Fade delay={i * 200}>
-              <CounterContainer>
-                <Counter>
-                  <CountUp
-                    key={stat.id}
-                    start={stat.start || 0}
-                    end={stat.end || 100}
-                    duration={3}
-                  />
-                </Counter>
-                <StatTitle>{stat.name}</StatTitle>
-              </CounterContainer>
-            </Fade>
-          )
-        })}
-      </AboutStats>
+    <Container>
+      <Heading>
+        <Link to="/">
+          <span>Home</span>
+        </Link>
+        / About
+      </Heading>
+      <Grid>
+        <AboutImg src={Me} alt="me" />
+        <AboutStats>
+          {statsList.map((stat, i) => {
+            return (
+              <Fade delay={i * 200}>
+                <CounterContainer>
+                  <Counter>
+                    <CountUp
+                      key={stat.id}
+                      start={stat.start || 0}
+                      end={stat.end || 100}
+                      duration={3}
+                    />
+                  </Counter>
+                  <StatTitle>{stat.name}</StatTitle>
+                </CounterContainer>
+              </Fade>
+            )
+          })}
+        </AboutStats>
 
-      <AboutSkills>
-        <h1>Tools I use</h1> <br />
-        {skillsList.map((skill, i) => {
-          return (
-            <Fade right delay={100 * i}>
-              <Tooltip
-                title={skill.name}
-                position="bottom"
-                trigger="mouseenter"
-              >
-                <FormattedIcon name={skill.name} />
-              </Tooltip>
-            </Fade>
-          )
-        })}
-      </AboutSkills>
+        <AboutSkills>
+          <h1>Tools I use</h1> <br />
+          {skillsList.map((skill, i) => {
+            return (
+              <Fade right delay={100 * i}>
+                <Tooltip
+                  title={skill.name}
+                  position="bottom"
+                  trigger="mouseenter"
+                >
+                  <FormattedIcon name={skill.name} />
+                </Tooltip>
+              </Fade>
+            )
+          })}
+        </AboutSkills>
 
-      <AboutIntro>
-        <h1>
-          I'm an Egyptian based Front-end-engineer and UX designer, I am
-          passionate about building exciting software projects. I'm a 3rd year
-          undergraduate, currently majoring in Computer Science at the German
-          University in Cairo.
-        </h1>
-        <h1>
-          Here's some fun facts about me: I speak five languages: Arabic
-          (Native), English (fluent) , French (fluent), Spanish (intermediate)
-          and German (beginner).
-        </h1>
-        <h1>
-          During the past few years, Fitness and working out became a huge part
-          of my life and daily routine, that's why if you can't find me at my
-          workspace , you'll probably find me at the gym 💪. One of my passions
-          is Filmmaking 🎥 , I love to write, shoot and edit videos. The process
-          of building a story using visuals has always fascinated me; this is
-          probably why I fell in love with Frontend Engineering.
-        </h1>
-      </AboutIntro>
-    </Grid>
+        <AboutIntro>
+          <h1>
+            I'm an Egyptian based Front-end-engineer and UX designer, I am
+            passionate about building exciting software projects. I'm a 3rd year
+            undergraduate, currently majoring in Computer Science at the German
+            University in Cairo.
+          </h1>
+          <h1>
+            Here's some fun facts about me: I speak five languages: Arabic
+            (Native), English (fluent) , French (fluent), Spanish (intermediate)
+            and German (beginner).
+          </h1>
+          <h1>
+            During the past few years, Fitness and working out became a huge
+            part of my life and daily routine, that's why if you can't find me
+            at my workspace , you'll probably find me at the gym 💪. One of my
+            passions is Filmmaking 🎥 , I love to write, shoot and edit videos.
+            The process of building a story using visuals has always fascinated
+            me; this is probably why I fell in love with Frontend Engineering.
+          </h1>
+        </AboutIntro>
+      </Grid>
+    </Container>
   )
 }
 
 export default About
 
-const Grid = styled(Section)`
+const Container = styled(Section)``
+
+const Grid = styled.div`
   display: grid;
   grid-template-columns: 30% 1fr;
   grid-template-rows: auto;
@@ -144,9 +157,9 @@ const AboutStats = styled.div`
 
 const AboutSkills = styled.div`
   grid-area: skills;
-  font-size: 1.5vw;
   position: relative;
   align-self: end;
+  font-size: 2em;
   svg {
     width: 48px;
     margin: 0.5em;
@@ -159,7 +172,7 @@ const AboutSkills = styled.div`
   }
 
   & > h1 {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-bottom: 5px;
     margin-top: 10px;
     position: relative;
@@ -214,7 +227,9 @@ const AboutSkills = styled.div`
 const AboutIntro = styled.div`
   grid-area: intro;
   line-height: 1.7;
-  font-size: 2em;
+  h1 {
+    font-size: 1em;
+  }
   margin: 2em 0;
   width: 100%;
   & a {
@@ -260,10 +275,9 @@ const Counter = styled.span`
   @media (max-width: 1024px) {
     font-size: 2em;
   }
-    &:after {
-      content: "+";
-    }
-  
+  &:after {
+    content: "+";
+  }
 `
 
 const StatTitle = styled.span`
@@ -274,5 +288,19 @@ const StatTitle = styled.span`
   }
   @media (max-width: 425px) {
     font-size: 1em;
+  }
+`
+const Heading = styled.h3`
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 10px 0 40px;
+  width: 100%;
+  white-space: nowrap;
+  color: ${colors.dark};
+  font-size: ${fontSizes.h3};
+  ${media.tablet`font-size: 24px;`};
+  span {
+    font-size: ${fontSizes.h3};
   }
 `

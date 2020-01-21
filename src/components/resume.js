@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Resume from "../data/resume"
 import {
   IconGithub,
   IconMail,

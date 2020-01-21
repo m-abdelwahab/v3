@@ -5502,6 +5502,15 @@ gatsby-react-router-scroll@^2.1.20:
     scroll-behavior "^0.9.10"
     warning "^3.0.0"
 
+gatsby-remark-embedder@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-embedder/-/gatsby-remark-embedder-1.8.0.tgz#5851d1b30982d9fbf6aee23919240aa69e0f1978"
+  integrity sha512-lKxgUUGYCaiPpCn6B9RYNAZ/Dxm63CvafNk5tCoPSTeclpP8mtR83Tg6UNKdcHYKj8jJn2EeBDZKQmZTa+0e4w==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+    node-fetch "^2.6.0"
+    unist-util-visit "^2.0.1"
+
 gatsby-remark-images@^3.1.42:
   version "3.1.42"
   resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.1.42.tgz#93a6e191c6af7fafad3966616ea66b4bd5280082"
@@ -12517,7 +12526,7 @@ unist-util-visit@^1.0.0, unist-util-visit@^1.1.0, unist-util-visit@^1.4.1:
   dependencies:
     unist-util-visit-parents "^2.0.0"
 
-unist-util-visit@^2.0.0:
+unist-util-visit@^2.0.0, unist-util-visit@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-2.0.1.tgz#b4e1c1cb414250c6b3cb386b8e461d79312108ae"
   integrity sha512-bEDa5S/O8WRDeI1mLaMoKuFFi89AjF+UAoMNxO+bbVdo06q+53Vhq4iiv1PenL6Rx1ZxIpXIzqZoc5HD2I1oMA==

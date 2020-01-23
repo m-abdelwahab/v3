@@ -8,7 +8,8 @@ import Footer from "../components/footer"
 import Social from "../components/social"
 import Main from "../styles/Main"
 import GlobalStyle from "../styles/GlobalStyle"
-import { ThemeProvider } from "styled-components"
+import { FormattedIcon } from "../components/icons"
+import styled, { ThemeProvider } from "styled-components"
 import { lightTheme, darkTheme } from "../styles/theme"
 
 const Layout = ({ children }) => {
@@ -21,24 +22,30 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const [theme, setTheme] = useState("light")
+  // const toggleTheme = () => {
+  //   // theme === "light" ? setTheme("dark") : setTheme("light")
+  //   if (theme === "light") {
+  //     setTheme("dark")
+  //     // otherwise, it should be light
+  //   } else {
+  //     setTheme("light")
+  //   }
+  // }
 
-  const toggleTheme = () => {
-    // if the theme is not light, then set it to dark
-    if (theme === 'light') {
-      setTheme('dark');
-    // otherwise, it should be light
-    } else {
-      setTheme('light');
-    }
-  }
+  // const [theme, setTheme] = useState("light")
 
   return (
     <div>
-      {/* <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}> */}
+      {/* <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}> */}
         <GlobalStyle />
+        {/* <Button onClick={toggleTheme}>
+          {theme === "light" ? (
+            <FormattedIcon name="Moon" />
+          ) : (
+            <FormattedIcon name="Sun" />
+          )}
+        </Button> */}
         <Header siteTitle={data.site.siteMetadata.title} />
-        {/* <button onClick={toggleTheme}>Toggle theme</button> */}
         <Social />
         <Main>{children}</Main>
         <Footer />
@@ -48,3 +55,8 @@ const Layout = ({ children }) => {
 }
 
 export default Layout
+
+const Button = styled.button`
+  position: fixed;
+  right: 10;
+`

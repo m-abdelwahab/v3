@@ -31,7 +31,11 @@ import IconGlobe from "./globe"
 import IconStyledComponents from "./styledComponents"
 import IconReactTestingLib from "./reactTestingLibrary"
 import IconPreview from "./preview"
+import IconMoon from "./moon"
+import IconSun from "./sun"
 export {
+  IconMoon,
+  IconSun,
   IconPreview,
   IconReactTestingLib,
   IconGlobe,

@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import { theme, mixins } from "../styles"
 
 import usePopup from "../hooks/usePopup"
-
 import IconLogo from "./icons/logo"
 const { colors } = theme
 
@@ -68,7 +67,7 @@ export default React.memo(() => {
 })
 const Header = styled.header`
   position: fixed;
-  z-index:999;
+  z-index: 999;
 
   top: 20px;
   display: flex;
@@ -114,8 +113,7 @@ const MenuButton = styled.button`
   outline: none;
   cursor: pointer;
   transition: opacity 0.25s var(--cubic);
-  z-index:999;
-
+  z-index: 999;
 
   .hamburger {
     font-size: 0;

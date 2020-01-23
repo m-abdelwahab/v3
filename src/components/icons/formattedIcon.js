@@ -31,10 +31,16 @@ import {
   IconStyledComponents,
   IconReactTestingLib,
   IconPreview,
+  IconMoon,
+  IconSun,
 } from "./index"
 
 const FormattedIcon = ({ name }) => {
   switch (name) {
+    case "Moon":
+      return <IconMoon />
+    case "Sun":
+      return <IconSun />
     case "Preview":
       return <IconPreview />
     case "react-testing-library":

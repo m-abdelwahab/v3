@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
@@ -7,7 +7,9 @@ import Footer from "../components/footer"
 
 import Social from "../components/social"
 import Main from "../styles/Main"
-import GlobalStyle from '../styles/GlobalStyle'
+import GlobalStyle from "../styles/GlobalStyle"
+import { ThemeProvider } from "styled-components"
+import { lightTheme, darkTheme } from "../styles/theme"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,14 +21,28 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  const [theme, setTheme] = useState("light")
+
+  const toggleTheme = () => {
+    // if the theme is not light, then set it to dark
+    if (theme === 'light') {
+      setTheme('dark');
+    // otherwise, it should be light
+    } else {
+      setTheme('light');
+    }
+  }
 
   return (
     <div>
-      <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Social />
-      <Main>{children}</Main>
-      <Footer />
+      {/* <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}> */}
+        <GlobalStyle />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        {/* <button onClick={toggleTheme}>Toggle theme</button> */}
+        <Social />
+        <Main>{children}</Main>
+        <Footer />
+      {/* </ThemeProvider> */}
     </div>
   )
 }

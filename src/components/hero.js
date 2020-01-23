@@ -36,7 +36,7 @@ const Hero = () => {
   const three = () => <Subtitle style={{ transitionDelay: "400ms" }}></Subtitle>
   const four = () => (
     <Blurb style={{ transitionDelay: "500ms" }}>
-      Front-end Engineer/ UX Designer obsessed with designing and building
+      Creative Front-end Engineer obsessed with designing and building
       exceptional, high-quality, performant websites and applications .
     </Blurb>
   )

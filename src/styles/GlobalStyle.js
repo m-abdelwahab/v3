@@ -1,7 +1,11 @@
-import { createGlobalStyle } from 'styled-components';
-import theme from './theme';
-import media from './media';
-const { colors, fontSizes } = theme;
+import { createGlobalStyle } from "styled-components"
+import theme from "./theme"
+import media from "./media"
+const { colors, fontSizes } = theme
+
+// TODO: add in body tag
+// background: ${({ theme }) => theme.body};
+// color: ${({ theme }) => theme.text};
 
 const GlobalStyle = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css?family=Muli:400,700,900&display=swap");
@@ -26,10 +30,15 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     background-color: ${colors.white};
     color: ${colors.darkGrey};
+
+
     line-height: 1.3;
   font-family: "Muli", sans-serif;
     font-size: ${fontSizes.xlarge};
     ${media.phablet`font-size: ${fontSizes.large};`}
+
+    transition: all 0.25s linear;
+
 
     &.hidden {
       overflow: hidden;
@@ -172,6 +181,6 @@ const GlobalStyle = createGlobalStyle`
     transition: opacity 1000ms ${theme.easing};
   }
 
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

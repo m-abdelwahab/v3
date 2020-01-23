@@ -24,7 +24,7 @@ const Blog = ({ data }) => {
             {posts.map(({ node }, i) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <Fade top delay={i * 200}>
+                <Fade delay={i * 200}>
                   <Link to={node.fields.slug}>
                     <Card key={node.fields.slug}>
                       <Category>{node.frontmatter.tag}</Category>

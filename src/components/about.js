@@ -19,7 +19,7 @@ const About = () => {
         <Link to="/">
           <span>Home</span>
         </Link>
-        / About
+        /About
       </Heading>
       <Grid>
         <AboutImg src={Me} alt="me" />

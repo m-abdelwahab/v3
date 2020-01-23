@@ -21,13 +21,13 @@ const TalksPage = () => {
           /Talks
         </Heading>
         <Grid>
-          {talks.map(talk => {
+          {talks.map((talk, i) => {
             return (
-              <Fade>
+              <Fade delay={200 * i}>
                 <Card>
+                  <Tag>{talk.topic}</Tag>
                   <Title>{talk.title}</Title>
                   <Description>{talk.description}</Description>
-                  <Topic>{talk.topic}</Topic>
                   <Link to={talk.slides}>
                     <FormattedIcon name="Link" />
                     Slides
@@ -58,7 +58,6 @@ const Card = styled.div`
   padding: 1.5em;
   border-radius: 10px;
   margin: 1em auto;
-  max-width: 500px;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
@@ -70,37 +69,20 @@ const Card = styled.div`
   }
   svg {
     width: 24px;
+    padding:0.2em;
+    margin-bottom:5px;
     fill: none;
   }
   .react-reveal {
     display: inline;
   }
+  width: 100%;
+  max-width: 500px;
 `
-const Topic = styled.span`
-  display: inline;
-  background: #eee;
-  border-radius: 3px 0 0 3px;
-  color: #999;
-  line-height: 26px;
-  padding: 0 20px 0 23px;
-  position: relative;
-  margin: 0 10px 10px 0;
-  text-decoration: none;
-  font-size: 1em;
+const Tag = styled.span``
 
-  ::before {
-    background: #fff;
-    border-bottom: 13px solid transparent;
-    border-left: 10px solid #eee;
-    border-top: 13px solid transparent;
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-`
 const Title = styled.h2`
-  font-size: 1em;
+  font-size: 1.5em;
 `
 const Description = styled.p`
   font-size: 1em;

@@ -13,31 +13,30 @@ export default () => {
     togglerRef,
   })
 
-  const getContainerProps = ({ ...props }) => ({
+  const getContainerProps = () => ({
     position: 'relative',
     'aria-expanded': isOpen ? 'true' : 'false',
     'aria-haspopup': 'listbox',
-    ...props,
+    
   })
 
-  const getTogglerProps = ({ ...props }) => ({
+  const getTogglerProps = () => ({
     onClick: e => setOpen(!isOpen),
     'aria-label': isOpen ? 'close popup' : 'open popup',
     ref: togglerRef,
-    ...props,
+    
   })
 
-  const getMenuProps = ({ ...props }) => ({
+  const getMenuProps = () => ({
     role: 'listbox',
     ref: containerRef,
     isOpen,
-    ...props,
   })
 
-  const getItemProps = ({ ...props }) => ({
+  const getItemProps = () => ({
     tabIndex: isOpen ? 0 : -1,
     role: 'option',
-    ...props,
+    
   })
 
   return {

@@ -22,7 +22,7 @@ const About = () => {
         /About
       </Heading>
       <Grid>
-        <AboutImg src={Me} alt="me" />
+          <AboutImg src={Me} alt="me" />
         <AboutStats>
           {statsList.map((stat, i) => {
             return (
@@ -125,6 +125,7 @@ const AboutImg = styled.img`
   max-height: 100%;
   grid-area: pic;
   border-radius: 100%;
+
   @media (max-width: 420px) {
     width: 70%;
     margin: 0 auto;

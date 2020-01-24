@@ -50,8 +50,8 @@ const Heading = styled.h3`
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 2fr));
-  grid-template-rows: repeat(2, fr);
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-rows:auto auto;
 `
 
 const Project = styled.div`
@@ -63,7 +63,6 @@ const Project = styled.div`
   /* transform: perspective(980px) rotateY(-31deg) rotateX(3deg); */
   margin: 1em;
   padding: 1em;
-  max-width: 500px;
 `
 
 const Description = styled.p`

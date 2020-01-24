@@ -11,7 +11,7 @@ const { fontSizes, colors } = theme
 const FeaturedProjects = () => {
   return (
     <Container>
-      <Heading> Coding Projects</Heading>
+      <Heading>Coding Projects</Heading>
       <Grid>
         {projects.map((project, i) => {
           return (

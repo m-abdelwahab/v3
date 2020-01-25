@@ -75,6 +75,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
   grid-template-rows: repeat(2, fr);
+  ${media.phone`align-items:center;`};
 `
 
 const Project = styled.div`
@@ -83,7 +84,8 @@ const Project = styled.div`
   &:hover {
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.12);
   }
-  margin: 1em;
+  margin: 1em auto;
+  text-align:center;
   padding: 1em;
   max-width: 300px;
   width: 100%;
@@ -91,8 +93,8 @@ const Project = styled.div`
 `
 
 const Description = styled.p`
-margin:1em 0;
-height:1.5em;
+margin:0.5em 0;
+height:2em;
 `
 
 const ProjectTitle = styled.h1`

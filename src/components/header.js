@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { theme, mixins } from "../styles"
+import { theme, mixins, Section } from "../styles"
 
 import usePopup from "../hooks/usePopup"
 import IconLogo from "./icons/logo"
@@ -26,43 +26,43 @@ export default React.memo(() => {
   } = usePopup()
 
   return (
-    <Header>
-      <Logo>
-        <LogoLink href="/" aria-label="home">
-          <IconLogo />
-        </LogoLink>
-      </Logo>
-      <nav>
-        <ul>
-          <li className="menu" {...getContainerProps()}>
-            <MenuButton isMenuOpen={isOpen} {...getTogglerProps()}>
-              <h1 className="hamburger">
-                <span className="text">Menu</span>
-                <span className="escape" aria-hidden="true">
-                  (esc to close)
-                </span>
-              </h1>
-            </MenuButton>
-            <MenuBody {...getMenuProps()}>
-              {links
-                ? links.map(link => (
-                    <li key={link.url}>
-                      <MenuLink
-                        to={link.url}
-                        {...getItemProps({
-                          onClick: e => setOpen(prevOpen => !prevOpen),
-                        })}
-                      >
-                        {link.name}
-                      </MenuLink>
-                    </li>
-                  ))
-                : null}
-            </MenuBody>
-          </li>
-        </ul>
-      </nav>
-    </Header>
+      <Header>
+        <Logo>
+          <LogoLink href="/" aria-label="home">
+            <IconLogo />
+          </LogoLink>
+        </Logo>
+        <nav>
+          <ul>
+            <li className="menu" {...getContainerProps()}>
+              <MenuButton isMenuOpen={isOpen} {...getTogglerProps()}>
+                <h1 className="hamburger">
+                  <span className="text">Menu</span>
+                  <span className="escape" aria-hidden="true">
+                    (esc to close)
+                  </span>
+                </h1>
+              </MenuButton>
+              <MenuBody {...getMenuProps()}>
+                {links
+                  ? links.map(link => (
+                      <li key={link.url}>
+                        <MenuLink
+                          to={link.url}
+                          {...getItemProps({
+                            onClick: e => setOpen(prevOpen => !prevOpen),
+                          })}
+                        >
+                          {link.name}
+                        </MenuLink>
+                      </li>
+                    ))
+                  : null}
+              </MenuBody>
+            </li>
+          </ul>
+        </nav>
+      </Header>
   )
 })
 const Header = styled.header`
@@ -76,11 +76,10 @@ const Header = styled.header`
   width: 100%;
   nav {
   }
-
   .menu {
-    position: absolute;
-    right: 0.3125rem;
-    top: 0.4375rem;
+    position: relative;
+    right: 3%;
+    top: 10%;
   }
 `
 const Logo = styled.div`

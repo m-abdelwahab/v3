@@ -50,8 +50,9 @@ const Heading = styled.h3`
 `
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 2fr));
   grid-template-rows:auto auto;
+  align-items:center;
 `
 
 const Project = styled.div`

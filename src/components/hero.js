@@ -87,7 +87,7 @@ const HeroContainer = styled(Section)`
   ${media.desktop`padding-top: 150px;`};
 
   div {
-    width: 100%;
+    width: 90%;
   }
 `
 

@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { theme, mixins, media, Section } from "../styles"
 import Fade from "react-reveal/Fade"
-import projects from "../data/caseStudies"
+import projects from "../data/designProjects"
 const { fontSizes, colors } = theme
 
 const DesignProjects = () => {

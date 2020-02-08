@@ -58,17 +58,17 @@ const FeaturedProjects = () => {
                         position="bottom"
                         trigger="mouseenter"
                       >
-                        <FormattedIcon name={tech} />
+                        <FormattedIcon name={tech} aria-label="technology"/>
                       </Tooltip>
                     )
                   })}
                 </Stack>
                 <Links>
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <FormattedIcon name="GitHub" />
+                    <FormattedIcon name="GitHub" alt="github icon"/>
                   </a>
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <FormattedIcon name="Preview" />
+                    <FormattedIcon name="Preview" alt="preview icon"/>
                   </a>
                 </Links>
               </Project>

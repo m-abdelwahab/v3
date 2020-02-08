@@ -69,7 +69,7 @@ const Social = () => {
                         rel="nofollow noopener noreferrer"
                         aria-label={name}
                       >
-                        <FormattedIcon name={name} />
+                        <FormattedIcon name={name} aria-label="icon" />
                       </SocialLink>
                     </Tooltip>
                   </SocialItem>

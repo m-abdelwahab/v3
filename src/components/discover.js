@@ -1,24 +1,46 @@
 import React from "react"
 import styled from "styled-components"
 import { theme, mixins, media, Section } from "../styles"
-import { Link } from "gatsby"
-import data from "../data/discover"
+import { Link, graphql, useStaticQuery } from "gatsby"
+// import data from "../data/discover"
+import Img from "gatsby-image"
 import Fade from "react-reveal/Fade"
 const { fontSizes, colors } = theme
 
 const Discover = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      discoverJson {
+        sections {
+          id
+          title
+          link
+          cover {
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  const { sections } = data.discoverJson
   return (
     <Container>
       <Fade>
         <Heading>Discover</Heading>
       </Fade>
       <Grid>
-        {data.map((section, id) => {
+        {sections.map((section, id) => {
           return (
             <Link to={section.link}>
               <Fade key={id} delay={id * 200}>
                 <Card>
-                  <Cover src={section.cover} />
+                  <Cover fluid={section.cover.src.childImageSharp.fluid} />
                 </Card>
               </Fade>
             </Link>
@@ -71,7 +93,7 @@ const Card = styled.div`
     margin: 1em;
   }
 `
-const Cover = styled.img`
+const Cover = styled(Img)`
   width: 100%;
   max-width: 500px;
 `

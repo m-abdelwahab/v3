@@ -69,8 +69,8 @@ const Card = styled.div`
   }
   svg {
     width: 24px;
-    padding:0.2em;
-    margin-bottom:5px;
+    padding: 0.2em;
+    margin-bottom: 5px;
     fill: none;
   }
   .react-reveal {
@@ -79,7 +79,9 @@ const Card = styled.div`
   width: 100%;
   max-width: 500px;
 `
-const Tag = styled.span``
+const Tag = styled.span`
+  margin-bottom: 1em;
+`
 
 const Title = styled.h2`
   font-size: 1.5em;

@@ -1,14 +1,39 @@
 import React from "react"
 import styled from "styled-components"
-import projects from "../data/featuredProjects"
+// import projects from "../data/featuredProjects"
 import { FormattedIcon } from "../components/icons"
 import "react-tippy/dist/tippy.css"
 import { theme, mixins, media, Section } from "../styles"
 import { Tooltip } from "react-tippy"
 import Fade from "react-reveal/Fade"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 const { fontSizes, colors } = theme
 
 const FeaturedProjects = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      featuredProjectsJson {
+        projects {
+          id
+          title
+          description
+          link
+          tech
+          cover {
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  const { projects } = data.featuredProjectsJson
   return (
     <Container>
       <Heading>Coding Projects</Heading>
@@ -17,7 +42,7 @@ const FeaturedProjects = () => {
           return (
             <Fade delay={300 * i}>
               <Project key={project.id}>
-                <Cover src={project.cover} />
+                <Img fluid={project.cover.src.childImageSharp.fluid} />
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <Description>{project.description}</Description>
                 <Stack>
@@ -85,16 +110,16 @@ const Project = styled.div`
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.12);
   }
   margin: 1em auto;
-  text-align:center;
+  text-align: center;
   padding: 1em;
   max-width: 300px;
   width: 100%;
-  height:auto;
+  height: auto;
 `
 
 const Description = styled.p`
-margin:0.5em 0;
-height:2em;
+  margin: 0.5em 0;
+  height: 2em;
 `
 
 const ProjectTitle = styled.h1`
@@ -102,9 +127,7 @@ const ProjectTitle = styled.h1`
   margin-top: 1em;
 `
 
-const Cover = styled.img`
-  
-`
+const Cover = styled.img``
 
 const Stack = styled.div`
   display: flex;

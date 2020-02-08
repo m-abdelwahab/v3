@@ -12,7 +12,6 @@ const links = [
   { url: "/about", name: "About" },
   { url: "/blog", name: "Blog" },
   { url: "/talks", name: "Talks" },
-  { url: "/resume", name: "Résumé" },
 ]
 
 export default React.memo(() => {

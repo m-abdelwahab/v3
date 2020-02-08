@@ -51,6 +51,12 @@ export const statsList = [
     start: 0,
     end: 1000,
   },
+  {
+    id: "4",
+    name: "Years Of Experience",
+    start: 0,
+    end: 2,
+  },
 ]
 
 export const skillsList = [

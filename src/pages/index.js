@@ -6,6 +6,7 @@ import FeaturedProjects from "../components/featuredProjects"
 import DesignProjects from "../components/designProjects"
 import Experience from "../components/experience"
 import Discover from "../components/discover"
+import CreativeCoding from "../components/creativeCoding"
 
 const IndexPage = () => (
   <Layout>

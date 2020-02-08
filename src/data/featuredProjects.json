@@ -1,0 +1,46 @@
+[
+  {
+    "projects": [
+      {
+        "id": "1",
+        "title": "IdeaPad",
+        "description": "Full Stack note-taking Web App where users can use voice typing ",
+        "link": "https://ideapad-app.herokuapp.com",
+        "github": "https://github.com/m-abdelwahab/ideapad",
+        "tech": [
+          "Node",
+          "Express",
+          "MongoDB",
+          "Heroku",
+          "JavaScript",
+          "Handlebars"
+        ],
+        "cover": {
+          "src": "../images/featuredProjects/ideapad.png"
+        }
+      },
+      {
+        "id": "2",
+        "title": "HN360",
+        "description": "A news app powered by the Hackernews API",
+        "link": "https://hn360.netlify.com",
+        "github": "https://github.com/m-abdelwahab/hn360",
+        "tech": ["React", "styled-components", "react-testing-library"],
+        "cover": {
+          "src": "../images/featuredProjects/hn360.png"
+        }
+      },
+      {
+        "id": "3",
+        "title": "Portfolio Website",
+        "description": "RangeError: Maximum call stack size exceeded",
+        "link": "https://mahmoudabdelwahab.tech",
+        "github": "https://github.com/m-abdelwahab/portfolio",
+        "tech": ["Gatsby", "styled-components"],
+        "cover": { 
+          "src": "../images/featuredProjects/portfolio.png"
+         }
+      }
+    ]
+  }
+]

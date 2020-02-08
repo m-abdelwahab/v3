@@ -1,11 +1,34 @@
 import React from "react"
 import styled from "styled-components"
-import { theme, mixins, media, Section } from "../styles"
+import { theme, media } from "../styles"
 import Fade from "react-reveal/Fade"
-import projects from "../data/designProjects"
+import Img from "gatsby-image"
+import { graphql, useStaticQuery } from "gatsby"
 const { fontSizes, colors } = theme
 
 const DesignProjects = () => {
+  const data = useStaticQuery(graphql`
+  query {
+    designProjectsJson {
+      projects {
+        id
+        title
+        description
+        link
+        cover {
+          src {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`)
+const { projects } = data.designProjectsJson
   return (
     <Container>
       <Heading>Design Projects</Heading>
@@ -14,7 +37,7 @@ const DesignProjects = () => {
           return (
             <Fade delay={300 * i}>
               <Project key={project.id}>
-                <Cover src={project.cover} />
+                <Img fluid={project.cover.src.childImageSharp.fluid} />
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <Description>{project.description}</Description>
               </Project>
@@ -51,8 +74,8 @@ const Heading = styled.h3`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 2fr));
-  grid-template-rows:auto auto;
-  align-items:center;
+  grid-template-rows: auto auto;
+  align-items: center;
 `
 
 const Project = styled.div`
@@ -67,7 +90,7 @@ const Project = styled.div`
 `
 
 const Description = styled.p`
-height:1.5em;
+  height: 1.5em;
 `
 
 const ProjectTitle = styled.h1`

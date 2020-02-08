@@ -1,0 +1,30 @@
+[
+  {
+    "sections": [
+      {
+        "id": "1",
+        "title": "Talks",
+        "link": "/talks",
+        "cover": { "src": "../images/discover/robot.png" }
+      },
+      {
+        "id": "2",
+        "title": "Blog",
+        "link": "/blog",
+        "cover": { "src": "../images/discover/blog.png" }
+      },
+      {
+        "id": "3",
+        "title": "About",
+        "link": "/about",
+        "cover": { "src": "../images/discover/about.png" }
+      },
+      {
+        "id": "4",
+        "title": "Contact",
+        "link": "mailto:mahmoud3799@gmail.com",
+        "cover": { "src": "../images/discover/rocket.png" }
+      }
+    ]
+  }
+]

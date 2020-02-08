@@ -70,6 +70,7 @@ const Social = () => {
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                         aria-label={name}
+                        aria-hidden="true"
                       >
                         <FormattedIcon name={name} aria-label={name} />
                       </SocialLink>

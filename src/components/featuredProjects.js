@@ -59,6 +59,7 @@ const FeaturedProjects = () => {
                         trigger="mouseenter"
                         role="tooltip"
                         aria-label={tech}
+                        aria-hidden="true"
                       >
                         <FormattedIcon name={tech} aria-label={tech}/>
                       </Tooltip>

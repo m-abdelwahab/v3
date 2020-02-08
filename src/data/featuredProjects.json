@@ -16,7 +16,8 @@
           "Handlebars"
         ],
         "cover": {
-          "src": "../images/featuredProjects/ideapad.png"
+          "src": "../images/featuredProjects/ideapad.png",
+          "alt": "voice recognition note-taking app"
         }
       },
       {
@@ -27,7 +28,8 @@
         "github": "https://github.com/m-abdelwahab/hn360",
         "tech": ["React", "styled-components", "react-testing-library"],
         "cover": {
-          "src": "../images/featuredProjects/hn360.png"
+          "src": "../images/featuredProjects/hn360.png",
+          "alt": "new app powered by hackernews api"
         }
       },
       {
@@ -37,9 +39,10 @@
         "link": "https://mahmoudabdelwahab.tech",
         "github": "https://github.com/m-abdelwahab/portfolio",
         "tech": ["Gatsby", "styled-components"],
-        "cover": { 
-          "src": "../images/featuredProjects/portfolio.png"
-         }
+        "cover": {
+          "src": "../images/featuredProjects/portfolio.png",
+          "alt": "portfolio website"
+        }
       }
     ]
   }

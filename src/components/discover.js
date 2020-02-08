@@ -15,6 +15,7 @@ const Discover = () => {
           title
           link
           cover {
+            alt
             src {
               childImageSharp {
                 fluid {
@@ -42,6 +43,7 @@ const Discover = () => {
                   <Cover
                     loading="lazy"
                     fluid={section.cover.src.childImageSharp.fluid}
+                    alt={section.cover.alt}
                   />
                 </Card>
               </Fade>
@@ -93,6 +95,9 @@ const Card = styled.div`
   } */
   @media (max-width: 768px) {
     margin: 1em;
+  }
+  &:hover {
+    cursor: pointer;
   }
 `
 const Cover = styled(Img)`

@@ -5,25 +5,25 @@
         "id": "1",
         "title": "Talks",
         "link": "/talks",
-        "cover": { "src": "../images/discover/robot.png" }
+        "cover": { "src": "../images/discover/robot.png", "alt": "talks" }
       },
       {
         "id": "2",
         "title": "Blog",
         "link": "/blog",
-        "cover": { "src": "../images/discover/blog.png" }
+        "cover": { "src": "../images/discover/blog.png", "alt": "blog" }
       },
       {
         "id": "3",
         "title": "About",
         "link": "/about",
-        "cover": { "src": "../images/discover/about.png" }
+        "cover": { "src": "../images/discover/about.png", "alt": "about" }
       },
       {
         "id": "4",
         "title": "Contact",
         "link": "mailto:mahmoud3799@gmail.com",
-        "cover": { "src": "../images/discover/rocket.png" }
+        "cover": { "src": "../images/discover/rocket.png", "alt": "mail" }
       }
     ]
   }

@@ -6,21 +6,28 @@
         "title": "Project 1",
         "description": "Full Stack note-taking Web App where users can use voice typing ",
         "link": "https://ideapad-app.herokuapp.com",
-        "cover": { "src": "../images/designProjects/project1.png" }
+        "cover": { "src": "../images/designProjects/project1.png","alt":"project1" }
       },
       {
         "id": "2",
         "title": "Project 2",
         "description": "A news app powered by the Hackernews API",
         "link": "https://hn360.netlify.com",
-        "cover": { "src": "../images/designProjects/project2.png" }
+        "cover": { "src": "../images/designProjects/project2.png","alt":"project2" }
       },
       {
         "id": "3",
         "title": "Project 3",
         "description": "Personal website where I showcase my work and people can learn about me.",
         "link": "https://mahmoudabdelwahab.tech",
-        "cover": { "src": "../images/designProjects/project3.png" }
+        "cover": { "src": "../images/designProjects/project3.png","alt":"project3" }
+      },
+      {
+        "id": "4",
+        "title": "Project 4",
+        "description": "Personal website where I showcase my work and people can learn about me.",
+        "link": "https://mahmoudabdelwahab.tech",
+        "cover": { "src": "../images/designProjects/project1.png","alt":"project4" }
       }
     ]
   }

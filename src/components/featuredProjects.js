@@ -21,6 +21,7 @@ const FeaturedProjects = () => {
           link
           tech
           cover {
+            alt
             src {
               childImageSharp {
                 fluid {
@@ -45,6 +46,7 @@ const FeaturedProjects = () => {
                 <Img
                   loading="lazy"
                   fluid={project.cover.src.childImageSharp.fluid}
+                  alt={project.cover.alt}
                 />
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <Description>{project.description}</Description>

@@ -8,27 +8,28 @@ const { fontSizes, colors } = theme
 
 const DesignProjects = () => {
   const data = useStaticQuery(graphql`
-  query {
-    designProjectsJson {
-      projects {
-        id
-        title
-        description
-        link
-        cover {
-          src {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
+    query {
+      designProjectsJson {
+        projects {
+          id
+          title
+          description
+          link
+          cover {
+            alt
+            src {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }
         }
       }
     }
-  }
-`)
-const { projects } = data.designProjectsJson
+  `)
+  const { projects } = data.designProjectsJson
   return (
     <Container>
       <Heading>Design Projects</Heading>
@@ -36,8 +37,12 @@ const { projects } = data.designProjectsJson
         {projects.map((project, i) => {
           return (
             <Fade key={project.id} delay={300 * i}>
-              <Project >
-                <Img loading="lazy" fluid={project.cover.src.childImageSharp.fluid} />
+              <Project>
+                <Img
+                  loading="lazy"
+                  fluid={project.cover.src.childImageSharp.fluid}
+                  alt={project.cover.alt}
+                />
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <Description>{project.description}</Description>
               </Project>

@@ -14,7 +14,7 @@ const Experience = () => {
           <Card >
             <ul>
               <li>
-                <Icon src={experience.icon} />
+                <Icon src={experience.icon} alt={experience.alt} />
                 <a
                   rel="noopener noreferrer"
                   target="_blank"

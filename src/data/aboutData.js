@@ -11,6 +11,7 @@ export const experiences = [
     url: "https://robustastudio.com",
     description: `Worked within an agile sprint team on multiple projects`,
     icon: `${robustaLogo}`,
+    alt:"Robusta Logo"
   },
   {
     id: "2",
@@ -20,6 +21,7 @@ export const experiences = [
     url: null,
     description: `Volunteered to teach CSEN301 (Data Structures & Algorithms) at the German University in Cairo.`,
     icon: `${gucLogo}`,
+    alt:"GUC Logo",
   },
   {
     id: "3",
@@ -29,6 +31,7 @@ export const experiences = [
     url: "https://www.facebook.com/vgsguc/",
     description: `Responsible for teaching Game Art Design for VGS club members.`,
     icon: `${vgs}`,
+    alt:"VGS Logo",
   },
 ]
 

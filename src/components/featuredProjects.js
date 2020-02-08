@@ -64,10 +64,10 @@ const FeaturedProjects = () => {
                   })}
                 </Stack>
                 <Links>
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  <a aria-label="github link" href={project.github} target="_blank" rel="noopener noreferrer">
                     <FormattedIcon name="GitHub" alt="github icon"/>
                   </a>
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  <a aria-label="live preview" href={project.link} target="_blank" rel="noopener noreferrer">
                     <FormattedIcon name="Preview" alt="preview icon"/>
                   </a>
                 </Links>

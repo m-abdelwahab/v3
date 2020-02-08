@@ -25,24 +25,25 @@ export default React.memo(() => {
   } = usePopup()
 
   return (
-      <Header>
-        <Logo>
-          <LogoLink href="/" aria-label="home">
-            <IconLogo />
-          </LogoLink>
-        </Logo>
-        <nav>
-          <ul>
-            <li className="menu" {...getContainerProps()}>
-              <MenuButton isMenuOpen={isOpen} {...getTogglerProps()}>
-                <h1 className="hamburger">
-                  <span className="text">Menu</span>
-                  <span className="escape" aria-hidden="true">
-                    (esc to close)
-                  </span>
-                </h1>
-              </MenuButton>
-              <MenuBody {...getMenuProps()}>
+    <Header>
+      <Logo>
+        <LogoLink href="/" aria-label="home">
+          <IconLogo />
+        </LogoLink>
+      </Logo>
+      <nav>
+        <ul>
+          <li className="menu" {...getContainerProps()}>
+            <MenuButton isMenuOpen={isOpen} {...getTogglerProps()}>
+              <h1 className="hamburger">
+                <span className="text">Menu</span>
+                <span className="escape" aria-hidden="true">
+                  (esc to close)
+                </span>
+              </h1>
+            </MenuButton>
+            <MenuBody {...getMenuProps()}>
+              <ul>
                 {links
                   ? links.map(link => (
                       <li key={link.url}>
@@ -57,11 +58,12 @@ export default React.memo(() => {
                       </li>
                     ))
                   : null}
-              </MenuBody>
-            </li>
-          </ul>
-        </nav>
-      </Header>
+              </ul>
+            </MenuBody>
+          </li>
+        </ul>
+      </nav>
+    </Header>
   )
 })
 const Header = styled.header`

@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { theme, mixins, media, Section } from "../styles"
 import { Link, graphql, useStaticQuery } from "gatsby"
-// import data from "../data/discover"
 import Img from "gatsby-image"
 import Fade from "react-reveal/Fade"
 const { fontSizes, colors } = theme
@@ -35,12 +34,15 @@ const Discover = () => {
         <Heading>Discover</Heading>
       </Fade>
       <Grid>
-        {sections.map((section, id) => {
+        {sections.map((section, i) => {
           return (
-            <Link to={section.link}>
-              <Fade key={id} delay={id * 200}>
+            <Link key={section.id} to={section.link}>
+              <Fade delay={i * 200}>
                 <Card>
-                  <Cover fluid={section.cover.src.childImageSharp.fluid} />
+                  <Cover
+                    loading="lazy"
+                    fluid={section.cover.src.childImageSharp.fluid}
+                  />
                 </Card>
               </Fade>
             </Link>

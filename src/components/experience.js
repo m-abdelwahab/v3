@@ -10,8 +10,8 @@ const Experience = () => {
     <Container>
       <Heading>Experience</Heading>
       {experiences.map((experience, i) => (
-        <Fade delay={i * 200}>
-          <Card key={experience.id}>
+        <Fade key={experience.id} delay={i * 200}>
+          <Card >
             <ul>
               <li>
                 <Icon src={experience.icon} />

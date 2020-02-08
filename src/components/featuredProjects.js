@@ -40,9 +40,12 @@ const FeaturedProjects = () => {
       <Grid>
         {projects.map((project, i) => {
           return (
-            <Fade delay={300 * i}>
-              <Project key={project.id}>
-                <Img fluid={project.cover.src.childImageSharp.fluid} />
+            <Fade key={project.id} delay={300 * i}>
+              <Project>
+                <Img
+                  loading="lazy"
+                  fluid={project.cover.src.childImageSharp.fluid}
+                />
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <Description>{project.description}</Description>
                 <Stack>

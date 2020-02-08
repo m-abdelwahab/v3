@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
-import { email } from "../config"
 import styled from "styled-components"
 import { theme, mixins, media, Section } from "../styles"
 import TextLoop from "react-text-loop"
@@ -152,50 +151,4 @@ const StyledPic = styled.div`
 const StyledAvatar = styled.img`
   border-radius: 10px;
   width: 550px;
-`
-const StyledCanvas = styled.div`
-  canvas {
-    width: 600px;
-    height: 600px;
-  }
-`
-const StyledAvatarLink = styled.a`
-  ${mixins.boxShadow};
-  width: 100%;
-  position: relative;
-  border-radius: ${theme.borderRadius};
-  background-color: ${colors.green};
-  margin-left: -20px;
-  &:hover,
-  &:focus {
-    background: transparent;
-    &:after {
-      top: 15px;
-      left: 15px;
-    }
-  }
-  &:before,
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: ${theme.borderRadius};
-    transition: ${theme.transition};
-  }
-  &:before {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: ${colors.navy};
-    mix-blend-mode: screen;
-  }
-  &:after {
-    border: 2px solid ${colors.green};
-    top: 20px;
-    left: 20px;
-    z-index: -1;
-  }
 `

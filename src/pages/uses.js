@@ -61,10 +61,7 @@ export default Uses
 
 const Container = styled(Section)``
 
-const subHeading = styled.p`
-  font-size: 1.3em;
-  margin: 0;
-`
+
 const List = styled.ul`
   margin: 1em;
 `

@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Fade from "react-reveal/Fade"
 import Bio from "../components/bio"
-import { theme, mixins, media, Section } from "../styles"
+import { theme, media } from "../styles"
 import ProgressBar from "../styles/progressBar"
 const { fontSizes, colors } = theme
 
@@ -84,13 +84,15 @@ const BlogPost = props => {
     const url = window.location.href
     console.log(url)
     if (navigator.share) {
-      navigator.share({
-        title: 'Share this article',
-        url: url
-      }).then(() => {
-        console.log('Thanks for sharing!');
-      })
-      .catch(console.error);
+      navigator
+        .share({
+          title: "Share this article",
+          url: url,
+        })
+        .then(() => {
+          console.log("Thanks for sharing!")
+        })
+        .catch(console.error)
     } else {
       // TODO: add fallback
       console.log("not supported")
@@ -111,22 +113,38 @@ const BlogPost = props => {
             </Link>
             <CallToAction>
               More blog posts can be found on{" "}
-              <a href="" target="_blank">
+              <a
+                href="https://medium.com./@thisismahmoud"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Medium.com{" "}
               </a>{" "}
               and{" "}
-              <a href="" target="_blank">
+              <a
+                href="https://dev.to/thisismahmoud"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Dev.to
               </a>
             </CallToAction>
             <header>
               <Title>{post.frontmatter.title}</Title>
-              <Date>🗓{post.frontmatter.date}</Date>
-              <TimeToRead>🕑 {post.timeToRead} min read</TimeToRead>
+              <Date>
+                <span role="img" aria-label="date">
+                  🗓
+                </span>
+                {post.frontmatter.date}
+              </Date>
+              <TimeToRead>
+                <span role="img" aria-label="time"></span>🕑 {post.timeToRead}{" "}
+                min read
+              </TimeToRead>
             </header>
             <p dangerouslySetInnerHTML={{ __html: post.html }} />
             <hr />
-            <button onClick={()=>share()}>Share this article</button>
+            <button onClick={() => share()}>Share this article</button>
             <Bio />
             <nav>
               <ul

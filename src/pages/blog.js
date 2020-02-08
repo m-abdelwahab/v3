@@ -38,8 +38,8 @@ const Blog = ({ data }) => {
                         />
                       </Description>
                       <Info>
-                        <p> 🕑{node.timeToRead} min read </p>
-                        <span>🗓{node.frontmatter.date}</span>
+                        <p> <span role="img" aria-label="clock">🕑</span>{node.timeToRead} min read </p>
+                        <span role="img" aria-label="date">🗓{node.frontmatter.date}</span>
                       </Info>
                     </Card>
                   </Link>

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { theme, mixins, Section } from "../styles"
+import { theme, mixins } from "../styles"
 
 import usePopup from "../hooks/usePopup"
 import IconLogo from "./icons/logo"

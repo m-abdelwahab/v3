@@ -1,7 +1,7 @@
 import React from "react"
 import { experiences } from "../data/aboutData"
 import styled from "styled-components"
-import { theme, mixins, media, Section } from "../styles"
+import { theme, media, Section } from "../styles"
 import Fade from "react-reveal/Fade"
 const { fontSizes, colors } = theme
 

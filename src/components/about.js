@@ -75,8 +75,8 @@ const About = () => {
           <h1>
             During the past few years, Fitness and working out became a huge
             part of my life and daily routine, that's why if you can't find me
-            at my workspace , you'll probably find me at the gym 💪. One of my
-            passions is Filmmaking 🎥 , I love to write, shoot and edit videos.
+            at my workspace , you'll probably find me at the gym <span role="img" aria-label="muscle">💪</span>. One of my
+            passions is Filmmaking <span role="img" aria-label="camera">🎥</span>  , I love to write, shoot and edit videos.
             The process of building a story using visuals has always fascinated
             me; this is probably why I fell in love with Frontend Engineering.
           </h1>

@@ -3,7 +3,7 @@ import styled from "styled-components"
 // import projects from "../data/featuredProjects"
 import { FormattedIcon } from "../components/icons"
 import "react-tippy/dist/tippy.css"
-import { theme, mixins, media, Section } from "../styles"
+import { theme, media, Section } from "../styles"
 import { Tooltip } from "react-tippy"
 import Fade from "react-reveal/Fade"
 import { graphql, useStaticQuery } from "gatsby"
@@ -62,10 +62,10 @@ const FeaturedProjects = () => {
                   })}
                 </Stack>
                 <Links>
-                  <a href={project.github} target="_blank">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <FormattedIcon name="GitHub" />
                   </a>
-                  <a href={project.link} target="_blank">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
                     <FormattedIcon name="Preview" />
                   </a>
                 </Links>
@@ -130,7 +130,7 @@ const ProjectTitle = styled.h1`
   margin-top: 1em;
 `
 
-const Cover = styled.img``
+// const Cover = styled.img``
 
 const Stack = styled.div`
   display: flex;

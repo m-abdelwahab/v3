@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { theme, mixins, media, Section } from "../styles"
+import { theme, media, Section } from "../styles"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import Fade from "react-reveal/Fade"
@@ -98,8 +98,4 @@ const Card = styled.div`
 const Cover = styled(Img)`
   width: 100%;
   max-width: 500px;
-`
-const Description = styled.div`
-  margin: 1em 1em 1em 0;
-  font-size: 1.3em;
 `

@@ -98,4 +98,4 @@ const ProjectTitle = styled.h1`
   margin-top: 1em;
 `
 
-const Cover = styled.img``
+// const Cover = styled.img``

@@ -68,7 +68,7 @@ const Hero = () => {
             style={{ transitionDelay: "700ms" }}
           >
             <StyledPic>
-              <StyledAvatar src={Coding} />
+              <StyledAvatar alt="hero image" src={Coding} />
             </StyledPic>
           </CSSTransition>
         )}

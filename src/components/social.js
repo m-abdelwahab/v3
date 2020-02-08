@@ -62,6 +62,7 @@ const Social = () => {
                       title={handle}
                       position="right"
                       trigger="mouseenter"
+                      role="tooltip"
                     >
                       <SocialLink
                         href={url}

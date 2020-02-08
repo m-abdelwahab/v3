@@ -63,6 +63,7 @@ const Social = () => {
                       position="right"
                       trigger="mouseenter"
                       role="tooltip"
+                      aria-label={name}
                     >
                       <SocialLink
                         href={url}
@@ -70,7 +71,7 @@ const Social = () => {
                         rel="nofollow noopener noreferrer"
                         aria-label={name}
                       >
-                        <FormattedIcon name={name} aria-label="icon" />
+                        <FormattedIcon name={name} aria-label={name} />
                       </SocialLink>
                     </Tooltip>
                   </SocialItem>

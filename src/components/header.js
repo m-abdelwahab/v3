@@ -69,7 +69,6 @@ export default React.memo(() => {
 const Header = styled.header`
   position: fixed;
   z-index: 999;
-
   top: 20px;
   display: flex;
   justify-content: space-between;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link, graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
@@ -47,7 +48,7 @@ const Heading = styled.h3`
 `
 
 const BlogPost = props => {
-  const post = props.data.markdownRemark
+  const post = props.data.mdx
   const { previous, next } = props.pageContext
   const listenToScrollEvent = () => {
     document.addEventListener("scroll", () => {
@@ -142,7 +143,7 @@ const BlogPost = props => {
                 min read
               </TimeToRead>
             </header>
-            <p dangerouslySetInnerHTML={{ __html: post.html }} />
+            <MDXRenderer>{post.body}</MDXRenderer>
             <hr />
             <button onClick={() => share()}>Share this article</button>
             <Bio />
@@ -188,10 +189,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       timeToRead
       frontmatter {
         title

@@ -4,8 +4,7 @@ import media from "./media"
 const { colors, fontSizes } = theme
 
 // TODO: add in body tag
-// background: ${({ theme }) => theme.body};
-// color: ${({ theme }) => theme.text};
+
 // normal
 // /* background-color: ${colors.white};
 // color: ${colors.darkGrey}; */
@@ -32,9 +31,8 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     
-    background-color: ${colors.white};
-    color: ${colors.darkGrey};
-
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
 
     line-height: 1.3;
   font-family: "Muli", sans-serif;

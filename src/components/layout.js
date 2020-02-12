@@ -22,34 +22,34 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  // const toggleTheme = () => {
-  //   // theme === "light" ? setTheme("dark") : setTheme("light")
-  //   if (theme === "light") {
-  //     setTheme("dark")
-  //     // otherwise, it should be light
-  //   } else {
-  //     setTheme("light")
-  //   }
-  // }
+  const toggleTheme = () => {
+    // theme === "light" ? setTheme("dark") : setTheme("light")
+    if (theme === "light") {
+      setTheme("dark")
+      // otherwise, it should be light
+    } else {
+      setTheme("light")
+    }
+  }
 
-  // const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("light")
 
   return (
     <div>
-      {/* <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}> */}
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyle />
-        {/* <Button onClick={toggleTheme}>
+        <Button onClick={toggleTheme}>
           {theme === "light" ? (
             <FormattedIcon name="Moon" />
           ) : (
             <FormattedIcon name="Sun" />
           )}
-        </Button> */}
+        </Button>
         <Header siteTitle={data.site.siteMetadata.title} />
         <Social />
         <Main>{children}</Main>
         <Footer />
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
     </div>
   )
 }
@@ -58,5 +58,9 @@ export default Layout
 
 const Button = styled.button`
   position: fixed;
-  right: 10;
+  right: 50px;
+  top: 5%;
+  z-index: 1000;
+  margin-right: 1em;
+  background-color: transparent;
 `

@@ -8,7 +8,7 @@ import Fade from "react-reveal/Fade"
 const { fontSizes, colors } = theme
 
 const Blog = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges
+  const posts = data.allMdx.edges
   return (
     <div>
       <Layout>
@@ -38,8 +38,16 @@ const Blog = ({ data }) => {
                         />
                       </Description>
                       <Info>
-                        <p> <span role="img" aria-label="clock">🕑</span>{node.timeToRead} min read </p>
-                        <span role="img" aria-label="date">🗓{node.frontmatter.date}</span>
+                        <p>
+                          {" "}
+                          <span role="img" aria-label="clock">
+                            🕑
+                          </span>
+                          {node.timeToRead} min read{" "}
+                        </p>
+                        <span role="img" aria-label="date">
+                          🗓{node.frontmatter.date}
+                        </span>
                       </Info>
                     </Card>
                   </Link>
@@ -62,7 +70,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           timeToRead

@@ -36,20 +36,20 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      {/* <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}> */}
         <GlobalStyle />
-        <Button onClick={toggleTheme}>
+        {/* <Button onClick={toggleTheme}>
           {theme === "light" ? (
             <FormattedIcon name="Moon" />
           ) : (
             <FormattedIcon name="Sun" />
           )}
-        </Button>
+        </Button> */}
         <Header siteTitle={data.site.siteMetadata.title} />
         <Social />
         <Main>{children}</Main>
         <Footer />
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </div>
   )
 }

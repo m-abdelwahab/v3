@@ -20,6 +20,7 @@ const FeaturedProjects = () => {
           description
           link
           tech
+          github
           cover {
             alt
             src {

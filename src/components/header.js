@@ -37,9 +37,6 @@ export default React.memo(() => {
             <MenuButton isMenuOpen={isOpen} {...getTogglerProps()}>
               <h1 className="hamburger">
                 <span className="text">Menu</span>
-                <span className="escape" aria-hidden="true">
-                  (esc to close)
-                </span>
               </h1>
             </MenuButton>
             <MenuBody {...getMenuProps()}>

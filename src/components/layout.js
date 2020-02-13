@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
@@ -8,9 +8,7 @@ import Footer from "../components/footer"
 import Social from "../components/social"
 import Main from "../styles/Main"
 import GlobalStyle from "../styles/GlobalStyle"
-import { FormattedIcon } from "../components/icons"
-import styled, { ThemeProvider } from "styled-components"
-import { lightTheme, darkTheme } from "../styles/theme"
+import styled from "styled-components"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,34 +20,14 @@ const Layout = ({ children }) => {
       }
     }
   `)
-  const toggleTheme = () => {
-    // theme === "light" ? setTheme("dark") : setTheme("light")
-    if (theme === "light") {
-      setTheme("dark")
-      // otherwise, it should be light
-    } else {
-      setTheme("light")
-    }
-  }
-
-  const [theme, setTheme] = useState("light")
 
   return (
     <div>
-      {/* <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}> */}
-        <GlobalStyle />
-        {/* <Button onClick={toggleTheme}>
-          {theme === "light" ? (
-            <FormattedIcon name="Moon" />
-          ) : (
-            <FormattedIcon name="Sun" />
-          )}
-        </Button> */}
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Social />
-        <Main>{children}</Main>
-        <Footer />
-      {/* </ThemeProvider> */}
+      <GlobalStyle />
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <Social />
+      <Main>{children}</Main>
+      <Footer />
     </div>
   )
 }

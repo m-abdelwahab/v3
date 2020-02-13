@@ -1,14 +1,6 @@
 import { createGlobalStyle } from "styled-components"
-// import theme from "./theme"
-// import media from "./media"
-const { colors, fontSizes } = theme
 
-// TODO: add in body tag
-// background: ${({ theme }) => theme.body};
-//     color: ${({ theme }) => theme.text};
-// normal
-// /* background-color: ${colors.white};
-// color: ${colors.darkGrey}; */
+const { colors, fontSizes } = theme
 
 const GlobalStyle = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css?family=Muli:400,700,900&display=swap");

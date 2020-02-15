@@ -61,17 +61,17 @@ const About = () => {
         </AboutSkills>
 
         <AboutIntro>
-          <h1>
+          <p>
             I'm an Egyptian based Front-end-engineer and I am passionate about
             UX Design. I'm a 3rd year undergraduate, currently majoring in
             Computer Science at the German University in Cairo.
-          </h1>
-          <h1>
+          </p>
+          <p>
             Here's some fun facts about me: I speak five languages: Arabic
             (Native), English (fluent) , French (fluent), Spanish (intermediate)
             and German (beginner).
-          </h1>
-          <h1>
+          </p>
+          <p>
             During the past few years, Fitness and working out became a huge
             part of my life and daily routine, that's why if you can't find me
             at my workspace , you'll probably find me at the gym{" "}
@@ -85,7 +85,13 @@ const About = () => {
             , I love to write, shoot and edit videos. The process of building a
             story using visuals has always fascinated me; this is probably why I
             fell in love with Frontend Engineering.
-          </h1>
+          </p>
+          <p>
+            {" "}
+            I also love giving <Link to="/talks">talks</Link> and{" "}
+            <Link to="/blog">writing</Link> to easily share my thoughts and what
+            I learn.
+          </p>
         </AboutIntro>
       </Grid>
     </Container>
@@ -143,7 +149,7 @@ const AboutStats = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   grid-column-gap: 2em;
   align-items: start;
-
+  color: ${colors.dark};
   @media (max-width: 1024px) {
     align-items: end;
     text-align: left;
@@ -188,7 +194,7 @@ const AboutSkills = styled.div`
 
     &:before {
       /* background of title on hover */
-      background-color: rgba(155, 219, 125, 0.6);
+      background-color: rgb(0, 153, 255, 0.6);
       opacity: 0.5;
       content: "";
       position: absolute;
@@ -234,8 +240,18 @@ const AboutSkills = styled.div`
 const AboutIntro = styled.div`
   grid-area: intro;
   line-height: 1.7;
-  h1 {
+  p {
     font-size: 1em;
+    font-weight: 500;
+    color: ${colors.dark};
+
+    a {
+      border-bottom: 5px solid #0099ff;
+      text-decoration:none;
+      &:hover{
+        color:#0099ff;
+      }
+    }
   }
   margin: 2em 0;
   width: 100%;
@@ -310,7 +326,5 @@ const Heading = styled.h3`
   span {
     font-size: ${fontSizes.h3};
     ${media.tablet`font-size: 24px;`};
-
   }
- 
 `

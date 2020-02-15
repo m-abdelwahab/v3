@@ -10,6 +10,5 @@ export default [
     title: "Hooked: How To Build Habit Forming Products",
     description: "A lightning-talk about patterns used by apps that hook and engage us",
     topic: "Book Review",
-    slides: "",
   },
 ]

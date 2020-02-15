@@ -89,7 +89,7 @@ const About = () => {
           <p>
             {" "}
             I also love <Link to="/blog">writing</Link> and giving{" "}
-            <Link to="/talks">talks</Link>
+            <Link to="/talks">talks</Link>{" "}
             to share my thoughts and what I learn.
           </p>
         </AboutIntro>

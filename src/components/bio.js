@@ -37,8 +37,8 @@ const Bio = () => {
       <Avatar src={Me} />
       <Paragraph>
         Hi! Welcome to my Blog<span role="img" aria-label="waving-hand">👋</span>.This is where I write about Design, Front-end
-        Development and share my thoughts. I'm A Front-end Software Engineer in
-        my 3rd year studying Computer Science.
+        Development and share my thoughts. I'm a Front-end Software Engineer in
+        my 3rd year, studying Computer Science.
       </Paragraph>
     </Card>
   )

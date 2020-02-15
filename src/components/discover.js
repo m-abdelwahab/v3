@@ -16,7 +16,7 @@ const Discover = () => {
           If you're interested in learning about what theme or apps or I use,
           check out my <Link to="/uses">uses </Link> page. I also{" "}
           <Link to="/blog">write</Link> and give <Link to="/talks">talks.</Link>
-          . You can find more details in the <Link to="/about"> about</Link>{" "}
+          You can find more details in the <Link to="/about"> about</Link>{" "}
           page.
           <br />
           If you want to chat about anything, feel free to email me or to send

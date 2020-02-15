@@ -5,6 +5,7 @@ import {
   IconTwitter,
   IconMail,
   IconMedium,
+  IconCodepen,
 } from "../components/icons"
 import { socialMedia } from "../config"
 import styled from "styled-components"
@@ -20,7 +21,6 @@ const FooterContainer = styled.footer`
   text-align: center;
   height: auto;
   min-height: 70px;
-  
 `
 const SocialContainer = styled.div`
   color: ${colors.white};
@@ -51,49 +51,51 @@ const GithubLink = styled.a`
 `
 
 const Footer = () => (
-    <FooterContainer>
-      <SocialContainer>
-        <SocialItemList>
-          {socialMedia &&
-            socialMedia.map(({ name, url }, i) => (
-              <li key={i}>
-                <SocialLink
-                  href={url}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  aria-label={name}
-                >
-                  {name === "Github" ? (
-                    <IconGithub />
-                  ) : name === "Linkedin" ? (
-                    <IconLinkedin />
-                  ) : name === "Twitter" ? (
-                    <IconTwitter />
-                  ) : name === "Mail" ? (
-                    <IconMail />
-                  ) : name === "Medium" ? (
-                    <IconMedium />
-                  ) : (
-                    <IconGithub />
-                  )}
-                </SocialLink>
-              </li>
-            ))}
-        </SocialItemList>
-      </SocialContainer>
-      <Copy>
-        <GithubLink
-          href="https://github.com/m-abdelwahab"
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-        >
-          <div>
-            Designed &amp; Built by Mahmoud Abdelwahab
-            {` `}
-          </div>
-        </GithubLink>
-      </Copy>
-    </FooterContainer>
+  <FooterContainer>
+    <SocialContainer>
+      <SocialItemList>
+        {socialMedia &&
+          socialMedia.map(({ name, url }, i) => (
+            <li key={i}>
+              <SocialLink
+                href={url}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                aria-label={name}
+              >
+                {name === "Github" ? (
+                  <IconGithub />
+                ) : name === "Linkedin" ? (
+                  <IconLinkedin />
+                ) : name === "Twitter" ? (
+                  <IconTwitter />
+                ) : name === "Mail" ? (
+                  <IconMail />
+                ) : name === "Codepen" ? (
+                  <IconCodepen />
+                ) : name === "Medium" ? (
+                  <IconMedium />
+                ) : (
+                  <IconGithub />
+                )}
+              </SocialLink>
+            </li>
+          ))}
+      </SocialItemList>
+    </SocialContainer>
+    <Copy>
+      <GithubLink
+        href="https://github.com/m-abdelwahab"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+      >
+        <div>
+          Designed &amp; Built by Mahmoud Abdelwahab
+          {` `}
+        </div>
+      </GithubLink>
+    </Copy>
+  </FooterContainer>
 )
 
 export default Footer

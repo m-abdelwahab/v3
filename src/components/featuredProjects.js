@@ -168,5 +168,8 @@ const Links = styled.div`
   svg {
     fill: none;
     width: 24px;
+    &:hover{
+      stroke: ${colors.blue};
+    }
   }
 `

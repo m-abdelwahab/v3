@@ -39,6 +39,7 @@ const SocialLink = styled.a`
     fill: none;
     width: 20px;
     height: 20px;
+    stroke: ${colors.dark}
   }
 `
 const Copy = styled.div`

@@ -2,28 +2,7 @@
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 375.02 302.13"
     >
-      <defs>
-        <radialGradient
-          id="a"
-          cx="188.01"
-          cy="150.92"
-          r="150.92"
-          data-name="Cyan Radial 2"
-          gradient-units="userSpaceOnUse"
-        >
-          <stop offset="0" stop-color="#fff"></stop>
-          <stop offset="0.02" stop-color="#f4f9fd"></stop>
-          <stop offset="0.14" stop-color="#bcdcf1"></stop>
-          <stop offset="0.25" stop-color="#8ac3e6"></stop>
-          <stop offset="0.37" stop-color="#5faddd"></stop>
-          <stop offset="0.49" stop-color="#3d9bd6"></stop>
-          <stop offset="0.61" stop-color="#228ed0"></stop>
-          <stop offset="0.74" stop-color="#0f84cc"></stop>
-          <stop offset="0.87" stop-color="#047eca"></stop>
-          <stop offset="1" stop-color="#007cc9"></stop>
-        </radialGradient>
-      </defs>
-      <circle cx="188.01" cy="150.92" r="150.92" fill="url('#a')"></circle>
+      <circle cx="188.01" cy="150.92" r="150.92" fill="#0099ff"></circle>
       <!-- {/* me */} -->
       <g>
         <g id="head">

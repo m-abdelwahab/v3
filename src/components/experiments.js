@@ -6,10 +6,10 @@ import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 const { fontSizes, colors } = theme
 
-const DesignProjects = () => {
+const Experiments = () => {
   const data = useStaticQuery(graphql`
     query {
-      designProjectsJson {
+      experimentsJson {
         projects {
           id
           title
@@ -29,10 +29,10 @@ const DesignProjects = () => {
       }
     }
   `)
-  const { projects } = data.designProjectsJson
+  const { projects } = data.experimentsJson
   return (
     <Container>
-      <Heading>Design Projects</Heading>
+      <Heading>Experiments</Heading>
       <Grid>
         {projects.map((project, i) => {
           return (
@@ -54,7 +54,7 @@ const DesignProjects = () => {
   )
 }
 
-export default DesignProjects
+export default Experiments
 
 const Container = styled.div`
   margin: 0 auto;
@@ -95,7 +95,7 @@ const Project = styled.div`
 `
 
 const Description = styled.p`
-  height: 1.5em;
+  height: 3em;
 `
 
 const ProjectTitle = styled.h1`

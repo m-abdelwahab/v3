@@ -37,7 +37,7 @@ const FeaturedProjects = () => {
   `)
   const { projects } = data.featuredProjectsJson
   return (
-    <Container>
+    <Container id="featured-projects">
       <Heading>Coding Projects</Heading>
       <Grid>
         {projects.map((project, i) => {
@@ -62,17 +62,27 @@ const FeaturedProjects = () => {
                         aria-label={tech}
                         aria-hidden="true"
                       >
-                        <FormattedIcon name={tech} aria-label={tech}/>
+                        <FormattedIcon name={tech} aria-label={tech} />
                       </Tooltip>
                     )
                   })}
                 </Stack>
                 <Links>
-                  <a aria-label="github link" href={project.github} target="_blank" rel="noopener noreferrer">
-                    <FormattedIcon name="GitHub" alt="github icon"/>
+                  <a
+                    aria-label="github link"
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FormattedIcon name="GitHub" alt="github icon" />
                   </a>
-                  <a aria-label="live preview" href={project.link} target="_blank" rel="noopener noreferrer">
-                    <FormattedIcon name="Preview" alt="preview icon"/>
+                  <a
+                    aria-label="live preview"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FormattedIcon name="Preview" alt="preview icon" />
                   </a>
                 </Links>
               </Project>

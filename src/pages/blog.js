@@ -115,7 +115,7 @@ const Card = styled.div`
 `
 const Category = styled.h6`
   font-weight: 600;
-  color: darkgrey;
+  color: ${colors.grey};
   margin-bottom: 0.5em;
 `
 const Title = styled.h3`
@@ -154,5 +154,8 @@ const Heading = styled.h3`
   ${media.tablet`font-size: 24px;`};
   span {
     font-size: ${fontSizes.h3};
+    ${media.tablet`font-size: 24px;`};
+
   }
+  
 `

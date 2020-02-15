@@ -35,13 +35,13 @@ const Hero = () => {
   const three = () => <Subtitle style={{ transitionDelay: "400ms" }}></Subtitle>
   const four = () => (
     <Blurb style={{ transitionDelay: "500ms" }}>
-      Creative Front-end Engineer obsessed with designing and building
-      exceptional, high-quality, performant websites and applications .
+      Creative <span>Front-end Engineer</span> obsessed with designing and
+      building exceptional, high-quality, performant websites and applications .
     </Blurb>
   )
   const five = () => (
     <div style={{ transitionDelay: "600ms" }}>
-      <EmailLink href={`/resume.pdf`}>Resume</EmailLink>
+      <ResumeButton href={`/resume.pdf`}>Resume</ResumeButton>
     </div>
   )
 
@@ -100,6 +100,7 @@ const Hi = styled.h1`
   color: ${colors.dark};
   margin: 0 0 20px 3px;
   font-weight: normal;
+
   span {
     font-size: 1.4em;
   }
@@ -128,8 +129,15 @@ const Blurb = styled.div`
   width: 80%;
   max-width: 500px;
   font-size: 1.2em;
+  span {
+    font-size: 1em;
+    font-weight:700;
+    color: ${colors.dark};
+
+
+  }
 `
-const EmailLink = styled.a`
+const ResumeButton = styled.a`
   ${mixins.bigButton};
   margin-top: 50px;
 `

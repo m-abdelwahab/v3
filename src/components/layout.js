@@ -1,14 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import "./layout.css"
-import Footer from "../components/footer"
-
 import Social from "../components/social"
 import Main from "../styles/Main"
 import GlobalStyle from "../styles/GlobalStyle"
 import styled from "styled-components"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,7 +25,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <Social />
       <Main>{children}</Main>
-      <Footer />
+      <Footer/>
     </div>
   )
 }

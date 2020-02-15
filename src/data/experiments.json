@@ -1,0 +1,46 @@
+[
+  {
+    "projects": [
+      {
+        "id": "1",
+        "title": "3D On The Web",
+        "description": "Working with 3D Models in React using react-three-fiber, a React renderer for Three.js",
+        "link": "https://ideapad-app.herokuapp.com",
+        "cover": {
+          "src": "../images/experiments/project2.png",
+          "alt": "react-three-fiber"
+        }
+      },
+      {
+        "id": "2",
+        "title": "AR On The Web",
+        "description": "Marker-based AR using AR.js, a lightweight library for Augmented Reality on the Web,",
+        "link": "https://hn360.netlify.com",
+        "cover": {
+          "src": "../images/experiments/project2.png",
+          "alt": "project2"
+        }
+      },
+      {
+        "id": "3",
+        "title": "Generative Art",
+        "description": "Personal website where I showcase my work and people can learn about me.",
+        "link": "https://mahmoudabdelwahab.tech",
+        "cover": {
+          "src": "../images/experiments/project3.png",
+          "alt": "project3"
+        }
+      },
+      {
+        "id": "4",
+        "title": "Canvas Animation",
+        "description": "Personal website where I showcase my work and people can learn about me.",
+        "link": "https://mahmoudabdelwahab.tech",
+        "cover": {
+          "src": "../images/experiments/project1.png",
+          "alt": "project4"
+        }
+      }
+    ]
+  }
+]

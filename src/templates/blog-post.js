@@ -81,24 +81,6 @@ const BlogPost = props => {
 
   useEffect(() => listenToScrollEvent(), [])
 
-  const share = () => {
-    const url = window.location.href
-    console.log(url)
-    if (navigator.share) {
-      navigator
-        .share({
-          title: "Share this article",
-          url: url,
-        })
-        .then(() => {
-          console.log("Thanks for sharing!")
-        })
-        .catch(console.error)
-    } else {
-      // TODO: add fallback
-      console.log("not supported")
-    }
-  }
   return (
     <>
       <ProgressBar scroll={progress + "%"} />
@@ -145,7 +127,6 @@ const BlogPost = props => {
             </header>
             <MDXRenderer>{post.body}</MDXRenderer>
             <hr />
-            <button onClick={() => share()}>Share this article</button>
             <Bio />
             <nav>
               <ul

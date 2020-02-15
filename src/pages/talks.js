@@ -28,10 +28,14 @@ const TalksPage = () => {
                   <Tag>{talk.topic}</Tag>
                   <Title>{talk.title}</Title>
                   <Description>{talk.description}</Description>
-                  <Link to={talk.slides}>
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href={talk.slides}
+                  >
                     <FormattedIcon name="Link" />
                     Slides
-                  </Link>
+                  </a>
                 </Card>
               </Fade>
             )
@@ -102,5 +106,6 @@ const Heading = styled.h3`
   ${media.tablet`font-size: 24px;`};
   span {
     font-size: ${fontSizes.h3};
+    ${media.tablet`font-size: 24px;`};
   }
 `

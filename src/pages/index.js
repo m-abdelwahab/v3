@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import FeaturedProjects from "../components/featuredProjects"
-import DesignProjects from "../components/designProjects"
+// import Experiments from "../components/experiments"
 import Experience from "../components/experience"
 import Discover from "../components/discover"
 
@@ -12,7 +12,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Hero />
     <FeaturedProjects />
-    <DesignProjects />
+    {/* <Experiments /> */}
     <Experience />
     <Discover />
   </Layout>

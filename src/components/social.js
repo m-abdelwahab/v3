@@ -28,9 +28,7 @@ const SocialItem = styled.li`
 `
 const SocialLink = styled.a`
   padding: 10px;
-  &:hover {
-    color: ${colors.blue};
-  }
+
   &:focus {
     transform: translateY(-3px);
   }
@@ -38,6 +36,9 @@ const SocialLink = styled.a`
     fill: none;
     width: 18px;
     height: 18px;
+    &:hover {
+      stroke: ${colors.blue};
+    }
   }
 `
 

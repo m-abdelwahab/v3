@@ -22,7 +22,7 @@ const About = () => {
         /About
       </Heading>
       <Grid>
-          <AboutImg src={Me} alt="me" />
+        <AboutImg src={Me} alt="me" />
         <AboutStats>
           {statsList.map((stat, i) => {
             return (
@@ -62,10 +62,9 @@ const About = () => {
 
         <AboutIntro>
           <h1>
-            I'm an Egyptian based Front-end-engineer and UX designer, I am
-            passionate about building exciting software projects. I'm a 3rd year
-            undergraduate, currently majoring in Computer Science at the German
-            University in Cairo.
+            I'm an Egyptian based Front-end-engineer and I am passionate about
+            UX Design. I'm a 3rd year undergraduate, currently majoring in
+            Computer Science at the German University in Cairo.
           </h1>
           <h1>
             Here's some fun facts about me: I speak five languages: Arabic
@@ -75,10 +74,17 @@ const About = () => {
           <h1>
             During the past few years, Fitness and working out became a huge
             part of my life and daily routine, that's why if you can't find me
-            at my workspace , you'll probably find me at the gym <span role="img" aria-label="muscle">💪</span>. One of my
-            passions is Filmmaking <span role="img" aria-label="camera">🎥</span>  , I love to write, shoot and edit videos.
-            The process of building a story using visuals has always fascinated
-            me; this is probably why I fell in love with Frontend Engineering.
+            at my workspace , you'll probably find me at the gym{" "}
+            <span role="img" aria-label="muscle">
+              💪
+            </span>
+            . One of my passions is Filmmaking{" "}
+            <span role="img" aria-label="camera">
+              🎥
+            </span>{" "}
+            , I love to write, shoot and edit videos. The process of building a
+            story using visuals has always fascinated me; this is probably why I
+            fell in love with Frontend Engineering.
           </h1>
         </AboutIntro>
       </Grid>
@@ -303,5 +309,8 @@ const Heading = styled.h3`
   ${media.tablet`font-size: 24px;`};
   span {
     font-size: ${fontSizes.h3};
+    ${media.tablet`font-size: 24px;`};
+
   }
+ 
 `

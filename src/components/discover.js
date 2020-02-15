@@ -1,73 +1,37 @@
 import React from "react"
 import styled from "styled-components"
 import { theme, media, Section } from "../styles"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { Link } from "gatsby"
 import Fade from "react-reveal/Fade"
 const { fontSizes, colors } = theme
 
 const Discover = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      discoverJson {
-        sections {
-          id
-          title
-          link
-          cover {
-            alt
-            src {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-  const { sections } = data.discoverJson
   return (
     <Container>
       <Fade>
-        <Heading>Discover</Heading>
+        <Heading>What's Next?</Heading>
       </Fade>
-      <Grid>
-        {sections.map((section, i) => {
-          return (
-            <Link key={section.id} to={section.link}>
-              <Fade delay={i * 200}>
-                <Card>
-                  <Cover
-                    loading="lazy"
-                    fluid={section.cover.src.childImageSharp.fluid}
-                    alt={section.cover.alt}
-                  />
-                </Card>
-              </Fade>
-            </Link>
-          )
-        })}
-      </Grid>
+      <Fade>
+        <Paragraph>
+          If you're interested in learning more about me you can do it{" "}
+          <Link to="/about">here</Link>. I also <Link to="/blog">write</Link>{" "}
+          and give <Link to="/talks">talks.</Link>
+          <br />
+          If you want to chat about anything, feel free to email me or to send
+          me a message on Twitter, since that's where I'm most active.
+        </Paragraph>
+      </Fade>
     </Container>
   )
 }
 
 export default Discover
 
-const Container = styled(Section)``
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-  }
-  .react-reveal {
-  }
+const Container = styled(Section)`
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  height:80vh;
 `
 
 const Heading = styled.h3`
@@ -84,23 +48,12 @@ const Heading = styled.h3`
     display: inline;
   }
 `
-const Card = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 0;
-  /* box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12);
-  transition: box-shadow 0.1s;
-  &:hover {
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.12);
-  } */
-  @media (max-width: 768px) {
-    margin: 1em;
-  }
-  &:hover {
-    cursor: pointer;
-  }
-`
-const Cover = styled(Img)`
-  width: 100%;
+const Paragraph = styled.h3`
+  font-size: ${fontSizes.xlarge};
   max-width: 500px;
+  text-align: center;
+  a {
+    font-size: ${fontSizes.xlarge};
+    border-bottom: 5px solid #0099ff;
+  }
 `

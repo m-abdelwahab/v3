@@ -94,10 +94,11 @@ const mixins = {
     border: 1px solid ${colors.dark};
     border-radius: ${theme.borderRadius};
     padding: 1.25rem 1.75rem;
-    font-size: ${fontSizes.small};
+    font-size: ${fontSizes.medium};
     ${'' /* font-family: ${fonts.SFMono}; */}
     line-height: 1;
     text-decoration: none;
+    font-weight:700;
     cursor: pointer;
     transition: ${theme.transition};
     &:hover,

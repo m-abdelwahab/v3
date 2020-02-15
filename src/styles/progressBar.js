@@ -8,7 +8,7 @@ const ProgressBar = styled.div`
     rgba(0, 0, 0, 1) ${props => props.scroll},
     transparent  0);
   width:  100%;
-  height:  4px;
+  height:  5px;
   z-index:  3;
 `
 export default ProgressBar

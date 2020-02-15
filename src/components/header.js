@@ -8,7 +8,7 @@ import IconLogo from "./icons/logo"
 const { colors } = theme
 
 const links = [
-  { url: "/", name: "Projects" },
+  { url: "/#featured-projects", name: "Projects" },
   { url: "/about", name: "About" },
   { url: "/blog", name: "Blog" },
   { url: "/talks", name: "Talks" },

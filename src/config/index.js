@@ -28,6 +28,11 @@ module.exports = {
           handle: 'thisismahmoud_',
       },
       {
+        name: 'Codepen',
+        url: 'https://codepen.io/m-abdelwahab',
+        handle: 'm-abdelwahab',
+    },
+      {
           name: 'Mail',
           url: 'mailto:mahmoud3799@gmail.com',
           handle: 'mahmoud3799@gmail.com',

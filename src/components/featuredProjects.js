@@ -52,18 +52,20 @@ const FeaturedProjects = () => {
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <Description>{project.description}</Description>
                 <Stack>
-                  {project.tech.map(tech => {
+                  {project.tech.map((tech, i) => {
                     return (
-                      <Tooltip
-                        title={tech}
-                        position="bottom"
-                        trigger="mouseenter"
-                        role="tooltip"
-                        aria-label={tech}
-                        aria-hidden="true"
-                      >
-                        <FormattedIcon name={tech} aria-label={tech} />
-                      </Tooltip>
+                      <div key={i}>
+                        <Tooltip
+                          title={tech}
+                          position="bottom"
+                          trigger="mouseenter"
+                          role="tooltip"
+                          aria-label={tech}
+                          aria-hidden="true"
+                        >
+                          <FormattedIcon name={tech} aria-label={tech} />
+                        </Tooltip>
+                      </div>
                     )
                   })}
                 </Stack>

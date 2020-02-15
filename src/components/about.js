@@ -88,9 +88,9 @@ const About = () => {
           </p>
           <p>
             {" "}
-            I also love giving <Link to="/talks">talks</Link> and{" "}
-            <Link to="/blog">writing</Link> to easily share my thoughts and what
-            I learn.
+            I also love <Link to="/blog">writing</Link> and giving{" "}
+            <Link to="/talks">talks</Link>
+            to share my thoughts and what I learn.
           </p>
         </AboutIntro>
       </Grid>
@@ -247,9 +247,9 @@ const AboutIntro = styled.div`
 
     a {
       border-bottom: 5px solid #0099ff;
-      text-decoration:none;
-      &:hover{
-        color:#0099ff;
+      text-decoration: none;
+      &:hover {
+        color: #0099ff;
       }
     }
   }

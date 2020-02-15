@@ -68,6 +68,7 @@ const List = styled.ul`
 const ListItem = styled.li`
   margin: 1em;
   list-style: square;
+  color:${colors.dark};
 `
 
 const Title = styled.h2`
@@ -89,5 +90,6 @@ const Heading = styled.h1`
   ${media.tablet`font-size: 24px;`};
   span {
     font-size: ${fontSizes.h3};
+    ${media.tablet`font-size: 24px;`};
   }
 `

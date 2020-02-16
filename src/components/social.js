@@ -5,7 +5,6 @@ import { FormattedIcon } from "../components/icons"
 import styled from "styled-components"
 import { theme, media } from "../styles"
 import "react-tippy/dist/tippy.css"
-import { Tooltip } from "react-tippy"
 const { colors } = theme
 
 const SocialContainer = styled.div`
@@ -59,23 +58,15 @@ const Social = () => {
               {socialMedia &&
                 socialMedia.map(({ url, name, handle }, i) => (
                   <SocialItem key={i}>
-                    <Tooltip
-                      title={handle}
-                      position="right"
-                      trigger="mouseenter"
-                      role="tooltip"
+                    <SocialLink
+                      href={url}
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
                       aria-label={name}
+                      aria-hidden="true"
                     >
-                      <SocialLink
-                        href={url}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                        aria-label={name}
-                        aria-hidden="true"
-                      >
-                        <FormattedIcon name={name} aria-label={name} />
-                      </SocialLink>
-                    </Tooltip>
+                      <FormattedIcon name={name} aria-label={name} />
+                    </SocialLink>
                   </SocialItem>
                 ))}
             </SocialItemList>

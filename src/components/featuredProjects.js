@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { FormattedIcon } from "../components/icons"
 import "react-tippy/dist/tippy.css"
 import { theme, media, Section } from "../styles"
-import { Tooltip } from "react-tippy"
 import Fade from "react-reveal/Fade"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
@@ -55,16 +54,7 @@ const FeaturedProjects = () => {
                   {project.tech.map((tech, i) => {
                     return (
                       <div key={i}>
-                        <Tooltip
-                          title={tech}
-                          position="bottom"
-                          trigger="mouseenter"
-                          role="tooltip"
-                          aria-label={tech}
-                          aria-hidden="true"
-                        >
-                          <FormattedIcon name={tech} aria-label={tech} />
-                        </Tooltip>
+                        <FormattedIcon name={tech} aria-label={tech} />
                       </div>
                     )
                   })}
@@ -168,7 +158,7 @@ const Links = styled.div`
   svg {
     fill: none;
     width: 24px;
-    &:hover{
+    &:hover {
       stroke: ${colors.blue};
     }
   }

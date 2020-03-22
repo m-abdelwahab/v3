@@ -112,6 +112,7 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
   grid-template-rows: repeat(2, fr);
   ${media.phone`align-items:center;`};
+  margin: 0 auto;
 `
 
 const Project = styled.div`

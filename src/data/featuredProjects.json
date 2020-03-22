@@ -3,6 +3,21 @@
     "projects": [
       {
         "id": "1",
+        "title": "Covid-viz",
+        "description": "View the latest statistics about COVID-19",
+        "link": "https://covid-viz.netlify.com",
+        "github": "https://github.com/m-abdelwahab/covid-viz",
+        "tech": [
+          "Gatsby",
+          "styled-components"
+        ],
+        "cover": {
+          "src": "../images/featuredProjects/covid-viz.png",
+          "alt": "View the latest statistics about COVID-19"
+        }
+      },
+      {
+        "id": "1",
         "title": "IdeaPad",
         "description": "Full Stack note-taking Web App where users can use voice typing ",
         "link": "https://ideapad-app.herokuapp.com",

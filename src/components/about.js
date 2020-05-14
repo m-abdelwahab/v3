@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import { FormattedIcon } from "../components/icons"
 import "react-tippy/dist/tippy.css"
 import CountUp from "react-countup"
@@ -14,19 +14,14 @@ const { fontSizes, colors } = theme
 
 const About = () => {
   return (
-    <Container>
-      <Heading>
-        <Link to="/">
-          <span>Home</span>
-        </Link>
-        /About
-      </Heading>
+    <Container id="about">
+      <Heading>About Me</Heading>
       <Grid>
         <AboutImg src={Me} alt="me" />
         <AboutStats>
           {statsList.map((stat, i) => {
             return (
-              <Fade delay={i * 200}>
+              <Fade key={i} delay={i * 200}>
                 <CounterContainer>
                   <Counter>
                     <CountUp
@@ -47,7 +42,7 @@ const About = () => {
           <h1>Tools I use</h1> <br />
           {skillsList.map((skill, i) => {
             return (
-              <Fade right delay={100 * i}>
+              <Fade key={i} right delay={100 * i}>
                 <Tooltip
                   title={skill.name}
                   position="bottom"
@@ -89,8 +84,8 @@ const About = () => {
           <p>
             {" "}
             I also love <Link to="/blog">writing</Link> and giving{" "}
-            <Link to="/talks">talks</Link>{" "}
-            to share my thoughts and what I learn.
+            <Link to="/talks">talks</Link> to share my thoughts and what I
+            learn.
           </p>
         </AboutIntro>
       </Grid>
@@ -149,7 +144,7 @@ const AboutStats = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   grid-column-gap: 2em;
   align-items: start;
-  color: ${colors.dark};
+
   @media (max-width: 1024px) {
     align-items: end;
     text-align: left;
@@ -187,10 +182,9 @@ const AboutSkills = styled.div`
   & > h1 {
     font-size: 1em;
     margin-bottom: 5px;
-    margin-top: 10px;
+    margin-top: 2rem;
     position: relative;
     display: inline-block;
-    color: black;
 
     &:before {
       /* background of title on hover */
@@ -243,7 +237,6 @@ const AboutIntro = styled.div`
   p {
     font-size: 1em;
     font-weight: 500;
-    color: ${colors.dark};
 
     a {
       border-bottom: 5px solid #0099ff;
@@ -256,7 +249,6 @@ const AboutIntro = styled.div`
   margin: 2em 0;
   width: 100%;
   & a {
-    color: black;
     text-decoration: overline;
 
     &:hover {
@@ -320,7 +312,7 @@ const Heading = styled.h3`
   margin: 10px 0 40px;
   width: 100%;
   white-space: nowrap;
-  color: ${colors.dark};
+
   font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
   span {

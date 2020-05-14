@@ -6,6 +6,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const categoryTemplate = path.resolve(`./src/templates/category.js`)
+
   const result = await graphql(
     `
       {
@@ -20,6 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                categories
               }
             }
           }
@@ -31,6 +34,26 @@ exports.createPages = async ({ graphql, actions }) => {
   if (result.errors) {
     throw result.errors
   }
+
+  // const allCategories = result.data.allMdx.edges.map(category =>{
+  //   return category.node.frontmatter.categories.map(item=>item)
+  // }
+  const allCategories = result.data.allMdx.edges.map(category =>
+    category.node.frontmatter.categories.map(item => item)
+  )
+  const categories = [...new Set(allCategories.flat(Infinity))]
+
+  // create categories pages
+
+  categories.forEach(category => {
+    createPage({
+      path: `category/${category}`,
+      component: categoryTemplate,
+      context: {
+        category: category,
+      },
+    })
+  })
 
   // Create blog posts pages.
   const posts = result.data.allMdx.edges

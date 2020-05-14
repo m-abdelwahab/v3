@@ -1,15 +1,27 @@
 import React from "react"
-import talks from "../data/talks"
 import { FormattedIcon } from "../components/icons"
 import Fade from "react-reveal/Fade"
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import { theme, Section, media } from "../styles"
-const { fontSizes, colors } = theme
+const { fontSizes } = theme
 
 const TalksPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      talksJson {
+        talks {
+          title
+          description
+          topic
+          slides
+        }
+      }
+    }
+  `)
+  const { talks } = data.talksJson
   return (
     <Layout>
       <SEO title="Talks" />
@@ -23,7 +35,7 @@ const TalksPage = () => {
         <Grid>
           {talks.map((talk, i) => {
             return (
-              <Fade delay={200 * i}>
+              <Fade key={i} delay={200 * i}>
                 <Card>
                   <Tag>{talk.topic}</Tag>
                   <Title>{talk.title}</Title>
@@ -101,7 +113,6 @@ const Heading = styled.h3`
   margin: 10px 0 40px;
   width: 100%;
   white-space: nowrap;
-  color: ${colors.dark};
   font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
   span {

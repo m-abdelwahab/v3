@@ -1,3 +1,5 @@
+// @jsx jsx
+import { jsx } from "theme-ui"
 import React from "react"
 
 const IconMedium = () => (
@@ -6,11 +8,11 @@ const IconMedium = () => (
     viewBox="0 0 50 50"
     width="50px"
     height="50px"
-    stroke="black"
     fill="none"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    sx={{ stroke: "text" }}
   >
     <title> Medium</title>
 

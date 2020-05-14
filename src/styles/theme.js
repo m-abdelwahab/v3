@@ -18,7 +18,7 @@ const theme = {
     yellow: "#B8860B",
     brown: "#D47500",
     orange: "#ff4c00",
-    red:"#E53E3E",
+    red: "#E53E3E",
     darkRed: "#be0000",
     purple: "#6a0dad",
     green: "#008000 ",
@@ -49,17 +49,3 @@ const theme = {
   loaderDelay: `6`,
 }
 export default theme
-
-export const lightTheme = {
-  body: "#FFFFFF",
-  text: "#000007",
-  toggleBorder: "transparent",
-  gradient: "linear-gradient(#39598A, #79D7ED)",
-}
-
-export const darkTheme = {
-  body: "#363537",
-  text: "#FAFAFA",
-  toggleBorder: "transparent",
-  gradient: "linear-gradient(#091236, #1E215D)",
-}

@@ -8,22 +8,22 @@ import {
   IconCodepen,
 } from "../components/icons"
 import { socialMedia } from "../config"
-import styled from "styled-components"
-import { theme, mixins, media } from "../styles"
+import styled from "@emotion/styled"
+import { theme, media } from "../styles"
 const { colors, fontSizes } = theme
 
 const FooterContainer = styled.footer`
-  ${mixins.flexCenter};
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   padding: 15px;
-  background-color: ${colors.white};
-  color: ${colors.dark};
   text-align: center;
   height: auto;
   min-height: 70px;
 `
 const SocialContainer = styled.div`
-  color: ${colors.white};
+  /* color: ${colors.white}; */
   width: 100%;
   max-width: 270px;
   margin: 0 auto 10px;
@@ -31,7 +31,9 @@ const SocialContainer = styled.div`
   ${media.tablet`display: block;`};
 `
 const SocialItemList = styled.ul`
-  ${mixins.flexBetween};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 const SocialLink = styled.a`
   padding: 10px;
@@ -39,7 +41,6 @@ const SocialLink = styled.a`
     fill: none;
     width: 20px;
     height: 20px;
-    stroke: ${colors.dark}
   }
 `
 const Copy = styled.div`
@@ -47,9 +48,7 @@ const Copy = styled.div`
   font-size: ${fontSizes.xsmall};
   line-height: 1;
 `
-const GithubLink = styled.a`
-  color: ${colors.dark};
-`
+const GithubLink = styled.a``
 
 const Footer = () => (
   <FooterContainer>

@@ -1,10 +1,10 @@
 import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import { theme, Section, media } from "../styles"
-const { fontSizes, colors } = theme
+const { fontSizes } = theme
 
 const Uses = () => {
   return (
@@ -61,14 +61,12 @@ export default Uses
 
 const Container = styled(Section)``
 
-
 const List = styled.ul`
   margin: 1em;
 `
 const ListItem = styled.li`
   margin: 1em;
   list-style: square;
-  color:${colors.dark};
 `
 
 const Title = styled.h2`
@@ -85,7 +83,6 @@ const Heading = styled.h1`
   margin: 10px 0 40px;
   width: 100%;
   white-space: nowrap;
-  color: ${colors.dark};
   font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
   span {

@@ -1,12 +1,8 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
-import Header from "./header"
-import "./layout.css"
-import Social from "../components/social"
-import Main from "../styles/Main"
-import GlobalStyle from "../styles/GlobalStyle"
-import styled from "styled-components"
-import Footer from "./footer"
+import { GlobalStyle, Main } from "../styles"
+import { Footer, Social, Header, ThemeColorToggle } from "../components"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -20,23 +16,14 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div>
+    <div sx={{ backgroundColor: "background" }}>
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
       <Social />
       <Main>{children}</Main>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
 
 export default Layout
-
-const Button = styled.button`
-  position: fixed;
-  right: 50px;
-  top: 5%;
-  z-index: 1000;
-  margin-right: 1em;
-  background-color: transparent;
-`

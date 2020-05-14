@@ -1,4 +1,5 @@
 const config = require("./src/config")
+
 module.exports = {
   siteMetadata: {
     title: config.title,
@@ -47,9 +48,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-plugin-styled-components`,
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: config.googleAnalyticsId,
@@ -60,14 +58,32 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
+          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-embedder`,
+            options: {
+              // eslint-disable-next-line global-require
+              customTransformers: [require("gatsby-embedder-excalidraw")],
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
             },
           },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-embedder`,
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+          },
+          {
+            resolve: `gatsby-remark-smartypants`,
+          },
         ],
       },
     },
@@ -80,5 +96,7 @@ module.exports = {
         showSpinner: false,
       },
     },
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-emotion`,
   ],
 }

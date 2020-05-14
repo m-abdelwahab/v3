@@ -1,24 +1,65 @@
-import React, { useState, useEffect } from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import styled from "styled-components"
-import SEO from "../components/seo"
-import Layout from "../components/layout"
+import styled from "@emotion/styled"
+import { SEO, Layout, Bio, Code } from "../components"
 import Fade from "react-reveal/Fade"
-import Bio from "../components/bio"
-import { theme, media } from "../styles"
-import ProgressBar from "../styles/progressBar"
-const { fontSizes, colors } = theme
+import { theme, media, ProgressBar } from "../styles"
+const { fontSizes } = theme
 
-const CallToAction = styled.div`
-  margin: 1em 0;
-  background-color: grey;
-  color: white;
-  padding: 1em;
-  a {
-    padding: 0.25em;
-    text-decoration: underline;
+const Container = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+
+  @media (max-width: 768px) {
+    display: block;
   }
+`
+const Toc = styled.ul`
+  width: 350px;
+  padding-left: 2rem;
+  display: none;
+  top: 100px;
+  position: sticky;
+  max-height: calc(100vh - 148px);
+  padding-bottom: 16px;
+  overflow: auto;
+  @media (min-width: 1025px) {
+    display: block;
+  }
+  li {
+    max-width: 250px;
+    line-height: 1.6;
+    margin-top: 10px;
+    a {
+      font-size: 15px;
+      color: ${props => theme.text};
+      opacity: 0.7;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        opacity: 1;
+        transition: opacity 0ms ease 0s;
+      }
+      &:active {
+        /* color: blue; */
+      }
+    }
+  }
+`
+const H2 = styled.h2`
+  color: ${props => theme.text};
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1em;
+`
+
+const InnerScroll = styled.div`
+  overflow: hidden;
+  overflow-y: scroll;
 `
 const Article = styled.article`
   margin: 5em auto;
@@ -28,13 +69,6 @@ const Title = styled.h1`
   font-size: 2em;
   font-weight: 900;
 `
-
-const Date = styled.h2`
-  font-weight: 350;
-`
-const TimeToRead = styled.p`
-  font-size: 1em;
-`
 const Heading = styled.h3`
   position: relative;
   display: flex;
@@ -42,119 +76,89 @@ const Heading = styled.h3`
   margin: 10px 0 40px;
   width: 100%;
   white-space: nowrap;
-  color: ${colors.dark};
   font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
 `
 
-const BlogPost = props => {
-  const post = props.data.mdx
-  const { previous, next } = props.pageContext
-  const listenToScrollEvent = () => {
-    document.addEventListener("scroll", () => {
-      requestAnimationFrame(() => {
-        // Calculates the scroll distance
-        calculateScrollDistance()
-      })
-    })
-  }
-  const calculateScrollDistance = () => {
-    const scrollTop = window.pageYOffset
-    const windowHeight = window.innerHeight
-    const docHeight = getDocHeight()
-    const totalDocScrollLength = docHeight - windowHeight
-    const scrollPostion = Math.floor((scrollTop / totalDocScrollLength) * 100)
-    setProgress(scrollPostion)
-  }
-
-  const getDocHeight = () => {
-    return Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight,
-      document.body.clientHeight,
-      document.documentElement.clientHeight
-    )
-  }
-  const [progress, setProgress] = useState(0)
-
-  useEffect(() => listenToScrollEvent(), [])
+const BlogPost = ({ data, pageContext, excerpt }) => {
+  const { previous, next } = pageContext
+  const { body, frontmatter, tableOfContents } = data.mdx
+  const { title, description } = frontmatter
 
   return (
     <>
-      <ProgressBar scroll={progress + "%"} />
+      <ProgressBar />
       <Layout>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
+        <SEO title={title} description={description || excerpt} />
         <Fade>
-          <Article>
-            <Link to="/blog">
-              <Heading>Blog</Heading>
-            </Link>
-            <CallToAction>
-              More blog posts can be found on{" "}
-              <a
-                href="https://medium.com./@thisismahmoud"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Medium.com{" "}
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://dev.to/thisismahmoud"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Dev.to
-              </a>
-            </CallToAction>
-            <header>
-              <Title>{post.frontmatter.title}</Title>
-              <Date>
-                <span role="img" aria-label="date">
-                  🗓
-                </span>
-                {post.frontmatter.date}
-              </Date>
-              <TimeToRead>
-                <span role="img" aria-label="time"></span>🕑 {post.timeToRead}{" "}
-                min read
-              </TimeToRead>
-            </header>
-            <MDXRenderer>{post.body}</MDXRenderer>
-            <hr />
-            <Bio />
-            <nav>
-              <ul
-                style={{
-                  display: `flex`,
-                  flexWrap: `wrap`,
-                  justifyContent: `space-between`,
-                  listStyle: `none`,
-                  padding: 0,
+          <Container>
+            {typeof tableOfContents.items === "undefined" ? null : (
+              <Toc>
+                <InnerScroll>
+                  <H2>Table of contents</H2>
+                  {tableOfContents.items.map((heading, i) => (
+                    <div key={i}>
+                      <li key={heading.url} sx={{ scrollMarginTop: "128px" }}>
+                        <a href={heading.url} key={heading.url}>
+                          {heading.title}
+                        </a>
+                      </li>
+                      {heading.items?.map(subheading => (
+                        <li key={subheading.url} sx={{ px: 3 }}>
+                          <a href={subheading.url} key={subheading.url}>
+                            {subheading.title}
+                          </a>
+                        </li>
+                      ))}
+                    </div>
+                  ))}
+                </InnerScroll>
+              </Toc>
+            )}
+            <Article>
+              <Link to="/blog">
+                <Heading>Blog</Heading>
+              </Link>
+              <header>
+                <Title>{title}</Title>
+              </header>
+
+              <MDXRenderer
+                components={{
+                  pre: Code,
                 }}
               >
-                <li>
-                  {previous && (
-                    <Link to={previous.fields.slug} rel="prev">
-                      ← {previous.frontmatter.title}
-                    </Link>
-                  )}
-                </li>
-                <li>
-                  {next && (
-                    <Link to={next.fields.slug} rel="next">
-                      {next.frontmatter.title} →
-                    </Link>
-                  )}
-                </li>
-              </ul>
-            </nav>
-          </Article>
+                {body}
+              </MDXRenderer>
+              <Bio />
+              <nav>
+                <ul
+                  style={{
+                    display: `flex`,
+                    flexWrap: `wrap`,
+                    justifyContent: `space-between`,
+                    listStyle: `none`,
+                    padding: 0,
+                  }}
+                >
+                  <li>
+                    {previous && (
+                      <Link to={previous.fields.slug} rel="prev">
+                        ← {previous.frontmatter.title}
+                      </Link>
+                    )}
+                  </li>
+                  <li>
+                    {next && (
+                      <Link to={next.fields.slug} rel="next">
+                        {next.frontmatter.title} →
+                      </Link>
+                    )}
+                  </li>
+                </ul>
+              </nav>
+            </Article>
+          </Container>
         </Fade>
       </Layout>
     </>
@@ -172,9 +176,8 @@ export const pageQuery = graphql`
     }
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
       body
-      timeToRead
+      tableOfContents
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

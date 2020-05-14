@@ -33,7 +33,12 @@ import IconReactTestingLib from "./reactTestingLibrary"
 import IconPreview from "./preview"
 import IconMoon from "./moon"
 import IconSun from "./sun"
+import IconMute from "./mute"
+import IconSoundOn from "./soundOn"
+
 export {
+  IconSoundOn,
+  IconMute,
   IconMoon,
   IconSun,
   IconPreview,

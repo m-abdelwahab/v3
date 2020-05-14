@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
 import { socialMedia } from "../config"
 import { FormattedIcon } from "../components/icons"
-import styled from "styled-components"
-import { theme, media } from "../styles"
+import styled from "@emotion/styled"
+import { media } from "../styles"
 import "react-tippy/dist/tippy.css"
-const { colors } = theme
+// const { colors } = theme
 
 const SocialContainer = styled.div`
   width: 40px;
@@ -35,9 +35,7 @@ const SocialLink = styled.a`
     fill: none;
     width: 18px;
     height: 18px;
-    &:hover {
-      stroke: ${colors.blue};
-    }
+    stroke: currentColor;
   }
 `
 

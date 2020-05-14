@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "@emotion/styled"
 import media from './media';
 
 const Section = styled.section`

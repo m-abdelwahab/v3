@@ -1,17 +1,19 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+import { useColorMode } from "theme-ui"
+import { ThemeColorToggle } from "../components"
 import React from "react"
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import { theme, mixins } from "../styles"
-
 import usePopup from "../hooks/usePopup"
 import IconLogo from "./icons/logo"
-const { colors } = theme
+import theme from "../gatsby-plugin-theme-ui"
 
 const links = [
-  { url: "/#featured-projects", name: "Projects" },
-  { url: "/about", name: "About" },
   { url: "/blog", name: "Blog" },
   { url: "/talks", name: "Talks" },
+  { url: "/#about", name: "About" },
+  { url: "/#featured-projects", name: "Projects" },
 ]
 
 export default React.memo(() => {
@@ -24,6 +26,13 @@ export default React.memo(() => {
     getItemProps,
   } = usePopup()
 
+  const [colorMode, setColorMode] = useColorMode()
+  const isDark = colorMode === `dark`
+  const toggleColorMode = e => {
+    e.preventDefault()
+    setColorMode(isDark ? `light` : `dark`)
+  }
+
   return (
     <Header>
       <Logo>
@@ -31,15 +40,31 @@ export default React.memo(() => {
           <IconLogo />
         </LogoLink>
       </Logo>
+      <ThemeColorToggle isDark={isDark} toggle={toggleColorMode} />
       <nav>
         <ul>
           <li className="menu" {...getContainerProps()}>
             <MenuButton isMenuOpen={isOpen} {...getTogglerProps()}>
-              <h1 className="hamburger">
-                <span className="text">Menu</span>
+              <h1
+                className="hamburger"
+                sx={{
+                  "&:before": {
+                    backgroundColor: "text",
+                  },
+                  "&:after": { backgroundColor: "text" },
+                }}
+              >
+                <span sx={{ backgroundColor: "text" }}>Menu</span>
               </h1>
             </MenuButton>
-            <MenuBody {...getMenuProps()}>
+            <MenuBody
+              {...getMenuProps()}
+              sx={{
+                backgroundColor: "background",
+                boxShadow:
+                  "0 13px 27px -5px rgba(50,50,93,.22), 0 8px 16px -8px rgba(0,0,0,.2)",
+              }}
+            >
               <ul>
                 {links
                   ? links.map(link => (
@@ -49,6 +74,10 @@ export default React.memo(() => {
                           {...getItemProps({
                             onClick: e => setOpen(prevOpen => !prevOpen),
                           })}
+                          sx={{
+                            "&::after": { backgroundColor: "background" },
+                            "&::before": { backgroundColor: "highlight" },
+                          }}
                         >
                           {link.name}
                         </MenuLink>
@@ -80,24 +109,20 @@ const Header = styled.header`
   }
 `
 const Logo = styled.div`
-  ${mixins.flexCenter};
   padding: 0 2%;
 `
 const LogoLink = styled.a`
   display: block;
-  color: ${colors.white};
   width: 42px;
   height: 42px;
   margin: 10px;
   &:hover,
   &:focus {
     svg {
-      fill: ${colors.dark};
     }
   }
   svg {
     fill: none;
-    transition: ${theme.transition};
     user-select: none;
   }
 `
@@ -108,7 +133,7 @@ const MenuButton = styled.button`
   padding: 1.875rem 2.1875rem;
   outline: none;
   cursor: pointer;
-  transition: opacity 0.25s var(--cubic);
+  transition: opacity 0.25s cubic-bezier(0.42, 0, 0.59, 1.1);
   z-index: 999;
 
   .hamburger {
@@ -118,42 +143,16 @@ const MenuButton = styled.button`
     top: 1.75rem;
     width: 1.4375rem;
 
-    > .text {
+    span {
       position: absolute;
       right: 0;
       height: 3px;
       width: 100%;
       font-size: 0;
-      background: var(--black);
       opacity: ${props => (props.isMenuOpen ? 0 : 1)};
       transform: scaleX(1);
       transform-origin: 100%;
       transition-property: transform, opacity;
-      transition: 0.15s ease;
-    }
-
-    > .escape {
-      position: absolute;
-      top: 50%;
-      right: 35px;
-      width: max-content;
-      font-size: var(--fontxs);
-      opacity: 0;
-      transform: translateY(-50%) translateX(30px);
-    }
-
-    @media (min-width: 768px) {
-      > .escape {
-        transform: ${props =>
-          props.isMenuOpen
-            ? "translateY(-50%) translateX(0px)"
-            : "translateY(-50%) translateX(30px)"};
-        transition: 0.15s var(--cubic);
-        transition-delay: ${props => (props.isMenuOpen ? ".3s" : "none")};
-        color: var(--gray2);
-        opacity: ${props => (props.isMenuOpen ? 1 : 0)};
-        font-weight: var(--fontregular);
-      }
     }
 
     &::before,
@@ -163,7 +162,6 @@ const MenuButton = styled.button`
       left: 0;
       height: 3px;
       width: 100%;
-      background: #000000;
       transition-property: transform, opacity;
       transition: transform 0.25s ease;
       transform-origin: ${props => (props.isMenuOpen ? "50%" : "100%")};
@@ -207,16 +205,14 @@ const MenuButton = styled.button`
 `
 
 const MenuBody = styled.ul`
-  background: var(--white);
-  border: 1px solid var(--gray);
+  border: 1px solid #f6fafd;
   position: absolute;
   right: 30px;
   width: 300px;
   border-radius: var(--baseborderradius);
-  box-shadow: var(--boxshadow2);
   opacity: ${props => (props.isOpen ? 1 : 0)};
   transform: ${props => (props.isOpen ? "scale(1)" : "scale(.5)")};
-  transition: transform 0.25s var(--cubic);
+  transition: transform 0.25s cubic-bezier(0.42, 0, 0.59, 1.1);
   transition-property: transform, opacity;
   transform-origin: 100% 0;
   pointer-events: ${props => (props.isOpen ? "initial" : "none")};
@@ -234,8 +230,8 @@ const MenuLink = styled(Link)`
   position: relative;
   display: block;
   padding: var(--baseborderpadding);
-  border-top: 2px solid var(--gray);
-  color: var(--black);
+  border-top: 2px solid #f6fafd;
+  /* color: #000; */
   outline: none;
   font-weight: var(--fontbold);
 
@@ -250,14 +246,14 @@ const MenuLink = styled(Link)`
     z-index: -1;
   }
   &::before {
-    background: var(--gray);
+    background: #f6fafd;
   }
 
   &::after {
-    background: var(--white);
+    background: #fff;
     transform: scaleX(1);
     transform-origin: 100%;
-    transition: transform 0.22s var(--cubic);
+    transition: transform 0.22s cubic-bezier(0.42, 0, 0.59, 1.1);
   }
 
   &:hover,

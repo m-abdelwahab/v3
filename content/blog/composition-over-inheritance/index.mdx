@@ -1,11 +1,9 @@
 ---
 title: Composition Over Inheritance
 date: "2019-05-12"
-tag: "Web Development"
-description: ""
+categories: ["Programming"]
+description: "A comparaison between Object-oriented programming and Functional programming"
 ---
-
-# Composition Over Inheritance
 
 _Object-Oriented Programming (OOP)_ is one of the most popular paradigms when it comes to building software, however, the more I learned about JavaScript, I got introduced to _Functional Programming (FP)_, a completely different way of thinking. In this article, I'll share with you what I've learned and I'll explain to you using my own examples.
 
@@ -13,24 +11,20 @@ Example: You want to build a game, where the main character is a student in Hogw
 So you create a _Student_ Class where your student object will be able to take tests, and you have another class called _Teacher_, where the teacher object will be able to grade Tests.
 
 ```js
-Student
-  .takeTest()
+Student.takeTest()
 
-Teacher
-  .gradeTest()
+Teacher.gradeTest()
 ```
 
 Assuming you want to add some features like eating, sleeping and walking, you'll end up with something that looks like this
 
 ```js
-Student
-  .takeTest()
+Student.takeTest()
   .sleep()
   .eat()
   .walk()
 
-Teacher
-  .gradeTest()
+Teacher.gradeTest()
   .sleep()
   .eat()
   .walk()
@@ -39,57 +33,41 @@ Teacher
 The problem is that the code above doesn't follow the DRY principle, which stands for ( Don't Repeat Yourself), so the solution is to create a _parent_ class where we put the sleep, eat and walk features. So we end up with something like this:
 
 ```js
-Human
-  .sleep()
+Human.sleep()
   .eat()
   .walk()
 
-    Student
-     .takeTest()
+Student.takeTest()
 
-    Teacher
-     .takeTest()
-
+Teacher.takeTest()
 ```
 
 Yaaay problem solved! everyone's happy. However, a few months later, to make your game even more exciting, you decide to add another character to your game, let's say you want to add a dragon. This is what you end up with:
 SO you end up with something like this:
 
 ```js
-EvilDragon
- .breathFire()
- .fly()
-Human
-  .sleep()
+EvilDragon.breathFire().fly()
+Human.sleep()
   .eat()
   .walk()
 
-    Student
-     .takeTest()
+Student.takeTest()
 
-    Teacher
-     .takeTest()
+Teacher.takeTest()
 ```
 
 While this is great, you're not satisfied, so you decide to make the game more realistic by giving your dragon abilities like humans, you want your dragon to be able to sleep and eat, so you end up with something like this:
 
 ```js
-GameObject
-  .sleep()
-  .eat()
+GameObject.sleep().eat()
 
-    EvilDragon
-     .breathFire()
-     .fly()
+EvilDragon.breathFire().fly()
 
-    Human
-     .walk()
+Human.walk()
 
-        Student
-        .takeTest()
+Student.takeTest()
 
-        Teacher
-        .takeTest()
+Teacher.takeTest()
 ```
 
 Now, this is working completely fine, but assuming that in your game, the teacher, after careful study of witchcraft, was able to create a cape that allowed him to fly.
@@ -106,17 +84,17 @@ By favoring composition over inheritance and thinking in terms of what things _d
 Here's a snippet of what our code might look like in our game when we think in terms of objects:
 
 ```js
-class Teacher{
-    constructor(name){
-        this.name = name;
-    }
-    sleep(){
-        setTimeout(console.log('Damn, that was a great nap'),8000);
-    }
+class Teacher {
+  constructor(name) {
+    this.name = name
+  }
+  sleep() {
+    setTimeout(console.log("Damn, that was a great nap"), 8000)
+  }
 }
 
-const teacher = new Teacher(Dumbledore);
-teacher.sleep();
+const teacher = new Teacher(Dumbledore)
+teacher.sleep()
 //outputs 'Damn, that was a great nap' after 8 seconds
 ```
 
@@ -127,12 +105,9 @@ When we write our project using a functional approach we end up with a collectio
 //factory functions are functions that create objects
 //we will use
 const sleep = () => {
-     return setTimeout(console.log('Damn, that was a great nap'),8000);
+  return setTimeout(console.log("Damn, that was a great nap"), 8000)
 }
-Object.assign(
-
-)
-
+Object.assign()
 ```
 
 Which one wins? well normally you would use inheritance when there is a _relation_ between objects, like me, Mahmoud, I'm a human, so I will inherit all of the things that a human has. On the other hand, you would use composition for example when an object _has_ a certain feature, like for example a car will have an engine component.

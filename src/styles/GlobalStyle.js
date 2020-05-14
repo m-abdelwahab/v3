@@ -1,183 +1,337 @@
-import { createGlobalStyle } from "styled-components"
 import theme from "./theme"
 import media from "./media"
+
+import React from "react"
+import { Global, css } from "@emotion/core"
 const { colors, fontSizes } = theme
 
-const GlobalStyle = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css?family=Muli:400,700,900&display=swap");
-
-  html {
-    box-sizing: border-box;
-    width: 100%;
-  }
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-
-  body {
-    margin: 0;
-    width: 100%;
-    min-height: 100%;
-    overflow-x: hidden;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    
-    
-    background-color: ${colors.white};
-    color: ${colors.darkGrey}; 
-
-    line-height: 1.3;
-  font-family: "Muli", sans-serif;
-    font-size: ${fontSizes.xlarge};
-    ${media.phablet`font-size: ${fontSizes.large};`}
-
-    transition: all 0.25s linear;
+export const GlobalStyle = () => (
+  <Global
+    styles={css`
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');        
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        @media screen and (prefers-reduced-motion: no-preference) {
+          html,
+          body {
+            scroll-behavior: smooth;
+          }
+        }
 
 
-    &.hidden {
-      overflow: hidden;
-    }
-    &.blur {
-      overflow: hidden;
-      #root > .container > * {
-        filter: blur(5px) brightness(0.7);
-        transition: ${theme.transition};
-        pointer-events: none;
-        user-select: none;
-      }
-    }
-  }
+        body {
+          margin: 0;
+          width: 100%;
+          min-height: 100%;
+          overflow-x: hidden;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
 
-  ::selection {
-    background-color: ${colors.highlight};
-  }
+          line-height: 1.3;
+          font-family: 'Open Sans', sans-serif;         
+           font-size: ${fontSizes.large};
+          ${media.phablet`font-size: ${fontSizes.large};`}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-weight: 600;
-    color: ${colors.dark};
-    margin: 0 0 10px 0;
-  }
+          &.hidden {
+            overflow: hidden;
+          }
+          &.blur {
+            overflow: hidden;
+          }
+        }
 
-  #root {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    grid-template-columns: 100%;
-  }
+        img {
+          width: 100%;
+          max-width: 100%;
+          vertical-align: middle;
+        }
+
+        svg {
+          width: 100%;
+          height: 100%;
+          vertical-align: middle;
+          &:hover,
+          &:focus {
+            outline: 0;
+          }
+        }
+
+        a {
+          display: inline-block;
+          text-decoration: none;
+          text-decoration-skip-ink: auto;
+          color: inherit;
+          position: relative;
+          cursor: pointer;
+
+          &:hover,
+          &:focus {
+            /* color: ${theme.colors.highlight}; */
+            opacity:0.7;
+            outline: 0;
+          }
+        }
+
+        button {
+          cursor: pointer;
+          border: 0;
+          border-radius: 0;
+
+          &:focus,
+          &:active {
+            /* outline-color: ${colors.blue}; */
+          }
+        }
+
+        p {
+          margin: 0 0 15px 0;
+        }
+
+        ul,
+        ol {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        }
+
+        .gatsby-image-outer-wrapper {
+          height: 100%;
+        }
+
+        .fadeup-enter {
+          opacity: 0.01;
+          transform: translateY(20px);
+          transition: opacity 300ms ${theme.easing},
+            transform 300ms ${theme.easing};
+        }
+
+        .fadeup-enter-active {
+          opacity: 1;
+          transform: translateY(0px);
+          transition: opacity 300ms ${theme.easing},
+            transform 300ms ${theme.easing};
+        }
+
+        .fadedown-enter {
+          opacity: 0.01;
+          transform: translateY(-20px);
+          transition: opacity 300ms ${theme.easing},
+            transform 300ms ${theme.easing};
+        }
+
+        .fadedown-enter-active {
+          opacity: 1;
+          transform: translateY(0px);
+          transition: opacity 300ms ${theme.easing},
+            transform 300ms ${theme.easing};
+        }
+
+        .fade-enter {
+          opacity: 0.01;
+          transition: opacity 1000ms ${theme.easing};
+        }
+
+        .fade-enter-active {
+          opacity: 1;
+          transition: opacity 1000ms ${theme.easing};
+        }
+        .prism-code {
+          font-size: 1rem;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          padding-right: 1rem;
+          -webkit-overflow-scrolling: touch;
+          background-color: transparent;
+          overflow-x: auto;
+        }
+
+        .token {
+          display: inline-block;
+        }
+
+        p > code,
+        li > code {
+          background: rgb(1, 22, 39);
+          color: rgb(214, 222, 235);
+          padding: 0.4em 0.3rem;
+        }
+
+        .gatsby-highlight {
+          position: relative;
+          -webkit-overflow-scrolling: touch;
+        }
+        .gatsby-highlight pre[class*="language-"] {
+          -webkit-overflow-scrolling: touch;
+        }
+        .gatsby-highlight pre[class*="language-"]::before {
+          background: black;
+          border-radius: 0 0 0.25rem 0.25rem;
+          color: white;
+          font-size: 12px;
+          letter-spacing: 0.025rem;
+          padding: 0.1rem 0.5rem;
+          position: absolute;
+          right: 1rem;
+          text-align: right;
+          text-transform: uppercase;
+          top: 0;
+        }
+
+        .gatsby-highlight pre[class~="language-javascript"]::before {
+          content: "JS";
+          background: #f7df1e;
+          color: black;
+        }
+        .gatsby-highlight pre[class~="language-ts"]::before {
+          content: "TS";
+          background: #f7df1e;
+          color: black;
+        }
+
+        .gatsby-highlight pre[class~="language-js"]::before {
+          content: "JS";
+          background: #f7df1e;
+          color: black;
+        }
+
+        .gatsby-highlight pre[class~="language-html"]::before {
+          content: "HTML";
+          background: #005a9c;
+          color: white;
+        }
+
+        .gatsby-highlight pre[class~="language-JSX"]::before {
+          content: "CSS";
+          background: #696969;
+          color: white;
+        }
+        .gatsby-highlight pre[class~="language-css"]::before {
+          content: "css";
+          background: #ff9800;
+          color: white;
+        }
+
+        .highlight-line {
+          background-color: rgb(2, 55, 81);
+          border-left: 4px solid rgb(2, 155, 206);
+          width: 100%;
+        }
+
+        .highlight-line .line-number-style {
+          opacity: 0.5;
+          left: -2px;
+        }
+
+        .line-number-style {
+          width: calc(1.2em - 4px);
+          display: inline-block;
+          padding-left: 1em;
+          padding-right: 1em;
+          margin-right: 10px;
+          width: 1.2em;
+          user-select: none;
+          opacity: 0.3;
+          text-align: center;
+          position: relative;
+        }
+
+/* @font-face {
+  font-family: 'NBInternational';
+  font-display: auto;
+  src: url('/assets/fonts/NBInternational_Regular.ttf');
+  font-weight: 100 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NBInternational';
+  font-display: auto;
+  src: url('/assets/fonts/NBInternational_Bold.ttf');
+  font-weight: 600 900;
+  font-style: normal;
+} */
+
+/* @font-face {
+  font-family: 'DomaineDisplayNarrow';
+  font-display: auto;
+  src: url('/assets/fonts/DomaineDisplayNarrow-Semibold.otf');
+  font-weight: 100 900;
+  font-style: normal;
+} */
+ 
+
+:root {
+  --ff-serif: "DomaineDisplayNarrow", "Georgia", "Times", "Times New Roman";
+  --ff-sanserif: "NBInternational", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fontbold: 800;
+  --fontregular: 400;
+
+  --fontxs: .75rem;
+  --fontsm: .85rem;
+  --fontmd: 1rem;
+  --fontidk: 1.25rem;
+  --fontlg: 3rem;
+  --fontxl: 4.5rem;
+  --baselineheight: 1.5rem;
 
 
-  img {
-    width: 100%;
-    max-width: 100%;
-    vertical-align: middle;
-  }
+  --baseborderpadding: 25px;
+  --baseborderradius: 2px;
 
-  svg {
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
-    vertical-align: middle;
-  }
+  --baseboxshadow: 0 1px 3px rgba(188, 193, 217, .12), 0 5px 12px rgba(188, 193, 217, .25);
+  --boxshadow2: 0 13px 27px -5px rgba(50,50,93,.22), 0 8px 16px -8px rgba(0,0,0,.2);
+  
+  --cubic: cubic-bezier(0.42, 0, 0.59, 1.1);
+  --cubic2: cubic-bezier(0.65,-0.22, 0.43, 0.72);
 
-  a {
-    display: inline-block;
-    text-decoration: none;
-    text-decoration-skip-ink: auto;
-    color: inherit;
-    position: relative;
-    transition: ${theme.transition};
-    cursor: pointer;
+}
 
-    &:hover,
-    &:focus {
-      color: ${colors.blue};
-      outline: 0;
-    }
-  }
 
-  button {
-    cursor: pointer;
-    border: 0;
-    border-radius: 0;
 
-    &:focus,
-    &:active {
-      outline-color: ${colors.blue};
-    }
-  }
+.hidden {
+  opacity: 0;
+  display: none;
+}
 
-  input, textarea {
-    border-radius: 0;
-    outline: 0;
+.wizard {
+  position: absolute;
+  width: 100%;
+  transition-property: opacity, transform;
+}
 
-    &:focus {
-      outline: 0;
-    }
-    &::placeholder {
-    }
-    &:focus,
-    &:active {
-      &::placeholder {
-        opacity: 0.5;
-      }
-    }
-  }
+.wizard-horizontal-left-enter-active,
+.wizard-horizontal-right-enter-active
+{
+  opacity: 0;
+}
+.wizard-horizontal-left-enter-active {
+  transform: translateX(100px);
+}
+.wizard-horizontal-right-enter-active {
+  transform: translateX(-100px);
+}
 
-  p {
-    margin: 0 0 15px 0;
-  }
+.wizard-horizontal-left-exit-active {
+  transform: translateX(-100px);
+}
+.wizard-horizontal-right-exit-active {
+  transform: translateX(100px);
+}
 
-  ul, ol {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
+.wizard-horizontal-right-exit-done {
+  transform: translateX(-100px);
+}
+.wizard-horizontal-left-exit-done {
+  transform: translateX(100px);
+}
 
-  .gatsby-image-outer-wrapper {
-    height: 100%;
-  }
 
-  .fadeup-enter {
-    opacity: 0.01;
-    transform: translateY(20px);
-    transition: opacity 300ms ${theme.easing}, transform 300ms ${theme.easing};
-  }
 
-  .fadeup-enter-active {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: opacity 300ms ${theme.easing}, transform 300ms ${theme.easing};
-  }
-
-  .fadedown-enter {
-    opacity: 0.01;
-    transform: translateY(-20px);
-    transition: opacity 300ms ${theme.easing}, transform 300ms ${theme.easing};
-  }
-
-  .fadedown-enter-active {
-    opacity: 1;
-    transform: translateY(0px);
-    transition: opacity 300ms ${theme.easing}, transform 300ms ${theme.easing};
-  }
-
-  .fade-enter {
-    opacity: 0.01;
-    transition: opacity 1000ms ${theme.easing};
-  }
-
-  .fade-enter-active {
-    opacity: 1;
-    transition: opacity 1000ms ${theme.easing};
-  }
-
-`
+      `}
+  />
+)
 
 export default GlobalStyle

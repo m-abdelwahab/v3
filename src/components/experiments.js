@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import { theme, media } from "../styles"
 import Fade from "react-reveal/Fade"
 import Img from "gatsby-image"

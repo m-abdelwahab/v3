@@ -1,11 +1,13 @@
+// @jsx jsx
+import { jsx } from "theme-ui"
 import React, { useState, useEffect } from "react"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
-import styled from "styled-components"
-import { theme, mixins, media, Section } from "../styles"
+import styled from "@emotion/styled"
+import { theme, media, Section } from "../styles"
 import TextLoop from "react-text-loop"
 import Coding from "../images/coding.svg"
 
-const { colors } = theme
+const { colors, fontSizes } = theme
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false)
@@ -28,20 +30,36 @@ const Hero = () => {
   )
 
   const two = () => (
-    <Name style={{ transitionDelay: "300ms" }}>
+    // add property because it breaks for dark mode
+    <Name
+      style={{
+        transitionDelay: "300ms",
+        transitionProperty: "opacity, transform",
+      }}
+    >
       Mahmoud <br /> Abdelwahab.
     </Name>
   )
   const three = () => <Subtitle style={{ transitionDelay: "400ms" }}></Subtitle>
   const four = () => (
-    <Blurb style={{ transitionDelay: "500ms" }}>
+    <Blurb
+      style={{
+        transitionDelay: "500ms",
+        transitionProperty: "opacity, transform",
+      }}
+    >
       Creative <span>Front-end Engineer</span> obsessed with designing and
       building exceptional, high-quality, performant websites and applications.
     </Blurb>
   )
   const five = () => (
     <div style={{ transitionDelay: "600ms" }}>
-      <ResumeButton href={`/resume.pdf`}>Resume</ResumeButton>
+      <ResumeButton
+        sx={{ backgroundColor: "text", color: "background" }}
+        href={`/resume.pdf`}
+      >
+        Resume
+      </ResumeButton>
     </div>
   )
 
@@ -80,7 +98,9 @@ const Hero = () => {
 export default Hero
 
 const HeroContainer = styled(Section)`
-  ${mixins.flexCenter};
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   min-height: 100vh;
   ${media.desktop`padding-top: 150px;`};
@@ -97,7 +117,6 @@ const Container = styled.div`
 `
 
 const Hi = styled.h1`
-  color: ${colors.dark};
   margin: 0 0 20px 3px;
   font-weight: normal;
 
@@ -106,7 +125,6 @@ const Hi = styled.h1`
   }
 `
 const Name = styled.h2`
-  color: ${colors.dark};
   font-size: 70px;
   line-height: 1.1;
   margin: 0;
@@ -131,14 +149,27 @@ const Blurb = styled.div`
   font-size: 1.2em;
   span {
     font-size: 1em;
-    font-weight:700;
-    color: ${colors.dark};
-
-
+    font-weight: 700;
   }
 `
 const ResumeButton = styled.a`
-  ${mixins.bigButton};
+  border: 1px solid ${colors.dark};
+  border-radius: ${theme.borderRadius};
+  padding: 1.25rem 1.75rem;
+  font-size: ${fontSizes.medium};
+  line-height: 1;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: ${colors.white};
+    color: ${colors.dark};
+  }
+  &:after {
+    display: none !important;
+  }
   margin-top: 50px;
 `
 

@@ -1,14 +1,60 @@
-import React from "react"
+// @jsx jsx
+import { jsx } from "theme-ui"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
-import styled from "styled-components"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import styled from "@emotion/styled"
+import { SEO, Layout } from "../components"
 import { theme, Section, media } from "../styles"
 import Fade from "react-reveal/Fade"
 const { fontSizes, colors } = theme
 
 const Blog = ({ data }) => {
-  const posts = data.allMdx.edges
+  const allPosts = data.allMdx.edges
+  const allCategories = data.allMdx.edges.map(category =>
+    category.node.frontmatter.categories.map(item => item)
+  )
+  const categories = [...new Set(allCategories.flat(Infinity))]
+
+  console.log(categories)
+  const emptyQuery = ""
+
+  const [state, setState] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+
+  const handleInputChange = event => {
+    const query = event.target.value
+    // this is how we get all of our posts
+    const posts = data.allMdx.edges || []
+    // return all filtered posts
+    const filteredData = posts.filter(post => {
+      // destructure data from post frontmatter
+      const { description, title, categories } = post.node.frontmatter
+      return (
+        // standardize data with .toLowerCase()
+        // return true if the description, title or categories
+        // contains the query string
+        description.toLowerCase().includes(query.toLowerCase()) ||
+        title.toLowerCase().includes(query.toLowerCase()) ||
+        (categories &&
+          categories
+            .join("") // convert categories from an array to string
+            .toLowerCase()
+            .includes(query.toLowerCase()))
+      )
+    })
+    // update state according to the latest query and results
+    setState({
+      query, // with current query string from the `Input` event
+      filteredData, // with filtered data from posts.filter(post => (//filteredData)) above
+    })
+  }
+
+  const { filteredData, query } = state
+  const hasSearchResults = filteredData && query !== emptyQuery
+  const posts = hasSearchResults ? filteredData : allPosts
+
   return (
     <div>
       <Layout>
@@ -20,37 +66,74 @@ const Blog = ({ data }) => {
             </Link>
             /Blog
           </Heading>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "baseline",
+              justifyContent: "center",
+            }}
+          >
+            <SearchBar
+              type="text"
+              aria-label="Search"
+              placeholder="Type to filter posts..."
+              onChange={handleInputChange}
+            />
+            <PostsCount>{posts.length}</PostsCount>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            {categories.map((category, i) => (
+              <Link
+                key={i}
+                sx={{
+                  backgroundColor: "highlight",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "10px",
+                  margin: "1rem",
+                }}
+                to={`/category/${category}`}
+              >
+                {category}
+              </Link>
+            ))}
+          </div>
           <Grid>
             {posts.map(({ node }, i) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <Fade delay={i * 200}>
-                  <Link to={node.fields.slug}>
-                    <Card key={node.fields.slug}>
-                      <Category>{node.frontmatter.tag}</Category>
-                      <Title>{title}</Title>
-                      <Description>
-                        <p
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              node.frontmatter.description || node.excerpt,
-                          }}
-                        />
-                      </Description>
-                      <Info>
-                        <p>
-                          {" "}
-                          <span role="img" aria-label="clock">
-                            🕑
+                <Fade key={i} delay={i * 200}>
+                  <Card key={node.fields.slug}>
+                    <Category>
+                      {node.frontmatter.categories.map((category, i) => {
+                        return (
+                          <span key={i}>
+                            <Link to={`/category/${category}`}>{category}</Link>
                           </span>
-                          {node.timeToRead} min read{" "}
-                        </p>
-                        <span role="img" aria-label="date">
-                          🗓{node.frontmatter.date}
+                        )
+                      })}
+                    </Category>
+                    <Link to={node.fields.slug}>
+                      <Title>{title}</Title>
+                    </Link>
+                    <Description
+                      dangerouslySetInnerHTML={{
+                        __html: node.frontmatter.description || node.excerpt,
+                      }}
+                    />
+                    <Info>
+                      <p>
+                        <span role="img" aria-label="clock">
+                          🕑
                         </span>
-                      </Info>
-                    </Card>
-                  </Link>
+                        {node.timeToRead} min read{" "}
+                      </p>
+                    </Info>
+                  </Card>
                 </Fade>
               )
             })}
@@ -70,7 +153,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx {
       edges {
         node {
           timeToRead
@@ -79,10 +162,9 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
             description
-            tag
+            categories
           }
         }
       }
@@ -100,7 +182,6 @@ const Container = styled(Section)``
 const Card = styled.div`
   padding: 1.5em;
   border-radius: 10px;
-  border: 0.5px dashed black;
   margin: 1em auto;
   max-width: 500px;
   display: flex;
@@ -110,17 +191,18 @@ const Card = styled.div`
   &:hover {
     box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.1);
     transition: all 150ms ease-in-out;
-    cursor: pointer;
   }
 `
-const Category = styled.h6`
+const Category = styled.h4`
   font-weight: 600;
-  color: ${colors.grey};
-  margin-bottom: 0.5em;
+  /* color: ${colors.grey}; */
+  margin:1rem 0;
+  span{
+    margin-right:0.5rem;
+  }
 `
 const Title = styled.h3`
   margin: 0;
-  color: black;
   font-size: 1.5em;
 `
 const Info = styled.div`
@@ -130,7 +212,6 @@ const Info = styled.div`
   }
   span {
     margin: 0;
-    color: black;
   }
 `
 const Description = styled.p`
@@ -139,7 +220,6 @@ const Description = styled.p`
   p:last-of-type {
     margin: 0;
   }
-  color: black;
 `
 
 const Heading = styled.h3`
@@ -149,13 +229,31 @@ const Heading = styled.h3`
   margin: 10px 0 40px;
   width: 100%;
   white-space: nowrap;
-  color: ${colors.dark};
   font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
   span {
     font-size: ${fontSizes.h3};
     ${media.tablet`font-size: 24px;`};
-
   }
-  
+`
+const SearchBar = styled.input`
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  margin: 1rem;
+  border-radius: 5px;
+  max-width: 400px;
+  width: 100%;
+  height: 3rem;
+  font-size: 1.2rem;
+`
+const PostsCount = styled.div`
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  text-align: center;
+  line-height: 1rem;
+  background: #fff;
+  border: 2px solid #666;
+  color: #666;
 `

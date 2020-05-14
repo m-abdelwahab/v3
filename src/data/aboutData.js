@@ -1,17 +1,40 @@
-import robustaLogo from "../images/robusta-logo.svg"
-import gucLogo from "../images/guc-logo.svg"
-import vgs from "../images/vgs.png"
+import RobustaLogo from "../images/robusta-logo.svg"
+import GUCLogo from "../images/guc-logo.svg"
+import VGS from "../images/vgs.png"
+import Egghead from "../images/egghead.png"
+import StudentPartner from "../images/microsoftStudentPartner.png"
 
 export const experiences = [
+  {
+    id: "4",
+    company: `Egghead.io`,
+    title: "Learner Advocate",
+    years: "May 2020 - present",
+    url: "https://egghead.io",
+    description: `Responsible for taking notes for courses, reviewing them and attending workshops on Egghead`,
+    icon: `${Egghead}`,
+    alt: "Egghead Logo",
+  },
+  {
+    id: "5",
+    company: `Microsoft`,
+    title: "Microsoft Student Partner",
+    years: "April 2020 - Dec 2021",
+    url:
+      "https://studentpartners.microsoft.com/en-us/Account/DisplayMSPCertificate?url=57f024aeea09451e8dfedba45230601f",
+    description: `Responsible for taking notes for courses, reviewing them and attending workshops on Egghead`,
+    icon: `${StudentPartner}`,
+    alt: "Microsoft Student Partners Logo",
+  },
   {
     id: "1",
     company: `Robusta Studio`,
     title: "Front-end Developer Intern",
-    years: "Dec 2019 - present",
+    years: "Dec 2019 - Jan 2020",
     url: "https://robustastudio.com",
     description: `Worked within an agile sprint team on multiple projects`,
-    icon: `${robustaLogo}`,
-    alt:"Robusta Logo"
+    icon: `${RobustaLogo}`,
+    alt: "Robusta Logo",
   },
   {
     id: "2",
@@ -20,8 +43,8 @@ export const experiences = [
     years: "Sep 2019 - Dec 2019",
     url: null,
     description: `Volunteered to teach CSEN301 (Data Structures & Algorithms) at the German University in Cairo.`,
-    icon: `${gucLogo}`,
-    alt:"GUC Logo",
+    icon: `${GUCLogo}`,
+    alt: "GUC Logo",
   },
   {
     id: "3",
@@ -30,8 +53,8 @@ export const experiences = [
     years: "Sep 2019 - present",
     url: "https://www.facebook.com/vgsguc/",
     description: `Responsible for teaching Game Art Design for VGS club members.`,
-    icon: `${vgs}`,
-    alt:"VGS Logo",
+    icon: `${VGS}`,
+    alt: "VGS Logo",
   },
 ]
 
@@ -71,7 +94,6 @@ export const skillsList = [
   { name: "GraphQL" },
   { name: "HTML" },
   { name: "CSS" },
-  { name: "Apollo" },
   { name: "Git" },
   { name: "Netlify" },
   { name: "Heroku" },
@@ -79,4 +101,6 @@ export const skillsList = [
   { name: "Handlebars" },
   { name: "Xd" },
   { name: "Illustrator" },
+  // { name: "Apollo" },
+  // add storybook and testing libs
 ]

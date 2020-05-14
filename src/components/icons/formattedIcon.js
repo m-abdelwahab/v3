@@ -33,10 +33,16 @@ import {
   IconPreview,
   IconMoon,
   IconSun,
+  IconSoundOn,
+  IconMute,
 } from "./index"
 
 const FormattedIcon = ({ name }) => {
   switch (name) {
+    case "SoundOn":
+      return <IconSoundOn />
+    case "Mute":
+      return <IconMute />
     case "Moon":
       return <IconMoon />
     case "Sun":

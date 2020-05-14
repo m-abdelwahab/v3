@@ -1,3 +1,5 @@
+// @jsx jsx
+import { jsx } from "theme-ui"
 import React from "react"
 
 const IconTwitter = () => (
@@ -7,10 +9,10 @@ const IconTwitter = () => (
     height="24"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="black"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    sx={{ stroke: "text" }}
   >
     <title>Twitter</title>
 

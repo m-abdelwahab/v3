@@ -1,18 +1,20 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Hero from "../components/hero"
-import FeaturedProjects from "../components/featuredProjects"
-// import Experiments from "../components/experiments"
-import Experience from "../components/experience"
-import Discover from "../components/discover"
+import {
+  Layout,
+  SEO,
+  Hero,
+  FeaturedProjects,
+  Experience,
+  Discover,
+  About,
+} from "../components"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Hero />
+    <About />
     <FeaturedProjects />
-    {/* <Experiments /> */}
     <Experience />
     <Discover />
   </Layout>

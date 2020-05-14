@@ -1,9 +1,9 @@
 import React from "react"
 import { experiences } from "../data/aboutData"
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import { theme, media, Section } from "../styles"
 import Fade from "react-reveal/Fade"
-const { fontSizes, colors } = theme
+const { fontSizes } = theme
 
 const Experience = () => {
   return (
@@ -11,7 +11,7 @@ const Experience = () => {
       <Heading>Experience</Heading>
       {experiences.map((experience, i) => (
         <Fade key={experience.id} delay={i * 200}>
-          <Card >
+          <Card>
             <ul>
               <li>
                 <Icon src={experience.icon} alt={experience.alt} />
@@ -43,7 +43,6 @@ const Heading = styled.h3`
   margin: 10px 0 40px;
   width: 100%;
   white-space: nowrap;
-  color: ${colors.dark};
   font-size: ${fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
 `
@@ -54,10 +53,11 @@ const Icon = styled.img`
   height: 56px;
   width: 56px;
   border-radius: 50%;
-  color: black;
+
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.2s;
-  background-color: white;
+  /* change to to take theme color */
+  /* background-color: white; */
   @media (max-width: 600px) {
     left: 50%;
     transform: translateX(-50%);
@@ -80,7 +80,6 @@ const Card = styled.div`
   position: relative;
   padding: 40px;
   border-radius: 8px;
-  background: #fff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.1s;
   &:hover {
@@ -92,16 +91,15 @@ const Card = styled.div`
   }
   h6 {
     margin: 6px 0;
-    color: black;
   }
   h4 {
     margin-bottom: 8px;
-    color: black;
+
     font-size: ${fontSizes.xxlarge};
   }
   h5 {
     margin-bottom: 6px;
-    color: black;
+
     font-size: ${fontSizes.medium};
   }
 

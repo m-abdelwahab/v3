@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled from "@emotion/styled"
 import Me from "../images/me.jpg"
 
 const Card = styled.div`
@@ -8,7 +8,6 @@ const Card = styled.div`
   align-items: center;
   padding: 40px;
   border-radius: 8px;
-  background: #fff;
   @media (max-width: 475px) {
     flex-direction: column;
   }
@@ -22,7 +21,6 @@ const Avatar = styled.img`
 `
 
 const Paragraph = styled.p`
-  color: black;
   font-size: 1em;
   margin: 1em;
   font-weight: 500;
@@ -36,9 +34,14 @@ const Bio = () => {
     <Card>
       <Avatar src={Me} />
       <Paragraph>
-        Hi! Welcome to my Blog<span role="img" aria-label="waving-hand">👋</span>.This is where I write about Design, Front-end
-        Development and share my thoughts. I'm a Front-end Software Engineer in
-        my 3rd year, studying Computer Science.
+        Hi! Welcome to my Blog
+        <span role="img" aria-label="waving-hand">
+          👋
+        </span>
+        <br />
+        This is where I write about Design, Front-end Development and share my
+        thoughts. I'm a Front-end Software Engineer in my 3rd year, studying
+        Computer Science.
       </Paragraph>
     </Card>
   )

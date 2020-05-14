@@ -15,8 +15,8 @@ const IconIllustrator = () => (
       gradientTransform="matrix(545.6736 0 0 528.3113 100439.305 -173525.125)"
       gradientUnits="userSpaceOnUse"
     >
-      <stop offset="0" stop-color="#423325" stop-opacity=".98" />
-      <stop offset="1" stop-color="#1c0a00" />
+      <stop offset="0" stopColor="#423325" stopOpacity=".98" />
+      <stop offset="1" stopColor="#1c0a00" />
     </radialGradient>
     <path d="M24.803 155.549h545.674v530.792H24.803V155.549z" fill="url(#a)" />
     <path

@@ -1,13 +1,13 @@
+// @jsx jsx
+import { jsx } from "theme-ui"
 import React from "react"
-import styled from "styled-components"
-// import projects from "../data/featuredProjects"
+import styled from "@emotion/styled"
 import { FormattedIcon } from "../components/icons"
 import "react-tippy/dist/tippy.css"
-import { theme, media, Section } from "../styles"
+import { media, Section } from "../styles"
 import Fade from "react-reveal/Fade"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-const { fontSizes, colors } = theme
 
 const FeaturedProjects = () => {
   const data = useStaticQuery(graphql`
@@ -37,7 +37,7 @@ const FeaturedProjects = () => {
   const { projects } = data.featuredProjectsJson
   return (
     <Container id="featured-projects">
-      <Heading>Coding Projects</Heading>
+      <Heading sx={{ fontSize: 5 }}>Coding Projects</Heading>
       <Grid>
         {projects.map((project, i) => {
           return (
@@ -103,9 +103,6 @@ const Heading = styled.h3`
   margin: 10px 0 40px;
   width: 100%;
   white-space: nowrap;
-  color: ${colors.dark};
-  font-size: ${fontSizes.h3};
-  ${media.tablet`font-size: 24px;`};
 `
 const Grid = styled.div`
   display: grid;
@@ -159,8 +156,5 @@ const Links = styled.div`
   svg {
     fill: none;
     width: 24px;
-    &:hover {
-      stroke: ${colors.blue};
-    }
   }
 `

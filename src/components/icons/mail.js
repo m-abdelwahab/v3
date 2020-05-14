@@ -1,3 +1,5 @@
+// @jsx jsx
+import { jsx } from "theme-ui"
 import React from "react"
 
 const IconMail = () => (
@@ -6,11 +8,11 @@ const IconMail = () => (
     width="24"
     height="24"
     viewBox="0 0 24 24"
-    stroke="black"
     fill="none"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
+    sx={{ stroke: "text" }}
   >
     <title>Mail</title>
 

@@ -1,6 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-
+const array = require("lodash/array")
 // create blog pages
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -41,7 +41,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const allCategories = result.data.allMdx.edges.map(category =>
     category.node.frontmatter.categories.map(item => item)
   )
-  const categories = [...new Set(allCategories.flat(Infinity))]
+  const categories = [...new Set(array.flattenDeep(allCategories))]
 
   // create categories pages
 

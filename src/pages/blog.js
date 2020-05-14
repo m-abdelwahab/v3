@@ -1,5 +1,6 @@
 // @jsx jsx
 import { jsx } from "theme-ui"
+const array = require("lodash/array")
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import styled from "@emotion/styled"
@@ -13,7 +14,7 @@ const Blog = ({ data }) => {
   const allCategories = data.allMdx.edges.map(category =>
     category.node.frontmatter.categories.map(item => item)
   )
-  const categories = [...new Set(allCategories.flat(Infinity))]
+  const categories = [...new Set(array.flattenDeep(allCategories))]
 
   console.log(categories)
   const emptyQuery = ""

@@ -9,6 +9,18 @@ import Fade from "react-reveal/Fade"
 import { theme, media, ProgressBar } from "../styles"
 const { fontSizes } = theme
 
+const StyledH2 = styled.h2`
+  a {
+    color: inherit;
+    display: block;
+    position: absolute;
+    left: 0px;
+    transform: translateX(-125%) translateY(-2px);
+    opacity: 0;
+    scroll-margin-top: 128px;
+    transition: opacity 250ms ease 0s;
+  }
+`
 const Container = styled.div`
   display: flex;
   flex-direction: row-reverse;
@@ -126,6 +138,7 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
               <MDXRenderer
                 components={{
                   pre: Code,
+                  h2: StyledH2,
                 }}
               >
                 {body}

@@ -6,7 +6,6 @@ import Experience from "./experience"
 import Footer from "./footer"
 import Header from "./header"
 import Layout from "./layout"
-import MobileNav from "./mobileNav"
 import SEO from "./seo"
 import Social from "./social"
 import FeaturedProjects from "./featuredProjects"
@@ -22,7 +21,6 @@ export {
   Footer,
   Header,
   Layout,
-  MobileNav,
   SEO,
   Social,
   FeaturedProjects,

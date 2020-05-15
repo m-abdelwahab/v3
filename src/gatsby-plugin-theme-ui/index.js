@@ -63,6 +63,21 @@ const theme = {
       fontSize: 5,
       my: 4,
       scrollMarginTop: "128px",
+      a: {
+        float: "left",
+        marginLeft: "-24px",
+      },
+      svg: {
+        visibility: "hidden",
+      },
+      "&:hover": {
+        svg: {
+          visibility: "visible",
+          height: "25px",
+          width: "20px",
+          fill: "highlight",
+        },
+      },
     },
     h3: {
       color: "text",
@@ -72,6 +87,21 @@ const theme = {
       fontSize: 3,
       my: 3,
       scrollMarginTop: "1em",
+      a: {
+        float: "left",
+        marginLeft: "-24px",
+      },
+      svg: {
+        visibility: "hidden",
+      },
+      "&:hover": {
+        svg: {
+          visibility: "visible",
+          height: "25px",
+          width: "20px",
+          fill: "highlight",
+        },
+      },
     },
     h4: {
       color: "text",

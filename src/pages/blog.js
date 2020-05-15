@@ -1,6 +1,5 @@
 // @jsx jsx
 import { jsx } from "theme-ui"
-const array = require("lodash/array")
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import styled from "@emotion/styled"
@@ -8,6 +7,7 @@ import { SEO, Layout } from "../components"
 import { theme, Section, media } from "../styles"
 import Fade from "react-reveal/Fade"
 const { fontSizes, colors } = theme
+const array = require("lodash/array")
 
 const Blog = ({ data }) => {
   const allPosts = data.allMdx.edges

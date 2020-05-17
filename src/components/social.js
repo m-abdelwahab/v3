@@ -1,3 +1,5 @@
+// @jsx jsx
+import { jsx } from "theme-ui"
 import React, { useState, useEffect } from "react"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
 import { socialMedia } from "../config"

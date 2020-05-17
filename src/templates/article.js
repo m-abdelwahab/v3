@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Message } from "theme-ui"
+import { jsx } from "theme-ui"
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -29,38 +29,7 @@ const Container = styled.div`
     display: block;
   }
 `
-const Toc = styled.ul`
-  width: 350px;
-  padding-left: 2rem;
-  display: none;
-  top: 100px;
-  position: sticky;
-  max-height: calc(100vh - 148px);
-  padding-bottom: 16px;
-  overflow: auto;
-  @media (min-width: 1025px) {
-    display: block;
-  }
-  li {
-    max-width: 250px;
-    line-height: 1.6;
-    margin-top: 10px;
-    a {
-      font-size: 15px;
-      color: ${props => theme.text};
-      opacity: 0.7;
-      text-decoration: none;
-      &:hover,
-      &:focus {
-        opacity: 1;
-        transition: opacity 0ms ease 0s;
-      }
-      &:active {
-        /* color: blue; */
-      }
-    }
-  }
-`
+
 const H2 = styled.h2`
   color: ${props => theme.text};
   font-size: 16px;
@@ -73,7 +42,7 @@ const InnerScroll = styled.div`
   overflow: hidden;
   overflow-y: scroll;
 `
-const Article = styled.article`
+const StyledArticle = styled.article`
   margin: 5em auto;
   max-width: 600px;
 `
@@ -92,7 +61,7 @@ const Heading = styled.h3`
   ${media.tablet`font-size: 24px;`};
 `
 
-const BlogPost = ({ data, pageContext, excerpt }) => {
+const Article = ({ data, pageContext, excerpt }) => {
   const { previous, next } = pageContext
   const { body, frontmatter, tableOfContents } = data.mdx
   const { title, description } = frontmatter
@@ -104,31 +73,7 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
         <SEO title={title} description={description || excerpt} />
         <Fade>
           <Container>
-            {typeof tableOfContents.items === "undefined" ? null : (
-              <Toc>
-                <InnerScroll>
-                  <H2>Table of contents</H2>
-                  {tableOfContents.items.map((heading, i) => (
-                    <div key={i}>
-                      <li key={heading.url} sx={{ scrollMarginTop: "128px" }}>
-                        <a href={heading.url} key={heading.url}>
-                          {heading.title}
-                        </a>
-                      </li>
-                      {heading.items?.map(subheading => (
-                        <li key={subheading.url} sx={{ px: 3 }}>
-                          <a href={subheading.url} key={subheading.url}>
-                            {subheading.title}
-                          </a>
-                        </li>
-                      ))}
-                    </div>
-                  ))}
-                </InnerScroll>
-              </Toc>
-            )}
-
-            <Article>
+            <StyledArticle>
               <Link to="/blog">
                 <Heading>Blog</Heading>
               </Link>
@@ -138,7 +83,6 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
 
               <MDXRenderer
                 components={{
-                  Message,
                   pre: Code,
                   h2: StyledH2,
                 }}
@@ -146,7 +90,6 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
                 {body}
               </MDXRenderer>
               <Bio />
-
               <nav>
                 <ul
                   style={{
@@ -166,18 +109,14 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
                   )}
                   {next && (
                     <li>
-                      <Link
-                        to={next.fields.slug}
-                        rel="next"
-                        data-tip={`${next.frontmatter.title}`}
-                      >
+                      <Link to={next.fields.slug} rel="next">
                         {next.frontmatter.title} →
                       </Link>
                     </li>
                   )}
                 </ul>
               </nav>
-            </Article>
+            </StyledArticle>
           </Container>
         </Fade>
       </Layout>
@@ -185,10 +124,10 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
   )
 }
 
-export default BlogPost
+export default Article
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query TutorialBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -197,8 +136,6 @@ export const pageQuery = graphql`
     mdx(fields: { slug: { eq: $slug } }) {
       id
       body
-      tableOfContents
-      excerpt
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

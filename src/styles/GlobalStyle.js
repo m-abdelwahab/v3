@@ -1,6 +1,5 @@
 import theme from "./theme"
 import media from "./media"
-
 import React from "react"
 import { Global, css } from "@emotion/core"
 const { colors, fontSizes } = theme
@@ -69,9 +68,9 @@ export const GlobalStyle = () => (
 
           &:hover,
           &:focus {
-            /* color: ${theme.colors.highlight}; */
-            opacity:0.7;
-            outline: 0;
+            /* color:#9802e3; */
+            opacity:0.8;
+            outline: 1;
           }
         }
 
@@ -327,8 +326,6 @@ export const GlobalStyle = () => (
 .wizard-horizontal-left-exit-done {
   transform: translateX(100px);
 }
-
-
 
       `}
   />

@@ -21,8 +21,8 @@ const theme = {
   },
   useColorSchemeMediaQuery: true,
   colors: {
-    text: "#000",
-    background: "#fff",
+    text: "#1a202c",
+    background: "#f7fafc",
     primary: "#609",
     secondary: "#306",
     muted: "#f6f6f6",
@@ -135,7 +135,7 @@ const theme = {
       margin: "20px 0",
     },
     a: {
-      color: "text",
+      color: "primary",
       "&::hover": {
         color: "highlight",
       },
@@ -144,11 +144,12 @@ const theme = {
       },
     },
     blockquote: {
-      fontSize: "19px",
-      fontStyle: "italic",
-      borderLeft: "5px solid text",
+      fontSize: "18px",
+      borderLeftWidth: "5px",
+      borderLeftColor: "primary",
+      borderLeftStyle: "solid",
       backgroundColor: "highlight",
-      padding: "0.3em",
+      padding: "0.3em 1rem",
       borderRadius: "4px",
       marginTop: 3,
     },
@@ -156,10 +157,11 @@ const theme = {
       my: 2,
     },
     ul: {
-      listStyle: "",
+      listStyle: "square inside",
     },
     li: {
-      display: "block",
+      // display:"",
+      lineHeight: "body",
       marginTop: "1em",
     },
     svg: {

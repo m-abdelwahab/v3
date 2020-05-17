@@ -16,7 +16,6 @@ const Blog = ({ data }) => {
   )
   const categories = [...new Set(array.flattenDeep(allCategories))]
 
-  console.log(categories)
   const emptyQuery = ""
 
   const [state, setState] = useState({
@@ -86,6 +85,7 @@ const Blog = ({ data }) => {
             style={{
               display: "flex",
               justifyContent: "center",
+              flexWrap: "wrap",
             }}
           >
             {categories.map((category, i) => (
@@ -108,7 +108,12 @@ const Blog = ({ data }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
                 <Fade key={i} delay={i * 200}>
-                  <Card key={node.fields.slug}>
+                  <Card
+                    key={node.fields.slug}
+                    sx={{
+                      boxShadow: "0 1px 3px 0 highlight, 0 1px 2px 0 highlight",
+                    }}
+                  >
                     <Category>
                       {node.frontmatter.categories.map((category, i) => {
                         return (
@@ -187,10 +192,8 @@ const Card = styled.div`
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
   transition: all 150ms ease-in-out;
   &:hover {
-    box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.1);
     transition: all 150ms ease-in-out;
   }
 `

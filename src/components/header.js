@@ -7,7 +7,6 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import usePopup from "../hooks/usePopup"
 import IconLogo from "./icons/logo"
-import theme from "../gatsby-plugin-theme-ui"
 
 const links = [
   { url: "/blog", name: "Blog" },
@@ -62,7 +61,7 @@ export default React.memo(() => {
               sx={{
                 backgroundColor: "background",
                 boxShadow:
-                  "0 13px 27px -5px rgba(50,50,93,.22), 0 8px 16px -8px rgba(0,0,0,.2)",
+                  "0 13px 27px -5px highlight, 0 8px 16px -8px highlight",
               }}
             >
               <ul>
@@ -216,10 +215,6 @@ const MenuBody = styled.ul`
   transition-property: transform, opacity;
   transform-origin: 100% 0;
   pointer-events: ${props => (props.isOpen ? "initial" : "none")};
-
-  @media (max-width: 768px) {
-    border: none;
-  }
 
   li:first-of-type a {
     border-top: none;

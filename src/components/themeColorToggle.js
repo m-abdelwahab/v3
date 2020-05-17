@@ -12,7 +12,6 @@ const ThemeColorToggle = ({ isDark, toggle }) => {
       aria-label={isDark ? `Activate Light Mode` : `Activate Dark Mode`}
       title={isDark ? `Activate Light Mode` : `Activate Dark Mode`}
       sx={{
-        opacity: 0.65,
         position: "fixed",
         right: "5rem",
         top: "2.5rem",
@@ -29,7 +28,7 @@ const ThemeColorToggle = ({ isDark, toggle }) => {
         cursor: `pointer`,
         padding: 0,
         appearance: `none`,
-        "&:hover, &:focus": { opacity: 1 },
+        "&:hover, &:focus": { opacity: 0.8 },
       }}
     >
       <div

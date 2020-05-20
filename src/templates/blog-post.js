@@ -165,11 +165,7 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
                   )}
                   {next && (
                     <li>
-                      <Link
-                        to={next.fields.slug}
-                        rel="next"
-                        data-tip={`${next.frontmatter.title}`}
-                      >
+                      <Link to={next.fields.slug} rel="next">
                         {next.frontmatter.title} →
                       </Link>
                     </li>

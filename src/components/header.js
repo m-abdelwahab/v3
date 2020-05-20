@@ -35,7 +35,7 @@ export default React.memo(() => {
   return (
     <Header>
       <Logo>
-        <LogoLink href="/" aria-label="home">
+        <LogoLink to="/" aria-label="home">
           <IconLogo />
         </LogoLink>
       </Logo>
@@ -59,9 +59,7 @@ export default React.memo(() => {
             <MenuBody
               {...getMenuProps()}
               sx={{
-                backgroundColor: "background",
-                boxShadow:
-                  "0 13px 27px -5px highlight, 0 8px 16px -8px highlight",
+                backgroundColor: "card",
               }}
             >
               <ul>
@@ -74,7 +72,7 @@ export default React.memo(() => {
                             onClick: e => setOpen(prevOpen => !prevOpen),
                           })}
                           sx={{
-                            "&::after": { backgroundColor: "background" },
+                            "&::after": { backgroundColor: "card" },
                             "&::before": { backgroundColor: "highlight" },
                           }}
                         >
@@ -110,7 +108,7 @@ const Header = styled.header`
 const Logo = styled.div`
   padding: 0 2%;
 `
-const LogoLink = styled.a`
+const LogoLink = styled(Link)`
   display: block;
   width: 42px;
   height: 42px;
@@ -208,6 +206,7 @@ const MenuBody = styled.ul`
   position: absolute;
   right: 30px;
   width: 300px;
+  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.1);
   border-radius: var(--baseborderradius);
   opacity: ${props => (props.isOpen ? 1 : 0)};
   transform: ${props => (props.isOpen ? "scale(1)" : "scale(.5)")};

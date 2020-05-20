@@ -11,6 +11,9 @@ import Social from "./social"
 import FeaturedProjects from "./featuredProjects"
 import Hero from "./hero"
 import ThemeColorToggle from "./themeColorToggle"
+import Newsletter from "./newsletter"
+import Share from "./share"
+import Tooltip from "./tooltip"
 
 export {
   About,
@@ -26,4 +29,7 @@ export {
   FeaturedProjects,
   Hero,
   ThemeColorToggle,
+  Newsletter,
+  Share,
+  Tooltip,
 }

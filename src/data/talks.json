@@ -3,20 +3,26 @@
     "talks": [
       {
         "title": "Beginner Pitfalls: My Personal Journey",
-        "description": "A talk on what is Gatsby and how it creates incredibly fast websites",
-        "topic": "Web Performance",
-        "slides": "https://slides.com/thisismahmoud/inside-gatsby-js#/"
+        "description": "A talk on the mistakes I made when learning how to code",
+        "topic": "Beginner",
+        "slides": "https://slides.com/thisismahmoud/inside-gatsby-js#/",
+        "location": "",
+        "country": ""
       },
       {
         "title": "Why Gatsby Is Awesome",
         "description": "A talk on what is Gatsby and how it creates incredibly fast websites",
         "topic": "Web Performance",
-        "slides": "https://slides.com/thisismahmoud/inside-gatsby-js#/"
+        "slides": "https://slides.com/thisismahmoud/inside-gatsby-js#/",
+        "location": "",
+        "country": ""
       },
       {
         "title": "Hooked: How To Build Habit Forming Products",
         "description": "A lightning-talk about patterns used by apps that hook and engage us",
-        "topic": "Book Review"
+        "topic": "Book Review",
+        "location": "",
+        "country": ""
       }
     ]
   }

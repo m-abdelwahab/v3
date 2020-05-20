@@ -66,6 +66,11 @@ const Blog = ({ data }) => {
             </Link>
             /Blog
           </Heading>
+          <p>
+            Welcome to my blog! In here you'll find useful articles about
+            various topics. I'm most active on twitter and you can always reach
+            me at my email
+          </p>
           <div
             style={{
               display: "flex",
@@ -112,6 +117,7 @@ const Blog = ({ data }) => {
                     key={node.fields.slug}
                     sx={{
                       boxShadow: "0 1px 3px 0 highlight, 0 1px 2px 0 highlight",
+                      backgroundColor: "card",
                     }}
                   >
                     <Category>
@@ -251,12 +257,14 @@ const SearchBar = styled.input`
   font-size: 1.2rem;
 `
 const PostsCount = styled.div`
-  border-radius: 50%;
-  width: 36px;
+  border-radius: 100%;
+  min-width: 36px;
   height: 36px;
   padding: 8px;
   text-align: center;
   line-height: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   background: #fff;
   border: 2px solid #666;
   color: #666;

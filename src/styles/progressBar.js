@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 import React, { useState, useEffect } from "react"
 import styled from "@emotion/styled"
 
@@ -12,6 +12,7 @@ const StyledProgressBar = styled.p`
 `
 
 const ProgressBar = props => {
+  const { theme } = useThemeUI()
   const listenToScrollEvent = () => {
     document.addEventListener("scroll", () => {
       requestAnimationFrame(() => {
@@ -45,7 +46,7 @@ const ProgressBar = props => {
   return (
     <StyledProgressBar
       sx={{
-        background: `linear-gradient(to right, highlight ${progress}%,transparent 0)`,
+        background: `linear-gradient(to right, ${theme.colors.primary} ${progress}%,transparent 0)`,
       }}
     />
   )

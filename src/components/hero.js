@@ -153,8 +153,7 @@ const Blurb = styled.div`
   }
 `
 const ResumeButton = styled.a`
-  border: 1px solid ${colors.dark};
-  border-radius: ${theme.borderRadius};
+  border-radius: 10px;
   padding: 1.25rem 1.75rem;
   font-size: ${fontSizes.medium};
   line-height: 1;

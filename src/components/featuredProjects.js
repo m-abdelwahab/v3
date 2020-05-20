@@ -42,7 +42,7 @@ const FeaturedProjects = () => {
         {projects.map((project, i) => {
           return (
             <Fade key={project.id} delay={300 * i}>
-              <Project>
+              <Project sx={{ backgroundColor: "card" }}>
                 <Img
                   loading="lazy"
                   fluid={project.cover.src.childImageSharp.fluid}

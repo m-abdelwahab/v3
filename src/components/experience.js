@@ -1,3 +1,5 @@
+// @jsx jsx
+import { jsx } from "theme-ui"
 import React from "react"
 import { experiences } from "../data/aboutData"
 import styled from "@emotion/styled"
@@ -11,10 +13,14 @@ const Experience = () => {
       <Heading>Experience</Heading>
       {experiences.map((experience, i) => (
         <Fade key={experience.id} delay={i * 200}>
-          <Card>
+          <Card sx={{ backgroundColor: "card" }}>
             <ul>
               <li>
-                <Icon src={experience.icon} alt={experience.alt} />
+                <Icon
+                  src={experience.icon}
+                  alt={experience.alt}
+                  sx={{ backgroundColor: "card" }}
+                />
                 <a
                   rel="noopener noreferrer"
                   target="_blank"

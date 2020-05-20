@@ -85,16 +85,3 @@ const ThemeColorToggle = ({ isDark, toggle }) => {
 }
 
 export default ThemeColorToggle
-
-const Toggle = styled.button`
-  position: fixed;
-  z-index: 1000;
-  right: 5rem;
-  top: 2.5rem;
-  background-color: () ransparent;
-
-  svg {
-    fill: none;
-    stroke: ${() => theme.colors.text};
-  }
-`

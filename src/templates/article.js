@@ -4,7 +4,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "@emotion/styled"
-import { SEO, Layout, Bio, Code } from "../components"
+import { SEO, Layout, Bio, Code, Share } from "../components"
 import Fade from "react-reveal/Fade"
 import { theme, media, ProgressBar } from "../styles"
 const { fontSizes } = theme
@@ -29,19 +29,10 @@ const Container = styled.div`
     display: block;
   }
 `
-
-const H2 = styled.h2`
-  color: ${props => theme.text};
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1em;
-`
-
-const InnerScroll = styled.div`
-  overflow: hidden;
-  overflow-y: scroll;
-`
+// const InnerScroll = styled.div`
+//   overflow: hidden;
+//   overflow-y: scroll;
+// `
 const StyledArticle = styled.article`
   margin: 5em auto;
   max-width: 600px;
@@ -63,7 +54,7 @@ const Heading = styled.h3`
 
 const Article = ({ data, pageContext, excerpt }) => {
   const { previous, next } = pageContext
-  const { body, frontmatter, tableOfContents } = data.mdx
+  const { body, frontmatter, fields } = data.mdx
   const { title, description } = frontmatter
 
   return (
@@ -89,6 +80,7 @@ const Article = ({ data, pageContext, excerpt }) => {
               >
                 {body}
               </MDXRenderer>
+              <Share slug={fields.slug} title={title} />
               <Bio />
               <nav>
                 <ul
@@ -136,6 +128,9 @@ export const pageQuery = graphql`
     mdx(fields: { slug: { eq: $slug } }) {
       id
       body
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

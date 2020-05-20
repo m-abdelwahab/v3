@@ -28,6 +28,7 @@ const theme = {
     muted: "#f6f6f6",
     italic: "#5A6072",
     toggle: "hsl(230, 25%, 18%)",
+    card: "#f7fafc",
     modes: {
       dark: {
         text: "hsl(210, 50%, 96%)",
@@ -39,6 +40,7 @@ const theme = {
         muted: "hsla(230, 20%, 0%, 20%)",
         gray: "hsl(210, 50%, 60%)",
         toggle: "#000",
+        card: "hsl(230, 25%, 19%)",
       },
     },
   },
@@ -136,6 +138,9 @@ const theme = {
     },
     a: {
       color: "primary",
+      overflowWrap: "break-word",
+      wordWrap: "break-word",
+      hyphens: "auto",
       "&::hover": {
         color: "highlight",
       },

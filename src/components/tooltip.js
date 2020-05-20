@@ -1,16 +1,23 @@
+// @jsx jsx
+import { jsx } from "theme-ui"
 import React from "react"
 import ReactTooltip from "react-tooltip"
 
-export const Tooltip = ({ content, ...props }) => {
+const Tooltip = ({ content }) => {
   return (
-    <div>
-      <ReactTooltip
+    <>
+      <ReactTooltip />
+      <span
+        sx={{
+          color: "primary",
+          fontSize: "30px",
+          "&:hover": { cursor: "pointer" },
+        }}
         data-tip={`${content}`}
-        {...props}
-        style={{ display: "inline-block", width: "400px", height: "100px" }}
       >
         *
-      </ReactTooltip>
-    </div>
+      </span>
+    </>
   )
 }
+export default Tooltip

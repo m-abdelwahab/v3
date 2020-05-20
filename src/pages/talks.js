@@ -1,3 +1,5 @@
+// @jsx jsx
+import { jsx } from "theme-ui"
 import React from "react"
 import { FormattedIcon } from "../components/icons"
 import Fade from "react-reveal/Fade"
@@ -36,7 +38,7 @@ const TalksPage = () => {
           {talks.map((talk, i) => {
             return (
               <Fade key={i} delay={200 * i}>
-                <Card>
+                <Card sx={{ backgroundColor: "card" }}>
                   <Tag>{talk.topic}</Tag>
                   <Title>{talk.title}</Title>
                   <Description>{talk.description}</Description>
@@ -101,6 +103,7 @@ const Tag = styled.span`
 
 const Title = styled.h2`
   font-size: 1.5em;
+  margin-bottom: 1em;
 `
 const Description = styled.p`
   font-size: 1em;

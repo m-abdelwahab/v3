@@ -1,13 +1,14 @@
-import theme from "./theme"
-import media from "./media"
+// @jsx jsx
+import { jsx, useThemeUI } from "theme-ui"
 import React from "react"
 import { Global, css } from "@emotion/core"
-const { colors, fontSizes } = theme
 
-export const GlobalStyle = () => (
-  <Global
-    styles={css`
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');        
+export const GlobalStyle = () => {
+  const { theme } = useThemeUI()
+  return (
+    <Global
+      styles={css`
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
         * {
           margin: 0;
           padding: 0;
@@ -20,7 +21,6 @@ export const GlobalStyle = () => (
           }
         }
 
-
         body {
           margin: 0;
           width: 100%;
@@ -30,10 +30,9 @@ export const GlobalStyle = () => (
           -webkit-font-smoothing: antialiased;
 
           line-height: 1.3;
-          font-family: 'Open Sans', sans-serif;         
-           font-size: ${fontSizes.large};
-          ${media.phablet`font-size: ${fontSizes.large};`}
-
+          font-family: "Open Sans", sans-serif;
+          /* change to theme.fontSizes */
+          font-size: 18px;
           &.hidden {
             overflow: hidden;
           }
@@ -68,8 +67,8 @@ export const GlobalStyle = () => (
 
           &:hover,
           &:focus {
-            /* color:#9802e3; */
-            opacity:0.8;
+            color: ${theme.colors.secondary};
+            opacity: 0.8;
             outline: 1;
           }
         }
@@ -81,7 +80,6 @@ export const GlobalStyle = () => (
 
           &:focus,
           &:active {
-            /* outline-color: ${colors.blue}; */
           }
         }
 
@@ -103,39 +101,39 @@ export const GlobalStyle = () => (
         .fadeup-enter {
           opacity: 0.01;
           transform: translateY(20px);
-          transition: opacity 300ms ${theme.easing},
-            transform 300ms ${theme.easing};
+          transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+            transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
         }
 
         .fadeup-enter-active {
           opacity: 1;
           transform: translateY(0px);
-          transition: opacity 300ms ${theme.easing},
-            transform 300ms ${theme.easing};
+          transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+            transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
         }
 
         .fadedown-enter {
           opacity: 0.01;
           transform: translateY(-20px);
-          transition: opacity 300ms ${theme.easing},
-            transform 300ms ${theme.easing};
+          transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+            transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
         }
 
         .fadedown-enter-active {
           opacity: 1;
           transform: translateY(0px);
-          transition: opacity 300ms ${theme.easing},
-            transform 300ms ${theme.easing};
+          transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+            transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
         }
 
         .fade-enter {
           opacity: 0.01;
-          transition: opacity 1000ms ${theme.easing};
+          transition: opacity 1000ms cubic-bezier(0.645, 0.045, 0.355, 1);
         }
 
         .fade-enter-active {
           opacity: 1;
-          transition: opacity 1000ms ${theme.easing};
+          transition: opacity 1000ms cubic-bezier(0.645, 0.045, 0.355, 1);
         }
         .prism-code {
           font-size: 1rem;
@@ -237,98 +235,40 @@ export const GlobalStyle = () => (
           position: relative;
         }
 
-/* @font-face {
-  font-family: 'NBInternational';
-  font-display: auto;
-  src: url('/assets/fonts/NBInternational_Regular.ttf');
-  font-weight: 100 500;
-  font-style: normal;
-}
+        :root {
+          --ff-serif: "DomaineDisplayNarrow", "Georgia", "Times",
+            "Times New Roman";
+          --ff-sanserif: "NBInternational", "Helvetica Neue", Helvetica, Arial,
+            sans-serif;
+          --fontbold: 800;
+          --fontregular: 400;
 
-@font-face {
-  font-family: 'NBInternational';
-  font-display: auto;
-  src: url('/assets/fonts/NBInternational_Bold.ttf');
-  font-weight: 600 900;
-  font-style: normal;
-} */
+          --fontxs: 0.75rem;
+          --fontsm: 0.85rem;
+          --fontmd: 1rem;
+          --fontidk: 1.25rem;
+          --fontlg: 3rem;
+          --fontxl: 4.5rem;
+          --baselineheight: 1.5rem;
 
-/* @font-face {
-  font-family: 'DomaineDisplayNarrow';
-  font-display: auto;
-  src: url('/assets/fonts/DomaineDisplayNarrow-Semibold.otf');
-  font-weight: 100 900;
-  font-style: normal;
-} */
- 
+          --baseborderpadding: 25px;
+          --baseborderradius: 2px;
 
-:root {
-  --ff-serif: "DomaineDisplayNarrow", "Georgia", "Times", "Times New Roman";
-  --ff-sanserif: "NBInternational", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --fontbold: 800;
-  --fontregular: 400;
+          --baseboxshadow: 0 1px 3px rgba(188, 193, 217, 0.12),
+            0 5px 12px rgba(188, 193, 217, 0.25);
+          --boxshadow2: 0 13px 27px -5px rgba(50, 50, 93, 0.22),
+            0 8px 16px -8px rgba(0, 0, 0, 0.2);
 
-  --fontxs: .75rem;
-  --fontsm: .85rem;
-  --fontmd: 1rem;
-  --fontidk: 1.25rem;
-  --fontlg: 3rem;
-  --fontxl: 4.5rem;
-  --baselineheight: 1.5rem;
-
-
-  --baseborderpadding: 25px;
-  --baseborderradius: 2px;
-
-  --baseboxshadow: 0 1px 3px rgba(188, 193, 217, .12), 0 5px 12px rgba(188, 193, 217, .25);
-  --boxshadow2: 0 13px 27px -5px rgba(50,50,93,.22), 0 8px 16px -8px rgba(0,0,0,.2);
-  
-  --cubic: cubic-bezier(0.42, 0, 0.59, 1.1);
-  --cubic2: cubic-bezier(0.65,-0.22, 0.43, 0.72);
-
-}
-
-
-
-.hidden {
-  opacity: 0;
-  display: none;
-}
-
-.wizard {
-  position: absolute;
-  width: 100%;
-  transition-property: opacity, transform;
-}
-
-.wizard-horizontal-left-enter-active,
-.wizard-horizontal-right-enter-active
-{
-  opacity: 0;
-}
-.wizard-horizontal-left-enter-active {
-  transform: translateX(100px);
-}
-.wizard-horizontal-right-enter-active {
-  transform: translateX(-100px);
-}
-
-.wizard-horizontal-left-exit-active {
-  transform: translateX(-100px);
-}
-.wizard-horizontal-right-exit-active {
-  transform: translateX(100px);
-}
-
-.wizard-horizontal-right-exit-done {
-  transform: translateX(-100px);
-}
-.wizard-horizontal-left-exit-done {
-  transform: translateX(100px);
-}
-
+          --cubic: cubic-bezier(0.42, 0, 0.59, 1.1);
+          --cubic2: cubic-bezier(0.65, -0.22, 0.43, 0.72);
+        }
+        .hidden {
+          opacity: 0;
+          display: none;
+        }
       `}
-  />
-)
+    />
+  )
+}
 
 export default GlobalStyle

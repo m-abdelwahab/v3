@@ -35,7 +35,7 @@ const LiveProviderContainer = styled.div`
   margin-left: -50vw;
   margin-right: -50vw;
 `
-export const Code = ({ codeString, language, metastring, ...props }) => {
+const Code = ({ codeString, language, metastring, ...props }) => {
   const shouldHighlightLine = calculateLinesToHighlight(metastring)
 
   if (props["react-live"]) {
@@ -86,3 +86,5 @@ export const Code = ({ codeString, language, metastring, ...props }) => {
     </Highlight>
   )
 }
+
+export default Code

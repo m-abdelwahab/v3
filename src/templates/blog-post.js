@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx, Message } from "theme-ui"
+import { jsx } from "theme-ui"
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "@emotion/styled"
-import { SEO, Layout, Bio, Code } from "../components"
+import { SEO, Layout, Bio, Code, Share, Tooltip } from "../components"
 import Fade from "react-reveal/Fade"
 import { theme, media, ProgressBar } from "../styles"
 const { fontSizes } = theme
@@ -94,7 +94,7 @@ const Heading = styled.h3`
 
 const BlogPost = ({ data, pageContext, excerpt }) => {
   const { previous, next } = pageContext
-  const { body, frontmatter, tableOfContents } = data.mdx
+  const { body, frontmatter, tableOfContents, fields } = data.mdx
   const { title, description } = frontmatter
 
   return (
@@ -135,18 +135,17 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
               <header>
                 <Title>{title}</Title>
               </header>
-
               <MDXRenderer
                 components={{
-                  Message,
+                  Tooltip,
                   pre: Code,
                   h2: StyledH2,
                 }}
               >
                 {body}
               </MDXRenderer>
+              <Share slug={fields.slug} title={title} />
               <Bio />
-
               <nav>
                 <ul
                   style={{
@@ -199,6 +198,9 @@ export const pageQuery = graphql`
       body
       tableOfContents
       excerpt
+      fields {
+        slug
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

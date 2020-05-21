@@ -14,6 +14,7 @@ import ThemeColorToggle from "./themeColorToggle"
 import Newsletter from "./newsletter"
 import Share from "./share"
 import Tooltip from "./tooltip"
+import Callout from "./callout"
 
 export {
   About,
@@ -32,4 +33,5 @@ export {
   Newsletter,
   Share,
   Tooltip,
+  Callout,
 }

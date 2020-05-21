@@ -1,12 +1,13 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { preToCodeBlock } from "mdx-utils"
-import { Code, Tooltip } from "./src/components/"
+import { Code, Tooltip, Callout } from "./src/components/"
 
 // components is its own object outside of render so that the references to
 // components are stable
 const components = {
   Tooltip,
+  Callout,
   pre: preProps => {
     const props = preToCodeBlock(preProps)
     // if there's a codeString and some props, we passed the test

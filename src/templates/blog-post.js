@@ -184,7 +184,6 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
               </header>
               <MDXRenderer
                 components={{
-                  Tooltip,
                   pre: Code,
                   h2: StyledH2,
                 }}

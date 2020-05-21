@@ -37,7 +37,7 @@ const theme = {
         secondary: "hsl(290, 100%, 80%)",
         highlight: "hsl(260, 20%, 40%)",
         accent: "hsl(290, 100%, 80%)",
-        muted: "hsla(230, 20%, 0%, 20%)",
+        muted: "hsl(230, 20%, 0%, 20%)",
         gray: "hsl(210, 50%, 60%)",
         toggle: "#000",
         card: "hsl(230, 25%, 19%)",

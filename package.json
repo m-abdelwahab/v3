@@ -28,6 +28,7 @@
     "gatsby-remark-embedder": "^1.8.0",
     "gatsby-remark-images": "^3.1.42",
     "gatsby-remark-responsive-iframe": "^2.4.2",
+    "gatsby-remark-slug": "^0.1.0",
     "gatsby-remark-smartypants": "^2.0.5",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-json": "^2.2.26",

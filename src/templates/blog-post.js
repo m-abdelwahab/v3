@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React from "react"
+import { useActiveHash } from "../hooks/useActiveHash"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "@emotion/styled"
@@ -56,7 +57,7 @@ const Toc = styled.ul`
         transition: opacity 0ms ease 0s;
       }
       &:active {
-        /* color: blue; */
+        /* color: red; */
       }
     }
   }
@@ -97,6 +98,22 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
   const { body, frontmatter, tableOfContents, fields } = data.mdx
   const { title, description } = frontmatter
 
+  const getHashUrl = (tableOfContents, url) => {
+    var UrlList = []
+    const recursivelyGetHashUrl = (object, keyToBeFound) => {
+      Object.keys(object).forEach(function(key) {
+        if (typeof object[key] === "object") {
+          recursivelyGetHashUrl(object[key], keyToBeFound)
+        } else {
+          if (key === keyToBeFound) UrlList.push(object[key])
+        }
+      })
+    }
+    recursivelyGetHashUrl(tableOfContents, url)
+    return UrlList
+  }
+  const activeHeadingHash = useActiveHash(getHashUrl(tableOfContents, "url"))
+
   return (
     <>
       <ProgressBar />
@@ -108,22 +125,52 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
               <Toc>
                 <InnerScroll>
                   <H2>Table of contents</H2>
-                  {tableOfContents.items.map((heading, i) => (
-                    <div key={i}>
-                      <li key={heading.url} sx={{ scrollMarginTop: "128px" }}>
-                        <a href={heading.url} key={heading.url}>
-                          {heading.title}
-                        </a>
-                      </li>
-                      {heading.items?.map(subheading => (
-                        <li key={subheading.url} sx={{ px: 3 }}>
-                          <a href={subheading.url} key={subheading.url}>
-                            {subheading.title}
+                  {tableOfContents.items.map((heading, i) => {
+                    const isHeadingActive =
+                      heading.url === `#${activeHeadingHash}`
+                    return (
+                      <div key={i}>
+                        <li
+                          key={heading.url}
+                          sx={{
+                            scrollMarginTop: "128px",
+                            color: theme =>
+                              isHeadingActive
+                                ? `${theme.colors.secondary}`
+                                : `inherit`,
+                            fontWeight: () =>
+                              isHeadingActive ? `700` : `inherit`,
+                          }}
+                        >
+                          <a href={heading.url} key={heading.url}>
+                            {heading.title}
                           </a>
                         </li>
-                      ))}
-                    </div>
-                  ))}
+                        {heading.items?.map(subheading => {
+                          const isSubHeadingActive =
+                            subheading.url === `#${activeHeadingHash}`
+                          return (
+                            <li
+                              key={subheading.url}
+                              sx={{
+                                px: 3,
+                                color: theme =>
+                                  isSubHeadingActive
+                                    ? `${theme.colors.secondary}`
+                                    : `inherit`,
+                                fontWeight: () =>
+                                  isSubHeadingActive ? `700` : `inherit`,
+                              }}
+                            >
+                              <a href={subheading.url} key={subheading.url}>
+                                {subheading.title}
+                              </a>
+                            </li>
+                          )
+                        })}
+                      </div>
+                    )
+                  })}
                 </InnerScroll>
               </Toc>
             )}

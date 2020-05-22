@@ -35,8 +35,14 @@ import IconMoon from "./moon"
 import IconSun from "./sun"
 import IconMute from "./mute"
 import IconSoundOn from "./soundOn"
+import IconInfo from "./info"
+import IconWarning from "./warning"
+import IconCheck from "./check"
 
 export {
+  IconCheck,
+  IconWarning,
+  IconInfo,
   IconSoundOn,
   IconMute,
   IconMoon,

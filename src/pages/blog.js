@@ -83,8 +83,23 @@ const Blog = ({ data }) => {
               aria-label="Search"
               placeholder="Type to filter posts..."
               onChange={handleInputChange}
+              sx={{
+                color: "text",
+                backgroundColor: "highlight",
+                border: "0.5px solid highlight",
+                "::placeholder": {
+                  color: "text",
+                },
+              }}
             />
-            <PostsCount>{posts.length}</PostsCount>
+            <PostsCount
+              sx={{
+                color: "text",
+                backgroundColor: "highlight",
+              }}
+            >
+              {posts.length}
+            </PostsCount>
           </div>
           <div
             style={{
@@ -248,7 +263,6 @@ const Heading = styled.h3`
 `
 const SearchBar = styled.input`
   padding: 0.5rem 1rem;
-  border: 1px solid black;
   margin: 1rem;
   border-radius: 5px;
   max-width: 400px;
@@ -262,10 +276,7 @@ const PostsCount = styled.div`
   height: 36px;
   padding: 8px;
   text-align: center;
-  line-height: 1rem;
-  font-weight: 700;
   font-size: 1.5rem;
   background: #fff;
-  border: 2px solid #666;
-  color: #666;
+  line-height: 0.85em;
 `

@@ -184,8 +184,8 @@ export const GlobalStyle = () => {
         }
         .gatsby-highlight pre[class~="language-ts"]::before {
           content: "TS";
-          background: #f7df1e;
-          color: black;
+          background: #007acc;
+          color: #ffffff;
         }
 
         .gatsby-highlight pre[class~="language-js"]::before {
@@ -196,13 +196,13 @@ export const GlobalStyle = () => {
 
         .gatsby-highlight pre[class~="language-html"]::before {
           content: "HTML";
-          background: #005a9c;
+          background: #e44d26;
           color: white;
         }
 
         .gatsby-highlight pre[class~="language-JSX"]::before {
           content: "CSS";
-          background: #696969;
+          background: #264de4;
           color: white;
         }
         .gatsby-highlight pre[class~="language-css"]::before {

@@ -12,7 +12,7 @@ const theme = {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
-    heading: 900,
+    heading: 600,
     bold: 700,
   },
   lineHeights: {
@@ -21,6 +21,7 @@ const theme = {
   },
   useColorSchemeMediaQuery: false,
   colors: {
+    code: "#5A6072",
     text: "#1a202c",
     background: "#f7fafc",
     primary: "#609",
@@ -38,6 +39,7 @@ const theme = {
     infoBg: "#DFEBF6",
     modes: {
       dark: {
+        code: "#9CA8B4",
         text: "hsl(210, 50%, 96%)",
         background: "hsl(230, 25%, 18%)",
         primary: "hsl(260, 100%, 80%)",
@@ -96,8 +98,9 @@ const theme = {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      fontSize: 3,
-      my: 3,
+      fontSize: 4,
+      marginTop: 4,
+      marginBottom: 2,
       scrollMarginTop: "1em",
       a: {
         float: "left",
@@ -144,7 +147,8 @@ const theme = {
       fontFamily: "body",
       fontWeight: "body",
       lineHeight: "body",
-      margin: "20px 0",
+      marginTop: 2,
+      marginBottom: 2,
     },
     a: {
       color: "primary",

@@ -38,10 +38,13 @@ import {
   IconCheck,
   IconWarning,
   IconInfo,
+  IconArrow,
 } from "./index"
 
 const FormattedIcon = ({ name }) => {
   switch (name) {
+    case "Arrow":
+      return <IconArrow />
     case "warning":
       return <IconWarning />
     case "info":

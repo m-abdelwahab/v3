@@ -41,7 +41,7 @@ const Toc = styled.ul`
   max-height: calc(100vh - 148px);
   padding-bottom: 16px;
   overflow: auto;
-  @media (min-width: 1025px) {
+  @media (min-width: 1200px) {
     display: block;
   }
   li {

@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 import { theme, media, Section } from "../styles"
 import { Link } from "gatsby"
 import Fade from "react-reveal/Fade"
-const { fontSizes, colors } = theme
+const { fontSizes } = theme
 
 const Discover = () => {
   return (

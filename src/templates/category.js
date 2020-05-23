@@ -32,7 +32,9 @@ const Category = ({ data, pageContext }) => {
                   boxShadow: "0 1px 3px 0 highlight, 0 1px 2px 0 highlight",
                 }}
               >
-                <Title key={i}>{post.frontmatter.title}</Title>
+                <Link to={post.fields.slug}>
+                  <Title key={i}>{post.frontmatter.title}</Title>
+                </Link>
                 <Description>{post.frontmatter.description}</Description>
                 <Info>
                   <p>
@@ -58,6 +60,9 @@ export const query = graphql`
     allMdx(filter: { frontmatter: { categories: { eq: $category } } }) {
       nodes {
         timeToRead
+        fields {
+          slug
+        }
         frontmatter {
           title
           description

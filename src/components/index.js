@@ -15,6 +15,7 @@ import Newsletter from "./newsletter"
 import Share from "./share"
 import Tooltip from "./tooltip"
 import Callout from "./callout"
+import Li from "./li"
 
 export {
   About,
@@ -34,4 +35,5 @@ export {
   Share,
   Tooltip,
   Callout,
+  Li,
 }

@@ -151,9 +151,12 @@ export const GlobalStyle = () => {
 
         p > code,
         li > code {
-          background: rgb(1, 22, 39);
-          color: rgb(214, 222, 235);
-          padding: 0.4em 0.3rem;
+          background: ${theme.colors.code};
+          color: ${theme.colors.background};
+          padding: 3px 6px;
+          font-size: 0.9em;
+          letter-spacing: -0.5px;
+          border-radius: 3px;
         }
 
         .gatsby-highlight {

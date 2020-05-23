@@ -38,8 +38,10 @@ import IconSoundOn from "./soundOn"
 import IconInfo from "./info"
 import IconWarning from "./warning"
 import IconCheck from "./check"
+import IconArrow from "./arrow"
 
 export {
+  IconArrow,
   IconCheck,
   IconWarning,
   IconInfo,

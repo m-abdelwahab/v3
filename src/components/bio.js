@@ -20,7 +20,7 @@ const Avatar = styled.img`
   shape-outside: ellipse();
 `
 
-const Paragraph = styled.p`
+const Paragraph = styled.div`
   font-size: 1em;
   margin: 1em;
   font-weight: 500;

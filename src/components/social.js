@@ -45,7 +45,7 @@ const Social = () => {
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 2000)
+    const timeout = setTimeout(() => setIsMounted(true), 1000)
     return () => clearTimeout(timeout)
   }, [])
 

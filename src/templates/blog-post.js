@@ -5,9 +5,11 @@ import { useActiveHash } from "../hooks/useActiveHash"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "@emotion/styled"
-import { SEO, Layout, Bio, Code, Share, Tooltip } from "../components"
+import { SEO, Layout, Bio, Code, Share } from "../components"
 import Fade from "react-reveal/Fade"
 import { theme, media, ProgressBar } from "../styles"
+import getShareImage from "@jlengstorf/get-share-image"
+
 const { fontSizes } = theme
 
 const StyledH2 = styled.h2`
@@ -114,11 +116,24 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
   }
   const activeHeadingHash = useActiveHash(getHashUrl(tableOfContents, "url"))
 
+  const socialImage = getShareImage({
+    title: title,
+    cloudName: "thisismahmoud",
+    imagePublicID: "blog-card",
+    textLeftOffset: "100",
+    textAreaWidth: "700",
+    titleFont: "futura",
+    textColor: "F0F5FA",
+  })
   return (
     <>
       <ProgressBar />
       <Layout>
-        <SEO title={title} description={description || excerpt} />
+        <SEO
+          title={title}
+          description={description || excerpt}
+          image={socialImage}
+        />
         <Fade>
           <Container>
             {typeof tableOfContents.items === "undefined" ? null : (

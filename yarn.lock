@@ -1377,6 +1377,11 @@
     core-js "^3.4.1"
     regenerator-runtime "^0.13.3"
 
+"@jlengstorf/get-share-image@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@jlengstorf/get-share-image/-/get-share-image-0.7.1.tgz#bdef9c633ce6dbf8c300fc82d18befba615a0d5c"
+  integrity sha512-eXATsFDhdRYMqAcrBNW4SpZttAxlA9S/9IAvyUt7UTxxlwNXKo/tqrOxRoOSrA79l25QQ0oDqP/9BcdvvGmYxQ==
+
 "@mdx-js/mdx@^1.5.5", "@mdx-js/mdx@^1.6.1", "@mdx-js/mdx@^1.6.4":
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.6.4.tgz#9c7be8430b15b18dad7bd48323eded92a01089f3"

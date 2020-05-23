@@ -7,6 +7,8 @@ import styled from "@emotion/styled"
 import { SEO, Layout, Bio, Code, Share } from "../components"
 import Fade from "react-reveal/Fade"
 import { theme, media, ProgressBar } from "../styles"
+import getShareImage from "@jlengstorf/get-share-image"
+
 const { fontSizes } = theme
 
 const StyledH2 = styled.h2`
@@ -57,11 +59,24 @@ const Article = ({ data, pageContext, excerpt }) => {
   const { body, frontmatter, fields } = data.mdx
   const { title, description } = frontmatter
 
+  const socialImage = getShareImage({
+    title: title,
+    cloudName: "thisismahmoud",
+    imagePublicID: "blog-card",
+    textLeftOffset: "100",
+    textAreaWidth: "700",
+    titleFont: "futura",
+    textColor: "F0F5FA",
+  })
   return (
     <>
       <ProgressBar />
       <Layout>
-        <SEO title={title} description={description || excerpt} />
+        <SEO
+          title={title}
+          description={description || excerpt}
+          image={socialImage}
+        />
         <Fade>
           <Container>
             <StyledArticle>

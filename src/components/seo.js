@@ -11,6 +11,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -44,7 +45,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: `article`,
         },
         {
           name: `twitter:card`,
@@ -52,7 +53,11 @@ const SEO = ({ description, lang, meta, title, image }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: "@thisismahmoud_",
+        },
+        {
+          name: `twitter:site`,
+          content: site.siteMetadata.siteUrl,
         },
         {
           name: `twitter:title`,

@@ -12,7 +12,7 @@ Here's the [talk link](https://egghead.io/lessons/egghead-egghead-talks-designin
 
 <Callout variant="info">
   These notes were originally published at{" "}
-  <a href="https://github.com/eggheadio-projects/egghead-talks-sleeping-better-at-night">
+  <a href="https://egghead.io/lessons/egghead-egghead-talks-designing-for-inclusive-user-experience">
     this repository
   </a>
   . They're community notes by <a href="https://egghead.io">Egghead.io</a> 's Learner
@@ -50,11 +50,10 @@ In the `<head>` tag of your HTML, make sure that you add a title because this is
 
 Also, setting the title allows users to manage their tabs easily since they can understand what each tab is for and what website they're on.
 
-```HTML
+```html
 <head>
- <title>Home | My Website</title>
+  <title>Home | My Website</title>
 </head>
-
 ```
 
 ![HTML Title Tag](./assets/htmlTitle.png)
@@ -97,9 +96,11 @@ Having meaningful names for links is also useful for SEO (Search Engine Optimiza
 
 Associating form elements with their labels increases the clickable area. This is crucial for mobile users since they use smaller screens.
 
-```HTML
-<label for="name">Name:</label>
-<input type="text" id="name"/>
+```html
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" />
+</form>
 ```
 
 Here's an example of an accessible checkbox. Much easier to use on mobile because users can click the label to check the box.
@@ -125,8 +126,8 @@ Here's an example of an image with good alt text:
 
 ![Image with good alt text](assets/pancake.png)
 
-```HTML
-<img src="pancakes.png" alt="Stack of blueberry pancakes with powdered sugar">
+```html
+<img src="pancakes.png" alt="Stack of blueberry pancakes with powdered sugar" />
 ```
 
 The exception to this is when you have a purely decorative image, like a line separator or an image that you're using as a bullet inside a list. Then you can use an empty `alt` attribute.

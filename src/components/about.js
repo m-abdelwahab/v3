@@ -1,3 +1,5 @@
+// @jsx jsx
+import { jsx } from "theme-ui"
 import React from "react"
 import styled from "@emotion/styled"
 import { FormattedIcon } from "../components/icons"
@@ -10,7 +12,7 @@ import Fade from "react-reveal/Fade"
 import { Link } from "gatsby"
 import { theme, Section, media } from "../styles"
 
-const { fontSizes, colors } = theme
+const { fontSizes } = theme
 
 const About = () => {
   return (

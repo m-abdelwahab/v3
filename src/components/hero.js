@@ -55,7 +55,15 @@ const Hero = () => {
   const five = () => (
     <div style={{ transitionDelay: "600ms" }}>
       <ResumeButton
-        sx={{ backgroundColor: "text", color: "background" }}
+        sx={{
+          backgroundColor: "text",
+          color: "background",
+          "&:hover": {
+            backgroundColor: "secondary",
+            color: "background",
+            opacity: 1,
+          },
+        }}
         href={`/resume.pdf`}
       >
         Resume
@@ -160,7 +168,6 @@ const ResumeButton = styled.a`
   text-decoration: none;
   font-weight: 700;
   cursor: pointer;
-  &:hover,
   &:focus,
   &:active {
     background-color: ${colors.white};

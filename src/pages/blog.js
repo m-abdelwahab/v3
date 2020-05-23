@@ -130,7 +130,7 @@ const Blog = ({ data }) => {
                   <Card
                     key={node.fields.slug}
                     sx={{
-                      boxShadow: "0 1px 3px 0 highlight, 0 1px 2px 0 highlight",
+                      boxShadow: `0 1px 3px 0 ${theme.colors.highlight}, 0 1px 2px 0 ${theme.colors.highlight}`,
                       backgroundColor: "card",
                     }}
                   >

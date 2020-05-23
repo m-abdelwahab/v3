@@ -202,12 +202,12 @@ export const GlobalStyle = () => {
 
         .gatsby-highlight pre[class~="language-JSX"]::before {
           content: "CSS";
-          background: #264de4;
+          background: #696969;
           color: white;
         }
         .gatsby-highlight pre[class~="language-css"]::before {
           content: "css";
-          background: #ff9800;
+          background: #264de4;
           color: white;
         }
 

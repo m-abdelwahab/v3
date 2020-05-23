@@ -19,7 +19,7 @@ const theme = {
     body: 1.6,
     heading: 1.25,
   },
-  useColorSchemeMediaQuery: true,
+  useColorSchemeMediaQuery: false,
   colors: {
     text: "#1a202c",
     background: "#f7fafc",

@@ -63,6 +63,9 @@ const ShareContainer = styled.div`
   border-radius: 10px;
 
   button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
     padding: 1.25rem 1.75rem;
     font-size: 1rem;
@@ -81,7 +84,7 @@ const ShareContainer = styled.div`
     svg {
       width: 24px;
       height: 24px;
-      margin-left: 0.1rem;
+      margin-left: 0.2rem;
     }
   }
 `

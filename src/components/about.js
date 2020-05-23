@@ -62,11 +62,6 @@ const About = () => {
             Computer Science at the German University in Cairo.
           </p>
           <p>
-            Here's some fun facts about me: I speak five languages: Arabic
-            (Native), English (fluent) , French (fluent), Spanish (intermediate)
-            and German (beginner).
-          </p>
-          <p>
             During the past few years, Fitness and working out became a huge
             part of my life and daily routine, that's why if you can't find me
             at my workspace , you'll probably find me at the gym{" "}

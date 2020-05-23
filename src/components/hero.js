@@ -13,7 +13,7 @@ const Hero = () => {
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 1000)
+    const timeout = setTimeout(() => setIsMounted(true), 100)
     return () => clearTimeout(timeout)
   }, [])
 

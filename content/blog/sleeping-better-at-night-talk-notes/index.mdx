@@ -1,5 +1,5 @@
 ---
-title: Sleeping Better At Night - Talk Notes
+title: Sleeping Better At Night
 type: "Tutorial"
 date: "2019-05-12"
 categories: ["Testing", "Notes"]
@@ -10,7 +10,17 @@ In this talk, [Tomasz](https://twitter.com/tlakomy) gives an overview on why you
 
 Here's the [talk link](https://egghead.io/lessons/egghead-egghead-talks-sleeping-better-at-night) 📹
 
-## Why are you afraid of pushing to production of Friday?
+<Callout variant="info">
+  These notes were originally published at{" "}
+  <a href="https://github.com/eggheadio-projects/egghead-talks-sleeping-better-at-night">
+    this repository
+  </a>
+  . They're community notes by <a href="https://egghead.io">Egghead.io</a> 's Learner
+  Advocates. I'm sharing them here on my blog since I contributed in writing them
+  😄
+</Callout>
+
+## Why are you afraid of pushing to production on Friday?
 
 Your code doesn't care about which day of the week it is, it doesn't know the difference between tuesday and friday so why should you?
 
@@ -64,7 +74,7 @@ Using a strongly typed language (like [TypeScript](https://www.typescriptlang.or
 
 Having types is great but even 100% typed code has bugs. Think of apps written in a strongly typed language like Java or C++, they have bugs.
 
-```ts {7,18-20}
+```ts
 // this code is in TypeScript, which is
 // strict syntactical super-set of JavaScript
 
@@ -161,7 +171,7 @@ test("shows the children when the checkbox is checked", () => {
 
 <!-- testing  lib code snippet-->
 
-> Your test should think in terms of props, classes, etc. It should think in terms of text, labels, button text, visible elements, and the things users see and interact with, and their associated accesible elements.
+> Your test shouldn't think in terms of props, classes, etc. It should think in terms of text, labels, button text, visible elements, and the things users see and interact with, and their associated accesible elements.
 
 Writing tests this way, gives you confidence in your software. Because through this testing approach youre answering the question of "Does this code actually work?"
 
@@ -251,5 +261,3 @@ A great book about user testing is ["Rocket Surgery made easy" by Steve Krug](ht
 _Don't forget to watch the [post-talk Q&A](https://egghead.io/lessons/egghead-egghead-talks-sleeping-better-at-night#t=2530)_
 
 ---
-
-This project follows the [all-contributors](https://allcontributors.org/) specification. Contributions of any kind are welcome!

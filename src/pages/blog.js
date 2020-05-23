@@ -1,12 +1,11 @@
 // @jsx jsx
-import { jsx } from "theme-ui"
+import { jsx, useThemeUI } from "theme-ui"
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import { SEO, Layout } from "../components"
 import { theme, Section, media } from "../styles"
 import Fade from "react-reveal/Fade"
-const { fontSizes, colors } = theme
 const array = require("lodash/array")
 
 const Blog = ({ data }) => {
@@ -54,7 +53,7 @@ const Blog = ({ data }) => {
   const { filteredData, query } = state
   const hasSearchResults = filteredData && query !== emptyQuery
   const posts = hasSearchResults ? filteredData : allPosts
-
+  const { theme } = useThemeUI()
   return (
     <div>
       <Layout>
@@ -86,7 +85,7 @@ const Blog = ({ data }) => {
               sx={{
                 color: "text",
                 backgroundColor: "highlight",
-                border: "0.5px solid highlight",
+                border: `0.5px solid ${theme.colors.highlight}`,
                 "::placeholder": {
                   color: "text",
                 },
@@ -213,17 +212,12 @@ const Card = styled.div`
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  transition: all 150ms ease-in-out;
-  &:hover {
-    transition: all 150ms ease-in-out;
-  }
 `
 const Category = styled.h4`
   font-weight: 600;
-  /* color: ${colors.grey}; */
-  margin:1rem 0;
-  span{
-    margin-right:0.5rem;
+  margin: 1rem 0;
+  span {
+    margin-right: 0.5rem;
   }
 `
 const Title = styled.h3`
@@ -254,10 +248,10 @@ const Heading = styled.h3`
   margin: 10px 0 40px;
   width: 100%;
   white-space: nowrap;
-  font-size: ${fontSizes.h3};
+  font-size: 32px;
   ${media.tablet`font-size: 24px;`};
   span {
-    font-size: ${fontSizes.h3};
+    font-size: 32px;
     ${media.tablet`font-size: 24px;`};
   }
 `

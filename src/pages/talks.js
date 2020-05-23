@@ -18,7 +18,8 @@ const TalksPage = () => {
           title
           description
           topic
-          slides
+          event
+          link
         }
       }
     }
@@ -36,21 +37,17 @@ const TalksPage = () => {
         </Heading>
         <Grid>
           {talks.map((talk, i) => {
+            const { topic, title, description, event, link } = talk
             return (
               <Fade key={i} delay={200 * i}>
-                <Card sx={{ backgroundColor: "card" }}>
-                  <Tag>{talk.topic}</Tag>
-                  <Title>{talk.title}</Title>
-                  <Description>{talk.description}</Description>
-                  <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={talk.slides}
-                  >
-                    <FormattedIcon name="Link" />
-                    Slides
-                  </a>
-                </Card>
+                <a rel="noopener noreferrer" target="_blank" href={link}>
+                  <Card sx={{ backgroundColor: "card" }}>
+                    <Tag>{topic}</Tag>
+                    <Title>{title}</Title>
+                    <Description>{description}</Description>
+                    <Event>{event}</Event>
+                  </Card>
+                </a>
               </Fade>
             )
           })}
@@ -122,4 +119,7 @@ const Heading = styled.h3`
     font-size: ${fontSizes.h3};
     ${media.tablet`font-size: 24px;`};
   }
+`
+const Event = styled.p`
+  font-weight: 700;
 `

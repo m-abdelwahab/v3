@@ -6,7 +6,6 @@ module.exports = {
     "Mahmoud Abdelwahab, Mahmoud, Abdelwahab, thisismahmoud, software engineer, front-end engineer, web developer, javascript",
   url: "https://mahmoudabdelwahab.tech",
   language: "en_US",
-  googleAnalyticsID: "UA-167499941-1",
   author: "Mahmoud Abdelwahab",
   name: "Mahmoud Abdelwahab",
   location: "Cairo, Egypt",

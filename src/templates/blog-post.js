@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React from "react"
+import ReactTooltip from "react-tooltip"
 import { useActiveHash } from "../hooks/useActiveHash"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -136,6 +137,7 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
         />
         <Fade>
           <Container>
+            <ReactTooltip />
             {typeof tableOfContents.items === "undefined" ? null : (
               <Toc>
                 <InnerScroll>

@@ -21,6 +21,7 @@ const theme = {
   },
   useColorSchemeMediaQuery: false,
   colors: {
+    player: "#FFFFFF",
     code: "#5A6072",
     text: "#1a202c",
     background: "#f7fafc",
@@ -39,6 +40,7 @@ const theme = {
     infoBg: "#DFEBF6",
     modes: {
       dark: {
+        player: "hsl(230, 25%, 25%)",
         code: "#9CA8B4",
         text: "hsl(210, 50%, 96%)",
         background: "hsl(230, 25%, 18%)",

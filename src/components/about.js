@@ -3,8 +3,7 @@ import { jsx } from "theme-ui"
 import React from "react"
 import styled from "@emotion/styled"
 import { FormattedIcon } from "../components/icons"
-import "react-tippy/dist/tippy.css"
-import { Tooltip } from "react-tippy"
+import ReactTooltip from "react-tooltip"
 import CountUp from "react-countup"
 import Me from "../images/me.jpg"
 import { statsList, skillsList } from "../data/aboutData"
@@ -41,17 +40,14 @@ const About = () => {
         </AboutStats>
 
         <AboutSkills>
+          <ReactTooltip />
           <h1>Tools I use</h1> <br />
           {skillsList.map((skill, i) => {
             return (
               <Fade key={i} right delay={100 * i}>
-                <Tooltip
-                  title={skill.name}
-                  position="bottom"
-                  trigger="mouseenter"
-                >
+                <div data-tip={`${skill.name}`}>
                   <FormattedIcon name={skill.name} />
-                </Tooltip>
+                </div>
               </Fade>
             )
           })}

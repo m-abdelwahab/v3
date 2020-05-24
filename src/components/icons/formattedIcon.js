@@ -39,10 +39,25 @@ import {
   IconWarning,
   IconInfo,
   IconArrow,
+  IconPause,
+  IconFastForward,
+  IconVolumeMax,
+  IconRewind,
+  IconPlay,
 } from "./index"
 
 const FormattedIcon = ({ name }) => {
   switch (name) {
+    case "VolumeMax":
+      return <IconVolumeMax />
+    case "Pause":
+      return <IconPause />
+    case "Play":
+      return <IconPlay />
+    case "FastForward":
+      return <IconFastForward />
+    case "Rewind":
+      return <IconRewind />
     case "Arrow":
       return <IconArrow />
     case "warning":

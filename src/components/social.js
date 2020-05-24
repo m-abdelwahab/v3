@@ -6,7 +6,6 @@ import { socialMedia } from "../config"
 import { FormattedIcon } from "../components/icons"
 import styled from "@emotion/styled"
 import { media } from "../styles"
-import "react-tippy/dist/tippy.css"
 // const { colors } = theme
 
 const SocialContainer = styled.div`

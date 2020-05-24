@@ -1,12 +1,10 @@
 // @jsx jsx
 import { jsx } from "theme-ui"
 import React from "react"
-import ReactTooltip from "react-tooltip"
 
 const Tooltip = ({ content }) => {
   return (
-    <>
-      <ReactTooltip />
+    <span>
       <span
         sx={{
           color: "primary",
@@ -17,7 +15,7 @@ const Tooltip = ({ content }) => {
       >
         *
       </span>
-    </>
+    </span>
   )
 }
 export default Tooltip

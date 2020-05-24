@@ -16,6 +16,7 @@ import Share from "./share"
 import Tooltip from "./tooltip"
 import Callout from "./callout"
 import Li from "./li"
+import Player from "./player"
 
 export {
   About,
@@ -36,4 +37,5 @@ export {
   Tooltip,
   Callout,
   Li,
+  Player,
 }

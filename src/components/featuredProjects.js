@@ -3,11 +3,11 @@ import { jsx } from "theme-ui"
 import React from "react"
 import styled from "@emotion/styled"
 import { FormattedIcon } from "../components/icons"
-import "react-tippy/dist/tippy.css"
 import { media, Section } from "../styles"
 import Fade from "react-reveal/Fade"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import ReactTooltip from "react-tooltip"
 
 const FeaturedProjects = () => {
   const data = useStaticQuery(graphql`
@@ -37,6 +37,7 @@ const FeaturedProjects = () => {
   const { projects } = data.featuredProjectsJson
   return (
     <Container id="featured-projects">
+      <ReactTooltip />
       <Heading sx={{ fontSize: 5 }}>Coding Projects</Heading>
       <Grid>
         {projects.map((project, i) => {
@@ -53,9 +54,9 @@ const FeaturedProjects = () => {
                 <Stack>
                   {project.tech.map((tech, i) => {
                     return (
-                      <div key={i}>
+                      <span key={i} data-tip={`${tech}`}>
                         <FormattedIcon name={tech} aria-label={tech} />
-                      </div>
+                      </span>
                     )
                   })}
                 </Stack>

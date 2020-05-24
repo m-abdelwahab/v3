@@ -39,8 +39,18 @@ import IconInfo from "./info"
 import IconWarning from "./warning"
 import IconCheck from "./check"
 import IconArrow from "./arrow"
+import IconPlay from "./play"
+import IconPause from "./pause"
+import IconRewind from "./rewind"
+import IconFastForward from "./fastForword"
+import IconVolumeMax from "./volumeMax"
 
 export {
+  IconPause,
+  IconFastForward,
+  IconVolumeMax,
+  IconRewind,
+  IconPlay,
   IconArrow,
   IconCheck,
   IconWarning,

@@ -8,10 +8,10 @@ import {
   Discover,
   About,
 } from "../components"
-
+import Screenshot from "../images/featuredProjects/portfolio.png"
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Home" image={Screenshot} />
     <Hero />
     <About />
     <FeaturedProjects />

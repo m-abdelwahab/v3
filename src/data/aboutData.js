@@ -32,7 +32,7 @@ export const experiences = [
     years: "April 2020 - Dec 2021",
     url:
       "https://studentpartners.microsoft.com/en-us/Account/DisplayMSPCertificate?url=57f024aeea09451e8dfedba45230601f",
-    description: `Responsible for taking notes for courses, reviewing them and attending workshops on Egghead`,
+    description: `Help fellow students, create robust tech communities, and develop technical and career skills.`,
     icon: `${StudentPartner}`,
     alt: "Microsoft Student Partners Logo",
   },

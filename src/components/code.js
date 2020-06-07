@@ -4,6 +4,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
 import styled from "@emotion/styled"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import theme from "prism-react-renderer/themes/nightOwl"
+import { useMDXScope } from "gatsby-plugin-mdx/context"
 
 const RE = /{([\d,-]+)}/
 
@@ -24,30 +25,35 @@ const calculateLinesToHighlight = meta => {
 }
 
 const LiveProviderContainer = styled.div`
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  @media (min-width: 1000px) {
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow-x: scroll;
+  }
 `
+
 const Code = ({ codeString, language, metastring, ...props }) => {
   const shouldHighlightLine = calculateLinesToHighlight(metastring)
+  const components = useMDXScope()
 
   if (props["react-live"]) {
     return (
       <LiveProviderContainer>
-        <LiveProvider code={codeString}>
+        <LiveProvider code={codeString} scope={components}>
           <LiveEditor
             theme={theme}
             sx={{ maxWidth: "750px", minWidth: "50%" }}
           />
           <LiveError />
-          <LivePreview />
+          <LivePreview sx={{ backgroundColor: "background" }} />
         </LiveProvider>
       </LiveProviderContainer>
     )

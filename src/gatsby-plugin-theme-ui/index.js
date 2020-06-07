@@ -84,13 +84,16 @@ const theme = {
         marginLeft: "-24px",
       },
       svg: {
-        visibility: "hidden",
+        display: "none",
+        width: "20px",
+        height: "20px",
       },
       "&:hover": {
         svg: {
-          visibility: "visible",
+          display: "inline",
           height: "25px",
           width: "20px",
+          height: "20px",
           fill: "highlight",
         },
       },
@@ -109,13 +112,16 @@ const theme = {
         marginLeft: "-24px",
       },
       svg: {
-        visibility: "hidden",
+        display: "none",
+        width: "20px",
+        height: "20px",
       },
       "&:hover": {
         svg: {
-          visibility: "visible",
+          display: "inline",
           height: "25px",
           width: "20px",
+          height: "20px",
           fill: "highlight",
         },
       },

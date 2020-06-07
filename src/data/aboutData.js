@@ -3,8 +3,18 @@ import GUCLogo from "../images/guc-logo.svg"
 import VGS from "../images/vgs.png"
 import Egghead from "../images/egghead.png"
 import StudentPartner from "../images/microsoftStudentPartner.png"
-
+import Auth0 from "../images/auth0.svg"
 export const experiences = [
+  {
+    id: "6",
+    company: `Auth0`,
+    title: "Ambassador",
+    years: "Jun 2020 - present",
+    url: "https://auth0.com/ambassador",
+    description: `Working with Auth0's DevRel team to write content about security, authentication and Auth0`,
+    icon: `${Auth0}`,
+    alt: "Auth0 Logo",
+  },
   {
     id: "4",
     company: `Egghead.io`,

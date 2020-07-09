@@ -13,6 +13,6 @@ Portfolio Website Built using:
 
 **V1**: https://m-abdelwahab.github.io
 
-**V2**: https://mahmoudabdelwahab.netlify.app/
+**V2**: https://mahmoudabdelwahab.netlify.app/ based on this website https://github.com/bchiang7/v4 https://brittanychiang.com/
 
 **V3**: https://mahmoud.codes

@@ -12,3 +12,4 @@ Portfolio Website Built using:
 - Gatsby
 
 **V1**: https://m-abdelwahab.github.io
+**V2**: built using Gatsby, but V3 is the redesign

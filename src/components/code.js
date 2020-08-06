@@ -34,9 +34,10 @@ const LiveProviderContainer = styled.div`
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    margin-left: -41vw;
+    margin-right: -41vw;
     overflow-x: scroll;
+    min-height: 20vh;
   }
 `
 

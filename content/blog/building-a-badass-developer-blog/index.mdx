@@ -1,0 +1,256 @@
+---
+title: Building A Badass Developer Blog
+type: "Tutorial"
+date: "2019-05-12"
+categories: ["Gatsby", "MDX"]
+description: "How to start your own blog"
+published: false
+---
+
+import { Bio, Callout } from "../../../src/components/"
+import Audiofile from "./assets/sample.mp3"
+
+## Why start a blog in the first place?
+
+When you look at the top performers in your field, the outliers, the ones that you look up to and learn from.
+You'll find that most often they share a similar trait: they have some sort of place where they share their knowledge.
+
+It can be:
+
+- A Twitter account
+- A blog on Dev.to
+- A YouTube Channel
+- Their own personal blog.
+- A Meetup they speak at
+- A Newsletter
+
+The important question here is **why**?
+
+Why should you spend time writing something or creating content?
+
+What's the benefit of doing this?
+
+Here's a list of some awesome benefits:
+
+- **You learn best by teaching**. You can't explain something without fully understanding it. So by teaching you find the gaps in your knowledgde.
+- **You establish yourself as someone that knows their sh\*t**.
+  Automatically when you see that someone writes a lot about a certain topic,
+  this means that they have a deep understanding of it
+- **You help others** who want to learn about the topic that you're teaching
+
+<br />
+
+Now you might be saying something along the lines of:
+
+**"the thing that I want to write about already has a ton of articles"**
+
+Your persepective, the way you explain things, the examples that you use, the diagrams that you draw make your blog post unique and different.
+Your blog post may be the one that makes a concept click inside someone's head.
+
+For me for example, at some point I wanted to understand what the "event loop" was. So I went through a couple of articles and it still didn't "click".
+
+Until I found this talk
+
+https://www.youtube.com/watch?v=8aGhZQkoFbQ
+
+After watching it I felt like a genius. Seriously.
+
+<div style="width:100%;height:0;padding-bottom:75%;position:relative;">
+  <iframe
+    src="https://giphy.com/embed/ojhAx9NdqUTK0"
+    width="100%"
+    height="100%"
+    style="position:absolute"
+    frameBorder="0"
+    class="giphy-embed"
+    allowFullScreen
+  ></iframe>
+</div>
+
+So don't hold back when it comes to creating content.
+
+<br />
+
+**What if no one reads my blog or watches my video?**
+
+In my humble opinion, blogging isn't about reaching as many people as possible.
+
+nor it's about likes or views.
+
+It's about **you**
+
+You gain the most by creating. You solidify your knowledge and you get better at writing.
+
+If you become famous in the process, that's awesome. But it shouldn't be your goal (unless you want to)
+
+<br />
+
+**What if I'm wrong and I embarass myself?**
+
+If you make a mistake while writing and people correct you, good. It means you've learned something new.
+
+Be open to criticism.
+
+If you find something wrong or missing from this article, please let me know. It will only help me get better.
+
+<br />
+
+Hopefully you now understand the benefits of blogging and creating content.
+If you didn't, here's a list of developerswho are much more experienced than I am
+discuss the importance of creating content.
+
+- [Learn in Public](https://www.swyx.io/writing/learn-in-public/) by [@swyx ](https://twitter.com/swyx)
+- [Intentional career bulding](https://kentcdodds.com/blog/intentional-career-building) by [Kent C. Dodds](https://twitter.com/kentcdodds)
+
+<br />
+
+Now let's see the different ways you can start blogging and the differences between them
+
+## Using a Blogging platform vs. Your own blog
+
+The most popular solutions for starting a developer blog are [Dev.to](https://dev.to) and [Hashnode](https://hashnode.com)
+
+Here's what's awesome about using a blogging platform:
+
+- You don't care about hosting and maintaining your blog
+- You don't worry about notifying people who are interested in your content (Notifications)
+- Generally your content can be discovered easily since you can specify tags for each post.
+
+Here's what's no so awesome about using a blogging platform
+
+- You don't **own** your content. This means if anything were to happen to the platform or if the platform decided to
+  remove your content there's nothing you can do about it.
+- You don't have control over how things look and feel. You're limited to what the platform offers in terms of design and features.
+
+Running your own blog is the exact opposite. It's more work but you have more control.
+
+Personally in my opinion, pick what's easier for you. The goal is to write and share what you learn. Make the process as frictionless as possible.
+
+Sometimes developers focus too much on the blog itself and forget about the content.
+
+I realised that I fell into this trap when someone kept asking me about my blog and I kept saying "oh I'm still working on it and adding features"
+
+Don't be like me.
+
+<br />
+
+So let's assume that you wanted to have your own blog and to own your content. How can you get started?
+
+## Options when creating your own blog
+
+### Static Site Generators
+
+Imaging you decide to create a blog today. So you open up your laptop.
+
+create directory called "blog"
+
+create an index.html file alongside a css file
+
+create another html page and write your blog post in HTML.
+
+You'll have something like this
+
+As you can see, the experience is very messy and there's a lot of copying and pasting.
+
+That's where static site generators come in.
+
+In a static site generators you have have a content directory that hols your blog posts, usually written in Markdown, and you specify a "template"
+
+Instead of you manually creating an HTML file, adding the CSS and making sure that there aren't any erros, etc. The pages are generated at build time.
+
+### Using a CMS
+
+### JamStack
+
+Gatsby
+
+Gridsome
+
+### Jamstack + CMS
+
+### Jamstack + MDX
+
+You can start a blog on a platform like Dev.to or Hashnode
+try and publish on popular blogs like Auth0, freecodecamp, logrocket, css-tricks, stackoverflow blog, etc.
+Hosting your own blog on your own domain.
+
+<Callout variant="check">
+  Make sure that when you do this you setup canonical URLs. If you're using
+  Gatsby, here's a [plugin]()
+</Callout>
+
+## Creating Custom Components
+
+One of my favorite things about MDX is that I have the full power of react when writing my blog posts.
+
+Writers have a common saying called "show don't tell". It's a common expression used to improve one's writing.
+
+Instead of telling your readers how they should feel, you let their imagination do the work. Here's an example:
+
+![show don't tell image](../assets/show-dont-tell.jpg)
+
+The goal is to create an immersive experience. So how do this relate to my blog?
+
+Well it's about making sure that the reader gets the most value of my writing.
+
+If I write a blog post about building a certain UI element, I want my readers to see the component in action.
+Tweak it to see what happens and interact with it. I don't want to have only screenshots.
+
+Show don't tell.
+
+Instead of just writing about my experience, why not add an audio version to make my blog more accessible and easier to consume?
+
+Instead of adding more context by using parentheses everywhere (like this). I can have a tooltip component that displays
+info when clicked/hovered.
+
+Maybe I want to discuss a book and I want to have spoilers. I can have a spoiler component that hides the content.
+This way I don't ruin someone's day
+
+For me the goal isn't just about learning in public. To me it's about trying to craft the best possible experience.
+The goal isn't just to inform, but to delight the reader as well.
+
+So that's why this setup worked so well for me. It made me excited about creating content.
+
+### Callouts
+
+<Callout variant="info">This is for info</Callout>
+<Callout variant="warning">This is for warnings</Callout>
+<Callout variant="check">
+  This is a reminder. Useful to establish prerequistes
+</Callout>
+
+### Tooltip
+
+Imagine that I want to add something to the sentence <Tooltip content="This is so cool for adding extra context" />
+
+### Audio Player
+
+Useful for making my blog posts easier to consume. Better UX
+
+<Player source={Audiofile} id="mdx-components" />
+
+### Sytnax Highlighting
+
+I can highlight individual lines in my code snippets. Really useful for pointing out important lines.
+
+```js {1,4}
+console.log("MDX is awesome!!")
+
+const add = (a, b) => {
+  return a + b
+}
+```
+
+## Live Code Editor
+
+This is really nice because It's much more interactive. Try changing `variant` to "info" or "warning"
+
+```js react-live
+<Callout variant="check">
+  This is a reminder. Useful to establish prerequistes
+</Callout>
+```
+
+## Inspiration For Awesome blogs
+
+## Resources

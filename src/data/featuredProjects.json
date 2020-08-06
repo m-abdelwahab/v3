@@ -3,6 +3,18 @@
     "projects": [
       {
         "id": "1",
+        "title": "Coding Career Handbook",
+        "description": "Designed and built the landing page",
+        "link": "https://www.learninpublic.org/",
+        "github": "https://github.com/m-abdelwahab/coding-career-handbook",
+        "tech": ["Gatsby", "tailwind-css"],
+        "cover": {
+          "src": "../images/featuredProjects/coding-career-handbook.png",
+          "alt": "coding career handbook landing page screenshot"
+        }
+      },
+      {
+        "id": "2",
         "title": "Covid-viz",
         "description": "View the latest statistics about COVID-19",
         "link": "https://covid-viz.netlify.com",
@@ -14,7 +26,7 @@
         }
       },
       {
-        "id": "2",
+        "id": "3",
         "title": "IdeaPad",
         "description": "Voice enabled full stack note-taking Web App",
         "link": "https://ideapad-app.herokuapp.com",
@@ -33,7 +45,7 @@
         }
       },
       {
-        "id": "3",
+        "id": "4",
         "title": "HN360",
         "description": "A news app powered by the Hackernews API",
         "link": "https://hn360.netlify.com",
@@ -45,7 +57,7 @@
         }
       },
       {
-        "id": "4",
+        "id": "5",
         "title": "Portfolio Website",
         "description": "RangeError: Maximum call stack size exceeded",
         "link": "https://mahmoudabdelwahab.tech",

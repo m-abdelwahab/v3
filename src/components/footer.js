@@ -45,7 +45,7 @@ const SocialLink = styled.a`
 `
 const Copy = styled.div`
   margin: 10px 0;
-  font-size: ${fontSizes.xsmall};
+  font-size: ${fontSizes.medium};
   line-height: 1;
 `
 const GithubLink = styled.a``

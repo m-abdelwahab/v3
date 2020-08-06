@@ -52,6 +52,7 @@ const Paragraph = styled.h3`
   font-size: ${fontSizes.xlarge};
   max-width: 500px;
   text-align: center;
+  line-height: 1.6;
   a {
     font-size: ${fontSizes.xlarge};
     border-bottom: 5px solid #0099ff;

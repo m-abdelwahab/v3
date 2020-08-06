@@ -98,5 +98,11 @@ module.exports = {
     },
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: config.url,
+      },
+    },
   ],
 }

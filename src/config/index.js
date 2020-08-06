@@ -4,7 +4,7 @@ module.exports = {
     "Mahmoud Abdelwahab is a Front-end software engineer based in Cairo, Egypt. Building at the intersection of Design and Development. who specializes in developing (and occasionally designing) exceptional, high-quality websites and applications.",
   keywords:
     "Mahmoud Abdelwahab, Mahmoud, Abdelwahab, thisismahmoud, software engineer, front-end engineer, web developer, javascript",
-  url: "https://mahmoudabdelwahab.tech",
+  url: "https://mahmoud.codes",
   language: "en_US",
   author: "Mahmoud Abdelwahab",
   name: "Mahmoud Abdelwahab",

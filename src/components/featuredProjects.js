@@ -133,7 +133,7 @@ const Description = styled.p`
 `
 
 const ProjectTitle = styled.h1`
-  font-size: 1.5em;
+  font-size: 1.35rem;
   margin-top: 1em;
 `
 

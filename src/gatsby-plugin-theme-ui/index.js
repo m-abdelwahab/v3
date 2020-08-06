@@ -163,6 +163,7 @@ const theme = {
       overflowWrap: "break-word",
       wordWrap: "break-word",
       hyphens: "auto",
+      fontWeight: "heading",
       "&::hover": {
         color: "highlight",
       },
@@ -181,10 +182,12 @@ const theme = {
       marginTop: 3,
     },
     hr: {
-      my: 2,
+      my: 4,
     },
     ul: {
       listStyle: "square inside",
+      my: 4,
+      marginLeft: 2,
     },
     li: {
       // display:"",
@@ -193,6 +196,9 @@ const theme = {
     },
     svg: {
       stroke: "text",
+    },
+    img: {
+      my: 4,
     },
   },
 }

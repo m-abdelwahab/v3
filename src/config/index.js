@@ -38,11 +38,6 @@ module.exports = {
       url: "mailto:mahmoud3799@gmail.com",
       handle: "mahmoud3799@gmail.com",
     },
-    {
-      name: "Medium",
-      url: "https://medium.com/@thisismahmoud",
-      handle: "thisismahmoud",
-    },
   ],
 
   navLinks: [

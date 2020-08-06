@@ -6,7 +6,7 @@ import { useActiveHash } from "../hooks/useActiveHash"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "@emotion/styled"
-import { SEO, Layout, Bio, Code, Share } from "../components"
+import { SEO, Layout, Bio, Code, Share, Callout } from "../components"
 import Fade from "react-reveal/Fade"
 import { theme, media, ProgressBar } from "../styles"
 import getShareImage from "@jlengstorf/get-share-image"
@@ -99,7 +99,7 @@ const Heading = styled.h3`
 const BlogPost = ({ data, pageContext, excerpt }) => {
   const { previous, next } = pageContext
   const { body, frontmatter, tableOfContents, fields } = data.mdx
-  const { title, description } = frontmatter
+  const { title, description, published } = frontmatter
 
   const getHashUrl = (tableOfContents, url) => {
     var UrlList = []
@@ -196,6 +196,11 @@ const BlogPost = ({ data, pageContext, excerpt }) => {
               <Link to="/blog">
                 <Heading>Blog</Heading>
               </Link>
+              {!published ? (
+                <Callout variant="warning">
+                  This article is still a work in progress
+                </Callout>
+              ) : null}
               <header>
                 <Title>{title}</Title>
               </header>
@@ -264,6 +269,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        published
       }
     }
   }

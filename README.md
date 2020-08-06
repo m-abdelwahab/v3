@@ -5,6 +5,7 @@
 For example maw.me/ will redirect to mahmoudabdelwahab.tech
 
 create a custom quote MDX component that has "Tweet this" attached to it
+![website screenshot](./image.png)
 
 Portfolio Website Built using:
 
